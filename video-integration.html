@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Video Integration - Video Creation Course</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../../video-creation.html" class="back-to-course">← Back to Video Creation Course</a>
+            <div class="lesson-controls">
+                <a href="../editing/audio-editing.html" class="prev-lesson">← Previous: Audio Editing</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>Web Video Integration</h1>
+            
+            <section class="lesson-section">
+                <h2>HTML5 Video</h2>
+                <p>Learn how to embed videos using native HTML5 capabilities.</p>
+                
+                <div class="example-code">
+                    <h3>Basic Video Implementation</h3>
+                    <pre><code>
+1. Basic Video Element
+   &lt;video width="720" height="480" controls&gt;
+     &lt;source src="video.mp4" type="video/mp4"&gt;
+     &lt;source src="video.webm" type="video/webm"&gt;
+     Your browser doesn't support HTML5 video.
+   &lt;/video&gt;
+
+2. Video Attributes
+   - controls (playback controls)
+   - autoplay (automatic playback)
+   - loop (continuous playback)
+   - muted (start muted)
+   - preload (loading behavior)
+
+3. Responsive Design
+   &lt;div class="video-container"&gt;
+     &lt;video width="100%" height="auto"&gt;
+       &lt;source src="video.mp4" type="video/mp4"&gt;
+     &lt;/video&gt;
+   &lt;/div&gt;
+
+   .video-container {
+     position: relative;
+     padding-bottom: 56.25%; /* 16:9 */
+     height: 0;
+     overflow: hidden;
+   }
+   .video-container video {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+   }
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Video Platforms</h2>
+                <p>Integrate videos from popular streaming platforms.</p>
+                
+                <div class="example-code">
+                    <h3>Platform Integration</h3>
+                    <pre><code>
+1. YouTube Embed
+   &lt;iframe 
+     width="560" 
+     height="315" 
+     src="https://www.youtube.com/embed/VIDEO_ID"
+     frameborder="0" 
+     allowfullscreen&gt;
+   &lt;/iframe&gt;
+
+2. Vimeo Embed
+   &lt;iframe 
+     src="https://player.vimeo.com/video/VIDEO_ID" 
+     width="640" 
+     height="360" 
+     frameborder="0" 
+     allowfullscreen&gt;
+   &lt;/iframe&gt;
+
+3. Custom Player
+   &lt;div id="player"&gt;&lt;/div&gt;
+   &lt;script src="https://player.platform.com/api.js"&gt;&lt;/script&gt;
+   &lt;script&gt;
+     const player = new Player('player', {
+       video: 'VIDEO_ID',
+       width: 640,
+       height: 360
+     });
+   &lt;/script&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Advanced Features</h2>
+                <p>Implement advanced video features and optimizations.</p>
+                
+                <div class="example-code">
+                    <h3>Advanced Implementation</h3>
+                    <pre><code>
+1. Lazy Loading
+   &lt;video 
+     loading="lazy"
+     poster="thumbnail.jpg"
+     data-src="video.mp4"&gt;
+   &lt;/video&gt;
+
+   &lt;script&gt;
+   const observer = new IntersectionObserver((entries) => {
+     entries.forEach(entry => {
+       if (entry.isIntersecting) {
+         const video = entry.target;
+         video.src = video.dataset.src;
+         observer.unobserve(video);
+       }
+     });
+   });
+   &lt;/script&gt;
+
+2. Custom Controls
+   &lt;div class="video-player"&gt;
+     &lt;video id="myVideo"&gt;
+       &lt;source src="video.mp4" type="video/mp4"&gt;
+     &lt;/video&gt;
+     &lt;div class="controls"&gt;
+       &lt;button onclick="playPause()"&gt;Play/Pause&lt;/button&gt;
+       &lt;input type="range" id="progress" value="0"&gt;
+       &lt;button onclick="toggleMute()"&gt;Mute&lt;/button&gt;
+     &lt;/div&gt;
+   &lt;/div&gt;
+
+3. Adaptive Streaming
+   &lt;video&gt;
+     &lt;source src="video-high.mp4" type="video/mp4" media="(min-width: 800px)"&gt;
+     &lt;source src="video-medium.mp4" type="video/mp4" media="(min-width: 400px)"&gt;
+     &lt;source src="video-low.mp4" type="video/mp4"&gt;
+   &lt;/video&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a responsive video player with:</p>
+                    <ul>
+                        <li>Custom controls</li>
+                        <li>Lazy loading</li>
+                        <li>Multiple video sources</li>
+                        <li>Fallback content</li>
+                    </ul>
+                    <button class="btn show-solution">Show Example Code</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+&lt;!-- HTML Structure --&gt;
+&lt;div class="video-wrapper"&gt;
+  &lt;div class="video-container"&gt;
+    &lt;video id="customPlayer" poster="thumbnail.jpg" preload="none"&gt;
+      &lt;source data-src="video-hd.mp4" type="video/mp4" media="(min-width: 1080px)"&gt;
+      &lt;source data-src="video-sd.mp4" type="video/mp4"&gt;
+      &lt;track kind="captions" src="captions.vtt" srclang="en" label="English"&gt;
+      &lt;p&gt;Your browser doesn't support HTML5 video.&lt;/p&gt;
+    &lt;/video&gt;
+    
+    &lt;div class="custom-controls"&gt;
+      &lt;button class="play-pause"&gt;Play&lt;/button&gt;
+      &lt;div class="progress-bar"&gt;
+        &lt;div class="progress"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;button class="mute"&gt;Mute&lt;/button&gt;
+      &lt;select class="quality"&gt;
+        &lt;option value="hd"&gt;HD&lt;/option&gt;
+        &lt;option value="sd"&gt;SD&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- CSS Styles --&gt;
+&lt;style&gt;
+.video-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.custom-controls {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  padding: 10px;
+}
+&lt;/style&gt;
+
+&lt;!-- JavaScript --&gt;
+&lt;script&gt;
+document.addEventListener('DOMContentLoaded', function() {
+  const video = document.getElementById('customPlayer');
+  const playPauseBtn = document.querySelector('.play-pause');
+  const progress = document.querySelector('.progress');
+  
+  // Lazy loading
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const sources = video.querySelectorAll('source');
+        sources.forEach(source => {
+          source.src = source.dataset.src;
+        });
+        video.load();
+        observer.unobserve(video);
+      }
+    });
+  });
+  
+  observer.observe(video);
+  
+  // Custom controls
+  playPauseBtn.addEventListener('click', () => {
+    if (video.paused) {
+      video.play();
+      playPauseBtn.textContent = 'Pause';
+    } else {
+      video.pause();
+      playPauseBtn.textContent = 'Play';
+    }
+  });
+  
+  // Update progress bar
+  video.addEventListener('timeupdate', () => {
+    const percentage = (video.currentTime / video.duration) * 100;
+    progress.style.width = percentage + '%';
+  });
+});
+&lt;/script&gt;
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which HTML5 video attribute enables video controls in the player?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> autoplay</label>
+                            <label><input type="radio" name="q1" value="b"> controls</label>
+                            <label><input type="radio" name="q1" value="c"> loop</label>
+                            <label><input type="radio" name="q1" value="d"> muted</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+    </script>
+</body>
+</html> 

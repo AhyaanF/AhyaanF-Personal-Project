@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Features - HTML Course</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../../html-course.html" class="back-to-course">← Back to HTML Course</a>
+            <div class="lesson-controls">
+                <a href="best-practices.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="../../css/basics/introduction.html" class="next-lesson">Next: CSS Basics →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>HTML5 Features</h1>
+            
+            <section class="lesson-section">
+                <h2>Native Form Features</h2>
+                <p>HTML5 introduced many new input types and form validation features.</p>
+                
+                <div class="example-code">
+                    <h3>New Input Types</h3>
+                    <pre><code>
+&lt;form&gt;
+    &lt;!-- Date and Time inputs --&gt;
+    &lt;input type="date" name="date"&gt;
+    &lt;input type="time" name="time"&gt;
+    &lt;input type="datetime-local" name="datetime"&gt;
+    &lt;input type="month" name="month"&gt;
+    &lt;input type="week" name="week"&gt;
+
+    &lt;!-- Number and Range inputs --&gt;
+    &lt;input type="number" min="0" max="100" step="5"&gt;
+    &lt;input type="range" min="0" max="100" value="50"&gt;
+
+    &lt;!-- Color picker --&gt;
+    &lt;input type="color" name="theme"&gt;
+
+    &lt;!-- Email, URL, and Search --&gt;
+    &lt;input type="email" name="email"&gt;
+    &lt;input type="url" name="website"&gt;
+    &lt;input type="search" name="query"&gt;
+
+    &lt;!-- Built-in validation --&gt;
+    &lt;input 
+        type="email" 
+        required 
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+    &gt;
+&lt;/form&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Multimedia Elements</h2>
+                
+                <div class="example-code">
+                    <h3>Audio and Video</h3>
+                    <pre><code>
+&lt;!-- Video with multiple sources --&gt;
+&lt;video controls width="640" height="360"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    &lt;track 
+        kind="subtitles" 
+        src="captions.vtt" 
+        srclang="en" 
+        label="English"
+    &gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+
+&lt;!-- Audio player --&gt;
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    &lt;source src="audio.ogg" type="audio/ogg"&gt;
+    Your browser does not support the audio tag.
+&lt;/audio&gt;
+
+&lt;!-- Canvas element --&gt;
+&lt;canvas id="myCanvas" width="200" height="100"&gt;
+    Your browser does not support the canvas element.
+&lt;/canvas&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Storage and APIs</h2>
+                
+                <div class="example-code">
+                    <h3>Web Storage</h3>
+                    <pre><code>
+&lt;!-- Example using localStorage --&gt;
+&lt;script&gt;
+// Store data
+localStorage.setItem('username', 'John');
+localStorage.setItem('theme', 'dark');
+
+// Retrieve data
+const username = localStorage.getItem('username');
+const theme = localStorage.getItem('theme');
+
+// Remove data
+localStorage.removeItem('username');
+
+// Clear all data
+localStorage.clear();
+&lt;/script&gt;
+
+&lt;!-- Example using sessionStorage --&gt;
+&lt;script&gt;
+// Stores data for the session
+sessionStorage.setItem('tempData', 'value');
+&lt;/script&gt;
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Geolocation API</h3>
+                    <pre><code>
+&lt;script&gt;
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+        function(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            console.log(`Lat: ${latitude}, Long: ${longitude}`);
+        },
+        function(error) {
+            console.error('Error getting location:', error);
+        }
+    );
+}
+&lt;/script&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Semantic Elements</h2>
+                
+                <div class="example-code">
+                    <h3>New Structural Elements</h3>
+                    <pre><code>
+&lt;!-- Article with sections --&gt;
+&lt;article&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Article Title&lt;/h1&gt;
+        &lt;time datetime="2024-01-15"&gt;January 15, 2024&lt;/time&gt;
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        &lt;h2&gt;Section Title&lt;/h2&gt;
+        &lt;p&gt;Content here...&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        &lt;h3&gt;Related Content&lt;/h3&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Related Link&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;Author: John Doe&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;
+
+&lt;!-- Details and Summary --&gt;
+&lt;details&gt;
+    &lt;summary&gt;Click to show more&lt;/summary&gt;
+    &lt;p&gt;Hidden content revealed when clicked.&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;!-- Figure with caption --&gt;
+&lt;figure&gt;
+    &lt;img src="diagram.png" alt="Diagram"&gt;
+    &lt;figcaption&gt;Figure 1: Diagram explanation&lt;/figcaption&gt;
+&lt;/figure&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a modern HTML5 page that includes:</p>
+                    <ul>
+                        <li>A form with various HTML5 input types</li>
+                        <li>A video player with captions</li>
+                        <li>Local storage functionality</li>
+                        <li>Semantic structure</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Modern HTML5 Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Modern HTML5 Features Demo&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#form"&gt;Form&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#media"&gt;Media&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section id="form"&gt;
+            &lt;h2&gt;Registration Form&lt;/h2&gt;
+            &lt;form id="registration"&gt;
+                &lt;label for="name"&gt;Name:&lt;/label&gt;
+                &lt;input type="text" id="name" required&gt;
+
+                &lt;label for="email"&gt;Email:&lt;/label&gt;
+                &lt;input type="email" id="email" required&gt;
+
+                &lt;label for="birth"&gt;Birthday:&lt;/label&gt;
+                &lt;input type="date" id="birth"&gt;
+
+                &lt;label for="favorite-color"&gt;Favorite Color:&lt;/label&gt;
+                &lt;input type="color" id="favorite-color"&gt;
+
+                &lt;button type="submit"&gt;Submit&lt;/button&gt;
+            &lt;/form&gt;
+        &lt;/section&gt;
+
+        &lt;section id="media"&gt;
+            &lt;h2&gt;Media Player&lt;/h2&gt;
+            &lt;video controls width="640" height="360"&gt;
+                &lt;source src="video.mp4" type="video/mp4"&gt;
+                &lt;track 
+                    kind="captions" 
+                    src="captions.vtt" 
+                    srclang="en" 
+                    label="English"
+                &gt;
+            &lt;/video&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;aside&gt;
+        &lt;h2&gt;Saved Data&lt;/h2&gt;
+        &lt;div id="saved-data"&gt;&lt;/div&gt;
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;© 2024 HTML5 Demo&lt;/p&gt;
+    &lt;/footer&gt;
+
+    &lt;script&gt;
+        // Form handling and local storage
+        document.getElementById('registration')
+            .addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                
+                // Save to localStorage
+                localStorage.setItem('userData', JSON.stringify({
+                    name: name,
+                    email: email
+                }));
+                
+                // Update display
+                displaySavedData();
+            });
+
+        function displaySavedData() {
+            const userData = JSON.parse(
+                localStorage.getItem('userData')
+            );
+            if (userData) {
+                document.getElementById('saved-data').innerHTML = `
+                    &lt;p&gt;Name: ${userData.name}&lt;/p&gt;
+                    &lt;p&gt;Email: ${userData.email}&lt;/p&gt;
+                `;
+            }
+        }
+
+        // Display saved data on load
+        displaySavedData();
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which HTML5 feature is used for client-side storage that persists after the browser is closed?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> sessionStorage</label>
+                            <label><input type="radio" name="q1" value="b"> localStorage</label>
+                            <label><input type="radio" name="q1" value="c"> cookies</label>
+                            <label><input type="radio" name="q1" value="d"> cache</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+    </script>
+</body>
+</html> 

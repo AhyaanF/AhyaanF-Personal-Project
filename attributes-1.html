@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Attributes - HTML Course</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../../html-course.html" class="back-to-course">← Back to HTML Course</a>
+            <div class="lesson-controls">
+                <a href="basic-elements.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="text-formatting.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>HTML Attributes</h1>
+            
+            <section class="lesson-section">
+                <h2>What are HTML Attributes?</h2>
+                <p>Attributes provide additional information about HTML elements and can modify their behavior. They are always specified in the start tag.</p>
+                
+                <div class="example-code">
+                    <h3>Basic Attribute Syntax</h3>
+                    <pre><code>
+&lt;element attribute="value"&gt;content&lt;/element&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Common HTML Attributes</h2>
+                
+                <div class="example-code">
+                    <h3>Link Attributes</h3>
+                    <pre><code>
+&lt;!-- href specifies the URL, target controls how the link opens --&gt;
+&lt;a href="https://example.com" target="_blank"&gt;Open in new tab&lt;/a&gt;
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Image Attributes</h3>
+                    <pre><code>
+&lt;!-- src specifies image source, alt provides alternative text --&gt;
+&lt;img src="cat.jpg" alt="Cute cat" width="300" height="200"&gt;
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Form Input Attributes</h3>
+                    <pre><code>
+&lt;!-- type, name, placeholder, and required attributes --&gt;
+&lt;input type="text" name="username" placeholder="Enter username" required&gt;
+&lt;input type="password" name="password" minlength="8"&gt;
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Global Attributes</h3>
+                    <pre><code>
+&lt;!-- class and id for styling and JavaScript --&gt;
+&lt;div class="container" id="main"&gt;Content&lt;/div&gt;
+
+&lt;!-- style for inline CSS --&gt;
+&lt;p style="color: blue;"&gt;Blue text&lt;/p&gt;
+
+&lt;!-- title for tooltips --&gt;
+&lt;span title="More info"&gt;Hover me&lt;/span&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create HTML elements using the following attributes:</p>
+                    <ul>
+                        <li>A link that opens in a new tab</li>
+                        <li>An image with width, height, and alt text</li>
+                        <li>A text input with placeholder and required attributes</li>
+                        <li>A div with both class and id attributes</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+&lt;!-- Link in new tab --&gt;
+&lt;a href="https://example.com" target="_blank"&gt;Visit Example&lt;/a&gt;
+
+&lt;!-- Image with attributes --&gt;
+&lt;img src="photo.jpg" alt="Beautiful landscape" width="800" height="600"&gt;
+
+&lt;!-- Input with attributes --&gt;
+&lt;input type="text" placeholder="Enter your name" required&gt;
+
+&lt;!-- Div with class and id --&gt;
+&lt;div class="content-box" id="main-content"&gt;
+    This is the main content
+&lt;/div&gt;
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which attribute is used to make a form input required?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> mandatory</label>
+                            <label><input type="radio" name="q1" value="b"> required</label>
+                            <label><input type="radio" name="q1" value="c"> must</label>
+                            <label><input type="radio" name="q1" value="d"> necessary</label>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p>What attribute is used to specify where a link should open?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q2" value="a"> href</label>
+                            <label><input type="radio" name="q2" value="b"> link</label>
+                            <label><input type="radio" name="q2" value="c"> target</label>
+                            <label><input type="radio" name="q2" value="d"> open</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+    </script>
+</body>
+</html> 

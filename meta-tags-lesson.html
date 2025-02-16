@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Tags & SEO - HTML Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="site-title">
+            <h1>Complete Web Development & Video Creation Course</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="../../html-course.html" class="active">HTML</a>
+                    <div class="dropdown-content">
+                        <a href="../../html-course.html#basics">Basics</a>
+                        <a href="../../html-course.html#intermediate">Intermediate</a>
+                        <a href="../../html-course.html#advanced">Advanced</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../css-course.html">CSS</a>
+                    <div class="dropdown-content">
+                        <a href="../../css-course.html#basics">Basics</a>
+                        <a href="../../css-course.html#layouts">Layouts</a>
+                        <a href="../../css-course.html#responsive">Responsive Design</a>
+                        <a href="../../css-course.html#animations">Animations</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../video-creation.html">Video Creation</a>
+                    <div class="dropdown-content">
+                        <a href="../../video-creation.html#basics">Video Basics</a>
+                        <a href="../../video-creation.html#advanced">Advanced Techniques</a>
+                        <a href="../../video-creation.html#editing">Video Editing</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../html-course.html" class="back-to-course">← Back to HTML Course</a>
+            <div class="lesson-controls">
+                <a href="semantic.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="html5-features.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>Meta Tags & SEO</h1>
+            
+            <section class="lesson-section">
+                <h2>Understanding Meta Tags</h2>
+                <p>Meta tags provide metadata about your HTML document. They are placed in the head section and are used by browsers, search engines, and other web services.</p>
+                
+                <div class="example-code">
+                    <h3>Essential Meta Tags</h3>
+                    <pre><code>
+&lt;!-- Character Encoding --&gt;
+&lt;meta charset="UTF-8"&gt;
+
+&lt;!-- Viewport Settings --&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+&lt;!-- Description (important for SEO) --&gt;
+&lt;meta name="description" content="A brief description of your page content"&gt;
+
+&lt;!-- Keywords (less important for modern SEO) --&gt;
+&lt;meta name="keywords" content="html, web development, coding"&gt;
+
+&lt;!-- Author Information --&gt;
+&lt;meta name="author" content="Your Name"&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Social Media Meta Tags</h2>
+                <div class="example-code">
+                    <h3>Open Graph Protocol (Facebook)</h3>
+                    <pre><code>
+&lt;!-- Open Graph Meta Tags --&gt;
+&lt;meta property="og:title" content="Your Page Title"&gt;
+&lt;meta property="og:description" content="Your page description"&gt;
+&lt;meta property="og:image" content="https://example.com/image.jpg"&gt;
+&lt;meta property="og:url" content="https://example.com/page"&gt;
+&lt;meta property="og:type" content="website"&gt;
+
+&lt;!-- Twitter Card Meta Tags --&gt;
+&lt;meta name="twitter:card" content="summary_large_image"&gt;
+&lt;meta name="twitter:site" content="@yourusername"&gt;
+&lt;meta name="twitter:title" content="Your Page Title"&gt;
+&lt;meta name="twitter:description" content="Your page description"&gt;
+&lt;meta name="twitter:image" content="https://example.com/image.jpg"&gt;
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>SEO-Specific Meta Tags</h3>
+                    <pre><code>
+&lt;!-- Robots Control --&gt;
+&lt;meta name="robots" content="index, follow"&gt;
+
+&lt;!-- Canonical URL --&gt;
+&lt;link rel="canonical" href="https://example.com/original-page"&gt;
+
+&lt;!-- Language Declaration --&gt;
+&lt;link rel="alternate" hreflang="es" href="https://example.com/es/page"&gt;
+
+&lt;!-- Mobile Specific --&gt;
+&lt;meta name="format-detection" content="telephone=no"&gt;
+&lt;meta name="theme-color" content="#ffffff"&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a complete head section for a webpage that includes:</p>
+                    <ul>
+                        <li>All essential meta tags</li>
+                        <li>Social media meta tags for sharing</li>
+                        <li>SEO-specific meta tags</li>
+                        <li>Proper title and description</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;!-- Essential Meta Tags --&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Amazing Website - Welcome Page&lt;/title&gt;
+    
+    &lt;!-- SEO Meta Tags --&gt;
+    &lt;meta name="description" content="Learn about web development, coding, and digital creation. Free tutorials and resources."&gt;
+    &lt;meta name="keywords" content="web development, coding, tutorials, learning"&gt;
+    &lt;meta name="author" content="Your Name"&gt;
+    &lt;meta name="robots" content="index, follow"&gt;
+    
+    &lt;!-- Canonical URL --&gt;
+    &lt;link rel="canonical" href="https://example.com/"&gt;
+    
+    &lt;!-- Open Graph / Facebook --&gt;
+    &lt;meta property="og:type" content="website"&gt;
+    &lt;meta property="og:url" content="https://example.com/"&gt;
+    &lt;meta property="og:title" content="My Amazing Website"&gt;
+    &lt;meta property="og:description" content="Learn about web development and coding"&gt;
+    &lt;meta property="og:image" content="https://example.com/image.jpg"&gt;
+    
+    &lt;!-- Twitter --&gt;
+    &lt;meta name="twitter:card" content="summary_large_image"&gt;
+    &lt;meta name="twitter:url" content="https://example.com/"&gt;
+    &lt;meta name="twitter:title" content="My Amazing Website"&gt;
+    &lt;meta name="twitter:description" content="Learn about web development and coding"&gt;
+    &lt;meta name="twitter:image" content="https://example.com/image.jpg"&gt;
+    
+    &lt;!-- Mobile Specific --&gt;
+    &lt;meta name="theme-color" content="#4285f4"&gt;
+    &lt;meta name="mobile-web-app-capable" content="yes"&gt;
+    &lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+    
+    &lt;!-- Stylesheets and other resources --&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+    &lt;link rel="icon" href="favicon.ico" type="image/x-icon"&gt;
+&lt;/head&gt;
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which meta tag is used to control how your page appears on mobile devices?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> &lt;meta name="mobile"&gt;</label>
+                            <label><input type="radio" name="q1" value="b"> &lt;meta name="viewport"&gt;</label>
+                            <label><input type="radio" name="q1" value="c"> &lt;meta name="responsive"&gt;</label>
+                            <label><input type="radio" name="q1" value="d"> &lt;meta name="device"&gt;</label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn check-answers">Check Answers</button>
+            </section>
+        </article>
+
+        <nav class="lesson-navigation">
+            <div class="lesson-controls">
+                <a href="semantic.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="html5-features.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2024 Web Development & Video Creation Course. All rights reserved.</p>
+            <p>Made by Ahyaan Farooqi</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+
+        document.querySelector('.check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'b'
+            };
+            // Add quiz checking logic
+        });
+    </script>
+</body>
+</html> 

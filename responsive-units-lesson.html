@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Units - CSS Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="site-title">
+            <h1>Complete Web Development & Video Creation Course</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="../../html-course.html">HTML</a>
+                    <div class="dropdown-content">
+                        <a href="../../html-course.html#basics">Basics</a>
+                        <a href="../../html-course.html#intermediate">Intermediate</a>
+                        <a href="../../html-course.html#advanced">Advanced</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../css-course.html" class="active">CSS</a>
+                    <div class="dropdown-content">
+                        <a href="../../css-course.html#basics">Basics</a>
+                        <a href="../../css-course.html#layouts">Layouts</a>
+                        <a href="../../css-course.html#responsive">Responsive Design</a>
+                        <a href="../../css-course.html#animations">Animations</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../video-creation.html">Video Creation</a>
+                    <div class="dropdown-content">
+                        <a href="../../video-creation.html#basics">Video Basics</a>
+                        <a href="../../video-creation.html#advanced">Advanced Techniques</a>
+                        <a href="../../video-creation.html#editing">Video Editing</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="responsive-design-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="responsive-images-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>Responsive Units in CSS</h1>
+            
+            <section class="lesson-section">
+                <h2>Relative Length Units</h2>
+                <p>Learn about CSS units that scale relative to other elements or viewport dimensions.</p>
+                
+                <div class="example-code">
+                    <h3>Font-Relative Units</h3>
+                    <pre><code>
+/* em - Relative to parent element's font size */
+.parent {
+    font-size: 16px;
+}
+.child {
+    font-size: 1.5em;    /* 24px (16 × 1.5) */
+    padding: 1em;        /* 24px (relative to element's font size) */
+    margin: 0.5em;       /* 12px */
+}
+
+/* rem - Relative to root element's font size */
+:root {
+    font-size: 16px;
+}
+.element {
+    font-size: 1.5rem;   /* 24px (16 × 1.5) */
+    padding: 1rem;       /* 16px */
+    margin: 2rem;        /* 32px */
+}
+
+/* ch - Width of the "0" character */
+.text-box {
+    width: 45ch;         /* Width of 45 "0" characters */
+    max-width: 60ch;     /* Maximum width of 60 "0" characters */
+}
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Viewport-Relative Units</h3>
+                    <pre><code>
+/* vw - Viewport Width */
+.hero {
+    width: 100vw;        /* Full viewport width */
+    height: 50vw;        /* Half viewport width */
+}
+
+/* vh - Viewport Height */
+.full-screen {
+    height: 100vh;       /* Full viewport height */
+    min-height: 50vh;    /* Minimum half viewport height */
+}
+
+/* vmin & vmax */
+.responsive-square {
+    width: 50vmin;       /* 50% of viewport's smaller dimension */
+    height: 50vmin;      /* Maintains square shape */
+}
+
+.dynamic-size {
+    font-size: 5vw;      /* Text scales with viewport width */
+    padding: 2vh 2vw;    /* Padding scales with viewport */
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Percentage Units</h2>
+                
+                <div class="example-code">
+                    <h3>Percentage-Based Layouts</h3>
+                    <pre><code>
+/* Basic percentage layout */
+.container {
+    width: 80%;          /* 80% of parent width */
+    max-width: 1200px;   /* Maximum width constraint */
+    margin: 0 auto;      /* Center horizontally */
+}
+
+.sidebar {
+    width: 30%;          /* 30% of parent width */
+    float: left;
+}
+
+.main-content {
+    width: 70%;          /* 70% of parent width */
+    float: right;
+}
+
+/* Percentage in padding and margin */
+.box {
+    padding: 10%;        /* Padding relative to parent width */
+    margin-bottom: 5%;   /* Margin relative to parent width */
+}
+
+/* Aspect ratio using padding percentage */
+.responsive-video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.responsive-video iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Fluid Typography</h2>
+                
+                <div class="example-code">
+                    <h3>Responsive Text Sizing</h3>
+                    <pre><code>
+/* Basic fluid typography */
+html {
+    font-size: 16px;
+}
+
+@media screen and (min-width: 320px) {
+    html {
+        font-size: calc(16px + 2vw);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    html {
+        font-size: 24px;
+    }
+}
+
+/* Clamp for fluid typography */
+.heading {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    /* Minimum: 1.5rem
+       Preferred: 5vw
+       Maximum: 3rem */
+}
+
+/* Fluid spacing */
+.container {
+    padding: clamp(1rem, 5vw, 3rem);
+    gap: clamp(1rem, 2vw, 2rem);
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a responsive layout using various CSS units:</p>
+                    <ul>
+                        <li>Fluid typography using clamp()</li>
+                        <li>Responsive container with percentage and max-width</li>
+                        <li>Viewport-based hero section</li>
+                        <li>Responsive card with em/rem units</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+/* HTML Structure */
+&lt;div class="container"&gt;
+    &lt;header class="hero"&gt;
+        &lt;h1 class="hero-title"&gt;Welcome&lt;/h1&gt;
+    &lt;/header&gt;
+    
+    &lt;main class="content"&gt;
+        &lt;div class="card"&gt;
+            &lt;h2&gt;Card Title&lt;/h2&gt;
+            &lt;p&gt;Card content goes here&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+&lt;/div&gt;
+
+/* CSS Styles */
+:root {
+    font-size: 16px;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(1rem, 5vw, 3rem);
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 8vw, 5rem);
+    text-align: center;
+}
+
+/* Content Area */
+.content {
+    margin: 2rem auto;
+    display: grid;
+    gap: clamp(1rem, 3vw, 2rem);
+}
+
+/* Card */
+.card {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    .content {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which unit is relative to the root element's font size?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> em</label>
+                            <label><input type="radio" name="q1" value="b"> rem</label>
+                            <label><input type="radio" name="q1" value="c"> vw</label>
+                            <label><input type="radio" name="q1" value="d"> px</label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn check-answers">Check Answers</button>
+            </section>
+        </article>
+
+        <nav class="lesson-navigation">
+            <div class="lesson-controls">
+                <a href="responsive-design-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="responsive-images-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2024 Web Development & Video Creation Course. All rights reserved.</p>
+            <p>Made by Ahyaan Farooqi</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+
+        document.querySelector('.check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'b'
+            };
+            // Add quiz checking logic
+        });
+    </script>
+</body>
+</html> 

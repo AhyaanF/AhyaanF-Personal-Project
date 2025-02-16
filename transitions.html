@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions - CSS Course</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="../layouts/grid.html" class="prev-lesson">← Previous: Grid</a>
+                <a href="animations.html#keyframe-animations" class="next-lesson">Next: Keyframe Animations →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>CSS Transitions</h1>
+            
+            <section class="lesson-section">
+                <h2>Basic Transitions</h2>
+                <p>CSS transitions allow you to change property values smoothly over a specified duration, creating smooth animations between states.</p>
+                
+                <div class="example-code">
+                    <h3>Transition Properties</h3>
+                    <pre><code>
+/* Basic transition */
+.element {
+    background-color: blue;
+    transition: background-color 0.3s ease;
+}
+
+.element:hover {
+    background-color: red;
+}
+
+/* Multiple properties */
+.button {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Individual properties */
+.card {
+    transition-property: transform, box-shadow;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+}
+
+/* Shorthand syntax */
+.card {
+    transition: transform 0.3s ease-in-out,
+                box-shadow 0.3s ease-in-out;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Timing Functions</h2>
+                <p>Timing functions control the acceleration and speed of transitions throughout their duration.</p>
+                
+                <div class="example-code">
+                    <h3>Common Timing Functions</h3>
+                    <pre><code>
+/* Built-in timing functions */
+.element {
+    /* Linear - constant speed */
+    transition-timing-function: linear;
+    
+    /* Ease - slow start, fast middle, slow end */
+    transition-timing-function: ease;
+    
+    /* Ease-in - slow start */
+    transition-timing-function: ease-in;
+    
+    /* Ease-out - slow end */
+    transition-timing-function: ease-out;
+    
+    /* Ease-in-out - slow start and end */
+    transition-timing-function: ease-in-out;
+}
+
+/* Custom cubic bezier */
+.custom-timing {
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Steps */
+.step-transition {
+    transition-timing-function: steps(4, end);
+}
+
+/* Multiple timing functions */
+.complex-transition {
+    transition: 
+        transform 0.3s ease-out,
+        opacity 0.5s linear,
+        background-color 0.2s ease-in;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Performance and Best Practices</h2>
+                <p>Learn how to create efficient and smooth transitions while maintaining good performance.</p>
+                
+                <div class="example-code">
+                    <h3>Optimized Transitions</h3>
+                    <pre><code>
+/* Hardware acceleration */
+.hardware-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Performant properties */
+.good-performance {
+    /* Use these properties for best performance */
+    transition: transform 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+
+.avoid-when-possible {
+    /* These properties can cause performance issues */
+    transition: width 0.3s ease;
+    transition: height 0.3s ease;
+    transition: top 0.3s ease;
+    transition: left 0.3s ease;
+}
+
+/* State changes */
+.state-transition {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease,
+                transform 0.3s ease;
+}
+
+.state-transition.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Disable transitions */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create an interactive card component that:</p>
+                    <ul>
+                        <li>Has smooth hover effects</li>
+                        <li>Includes image scale transitions</li>
+                        <li>Features content fade effects</li>
+                        <li>Uses performant properties</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+&lt;!-- index.html --&gt;
+&lt;div class="card"&gt;
+    &lt;div class="card-image"&gt;
+        &lt;img src="image.jpg" alt="Card image"&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+        &lt;h3&gt;Card Title&lt;/h3&gt;
+        &lt;p&gt;Card description text...&lt;/p&gt;
+        &lt;button class="card-button"&gt;Learn More&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+/* styles.css */
+.card {
+    position: relative;
+    width: 300px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.card-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+}
+
+.card:hover .card-content h3 {
+    color: #007bff;
+}
+
+.card-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease,
+                background-color 0.3s ease;
+}
+
+.card-button:hover {
+    transform: scale(1.05);
+    background: #0056b3;
+}
+
+/* Optional overlay effect */
+.card-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0);
+    transition: background 0.3s ease;
+}
+
+.card:hover .card-image::after {
+    background: rgba(0,0,0,0.2);
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which timing function provides a slow start and slow end to the transition?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> linear</label>
+                            <label><input type="radio" name="q1" value="b"> ease-in</label>
+                            <label><input type="radio" name="q1" value="c"> ease-out</label>
+                            <label><input type="radio" name="q1" value="d"> ease-in-out</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+    </script>
+</body>
+</html> 

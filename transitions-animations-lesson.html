@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions & Animations - Web Development Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../lessons.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-page" data-lesson-type="animations">
+        <nav class="lesson-nav">
+            <a href="../../css-course.html" class="back-btn">← Back to Course</a>
+            <div class="lesson-progress">
+                <span>Lesson 9 of 12</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 72%"></div>
+                </div>
+            </div>
+        </nav>
+
+        <article class="lesson-content">
+            <h1>CSS Transitions and Animations</h1>
+            
+            <section class="theory-section">
+                <h2>Adding Motion and Interactivity</h2>
+                <p>Learn how to create smooth transitions and complex animations:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+/* Basic Transitions */
+.button {
+    background-color: blue;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: darkblue;
+    transform: scale(1.1);
+}
+
+/* Individual Property Transitions */
+.card {
+    transition-property: transform, opacity;
+    transition-duration: 0.3s, 0.5s;
+    transition-timing-function: ease-out, linear;
+    transition-delay: 0s, 0.1s;
+}
+
+/* Shorthand Transition */
+.element {
+    transition: transform 0.3s ease-in-out,
+                background-color 0.5s linear;
+}
+
+/* Basic Keyframe Animation */
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.sliding-element {
+    animation: slide-in 1s ease-out forwards;
+}
+
+/* Multiple Keyframes */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Animation Properties */
+.animated-element {
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+/* Animation Shorthand */
+.element {
+    animation: pulse 2s ease-in-out 0.5s infinite alternate;
+}
+
+/* Multiple Animations */
+.complex-animation {
+    animation: 
+        slide-in 1s ease-out,
+        fade-in 2s linear;
+}
+
+/* Transform Transitions */
+.transform-element {
+    transition: transform 0.3s;
+}
+
+.transform-element:hover {
+    transform: rotate(45deg) scale(1.2) translateX(20px);
+}
+
+/* Timing Functions */
+.timing-examples {
+    transition-timing-function: linear;
+    transition-timing-function: ease;
+    transition-timing-function: ease-in;
+    transition-timing-function: ease-out;
+    transition-timing-function: ease-in-out;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animation Events */
+.element {
+    animation: bounce 1s;
+}
+
+.element.paused {
+    animation-play-state: paused;
+}
+
+/* Performance Optimizations */
+.optimized {
+    transform: translateZ(0);
+    will-change: transform;
+}
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h3>Animation Concepts:</h3>
+                    <ul>
+                        <li><strong>Transitions</strong> - Smooth property changes</li>
+                        <li><strong>Keyframes</strong> - Define animation sequences</li>
+                        <li><strong>Animation Properties</strong> - Control animation behavior</li>
+                        <li><strong>Transform Functions</strong> - Modify element appearance</li>
+                        <li><strong>Timing Functions</strong> - Control animation pacing</li>
+                        <li><strong>Performance</strong> - Optimize animations</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create animations that include:</p>
+                    <ul>
+                        <li>Hover transitions with multiple properties</li>
+                        <li>Keyframe animation with multiple steps</li>
+                        <li>Transform combinations</li>
+                        <li>Different timing functions</li>
+                        <li>Animation sequence with delays</li>
+                    </ul>
+                    <div class="code-editor">
+                        <textarea id="code-input" rows="20"></textarea>
+                        <button class="btn" onclick="checkCode()">Check Your Code</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Quick Quiz</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which property is used to specify how long a transition takes to complete?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="transition-speed"> transition-speed</label>
+                            <label><input type="radio" name="q1" value="transition-duration"> transition-duration</label>
+                            <label><input type="radio" name="q1" value="transition-time"> transition-time</label>
+                            <label><input type="radio" name="q1" value="transition-length"> transition-length</label>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="checkQuiz()">Submit Answer</button>
+                </div>
+            </section>
+
+            <nav class="lesson-navigation">
+                <a href="responsive-design-lesson.html" class="prev-lesson">← Previous: Responsive Design</a>
+                <a href="variables-lesson.html" class="next-lesson">Next: CSS Variables →</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+    <script src="../../lessons.js"></script>
+</body>
+</html> 

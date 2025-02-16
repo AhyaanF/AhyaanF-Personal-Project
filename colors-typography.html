@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colors & Typography - CSS Course</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="introduction.html" class="prev-lesson">← Previous: Introduction</a>
+                <a href="spacing-borders.html" class="next-lesson">Next: Spacing & Borders →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>Colors and Typography in CSS</h1>
+            
+            <section class="lesson-section">
+                <h2>Working with Colors</h2>
+                <p>CSS provides multiple ways to specify colors, each with its own advantages.</p>
+                
+                <div class="example-code">
+                    <h3>Color Values</h3>
+                    <pre><code>
+/* Named Colors */
+.named-colors {
+    color: red;
+    background-color: lightblue;
+    border-color: navy;
+}
+
+/* Hexadecimal Colors */
+.hex-colors {
+    color: #ff0000;        /* Red */
+    background: #00ff00;   /* Green */
+    border: #0000ff;      /* Blue */
+}
+
+/* RGB and RGBA Colors */
+.rgb-colors {
+    color: rgb(255, 0, 0);             /* Red */
+    background: rgba(0, 255, 0, 0.5);  /* Semi-transparent green */
+}
+
+/* HSL and HSLA Colors */
+.hsl-colors {
+    color: hsl(0, 100%, 50%);           /* Red */
+    background: hsla(120, 100%, 50%, 0.5); /* Semi-transparent green */
+}
+
+/* Modern Color Functions */
+.modern-colors {
+    color: color-mix(in srgb, #ff0000 50%, #00ff00 50%);
+    background: color-contrast(#ffffff vs #000000, #444444, #666666);
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Typography Basics</h2>
+                
+                <div class="example-code">
+                    <h3>Font Properties</h3>
+                    <pre><code>
+/* Font Family */
+body {
+    font-family: Arial, Helvetica, sans-serif;  /* Fallback system */
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Font Size */
+.font-sizes {
+    font-size: 16px;          /* Pixels */
+    font-size: 1.2em;         /* Relative to parent */
+    font-size: 1.2rem;        /* Relative to root */
+    font-size: 120%;          /* Percentage */
+}
+
+/* Font Weight */
+.font-weights {
+    font-weight: normal;      /* or 400 */
+    font-weight: bold;        /* or 700 */
+    font-weight: 300;         /* Light */
+    font-weight: 600;         /* Semi-bold */
+}
+
+/* Font Style */
+.font-styles {
+    font-style: normal;
+    font-style: italic;
+    font-style: oblique;
+}
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Text Properties</h3>
+                    <pre><code>
+/* Text Alignment */
+.text-alignment {
+    text-align: left;
+    text-align: right;
+    text-align: center;
+    text-align: justify;
+}
+
+/* Line Height */
+.line-spacing {
+    line-height: 1.6;        /* Unitless (recommended) */
+    line-height: 24px;       /* Fixed height */
+    line-height: 150%;       /* Percentage */
+}
+
+/* Text Decoration */
+.text-decoration {
+    text-decoration: none;
+    text-decoration: underline;
+    text-decoration: line-through;
+    text-decoration: overline;
+}
+
+/* Text Transform */
+.text-transform {
+    text-transform: uppercase;
+    text-transform: lowercase;
+    text-transform: capitalize;
+}
+
+/* Letter and Word Spacing */
+.spacing {
+    letter-spacing: 2px;
+    word-spacing: 4px;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Web Fonts</h2>
+                
+                <div class="example-code">
+                    <h3>Using Google Fonts</h3>
+                    <pre><code>
+&lt;!-- In HTML head --&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"&gt;
+
+/* In CSS */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+                    </code></pre>
+
+                    <h3>Using @font-face</h3>
+                    <pre><code>
+@font-face {
+    font-family: 'CustomFont';
+    src: url('path/to/font.woff2') format('woff2'),
+         url('path/to/font.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.custom-font {
+    font-family: 'CustomFont', sans-serif;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a styled article with the following requirements:</p>
+                    <ul>
+                        <li>Use different color formats</li>
+                        <li>Include custom fonts</li>
+                        <li>Apply various text styles</li>
+                        <li>Create a consistent typographic hierarchy</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Typography Practice&lt;/title&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet"&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;article class="blog-post"&gt;
+        &lt;h1&gt;The Art of Typography&lt;/h1&gt;
+        &lt;p class="lead"&gt;Typography is the art and technique of arranging type.&lt;/p&gt;
+        
+        &lt;h2&gt;The Importance of Readability&lt;/h2&gt;
+        &lt;p&gt;Good typography makes content easy to read...&lt;/p&gt;
+        
+        &lt;blockquote&gt;
+            Typography is the voice of your design speaking in silence.
+        &lt;/blockquote&gt;
+        
+        &lt;h3&gt;Key Principles&lt;/h3&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Hierarchy&lt;/li&gt;
+            &lt;li&gt;Contrast&lt;/li&gt;
+            &lt;li&gt;Consistency&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/article&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+/* styles.css */
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --light-bg: #f9f9f9;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: rgba(44, 62, 80, 0.8);
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: #666;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 1rem;
+}
+
+blockquote {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 5px;
+    font-style: italic;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid hsla(210, 29%, 29%, 0.1);
+}
+
+li:last-child {
+    border-bottom: none;
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which of these color formats supports transparency?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> HEX (#ffffff)</label>
+                            <label><input type="radio" name="q1" value="b"> RGB</label>
+                            <label><input type="radio" name="q1" value="c"> RGBA</label>
+                            <label><input type="radio" name="q1" value="d"> Named colors</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+    </script>
+</body>
+</html> 

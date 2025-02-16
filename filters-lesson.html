@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filters - CSS Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="site-title">
+            <h1>Complete Web Development & Video Creation Course</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="../../html-course.html">HTML</a>
+                    <div class="dropdown-content">
+                        <a href="../../html-course.html#basics">Basics</a>
+                        <a href="../../html-course.html#intermediate">Intermediate</a>
+                        <a href="../../html-course.html#advanced">Advanced</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../css-course.html" class="active">CSS</a>
+                    <div class="dropdown-content">
+                        <a href="../../css-course.html#basics">Basics</a>
+                        <a href="../../css-course.html#layouts">Layouts</a>
+                        <a href="../../css-course.html#responsive">Responsive Design</a>
+                        <a href="../../css-course.html#animations">Animations</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../video-creation.html">Video Creation</a>
+                    <div class="dropdown-content">
+                        <a href="../../video-creation.html#basics">Video Basics</a>
+                        <a href="../../video-creation.html#advanced">Advanced Techniques</a>
+                        <a href="../../video-creation.html#editing">Video Editing</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="effects-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="../../css-course.html" class="next-lesson">Back to Course →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>CSS Filters</h1>
+            
+            <section class="lesson-section">
+                <h2>Basic Filters</h2>
+                <p>Learn how to apply visual effects to elements using CSS filters.</p>
+                
+                <div class="example-code">
+                    <h3>Common Filter Functions</h3>
+                    <pre><code>
+/* Blur effect */
+.blur {
+    filter: blur(5px);
+}
+
+/* Brightness adjustment */
+.brightness {
+    filter: brightness(150%);
+}
+
+/* Contrast adjustment */
+.contrast {
+    filter: contrast(200%);
+}
+
+/* Grayscale conversion */
+.grayscale {
+    filter: grayscale(100%);
+}
+
+/* Hue rotation */
+.hue-rotate {
+    filter: hue-rotate(90deg);
+}
+
+/* Invert colors */
+.invert {
+    filter: invert(100%);
+}
+
+/* Opacity adjustment */
+.opacity {
+    filter: opacity(50%);
+}
+
+/* Saturation adjustment */
+.saturate {
+    filter: saturate(200%);
+}
+
+/* Sepia effect */
+.sepia {
+    filter: sepia(100%);
+}
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Multiple Filters</h3>
+                    <pre><code>
+/* Combining multiple filters */
+.multi-filter {
+    filter: 
+        contrast(150%) 
+        brightness(120%) 
+        blur(2px);
+}
+
+/* Image enhancement */
+.enhance-image {
+    filter: 
+        brightness(110%) 
+        contrast(110%) 
+        saturate(120%);
+}
+
+/* Vintage effect */
+.vintage {
+    filter: 
+        sepia(50%) 
+        contrast(150%) 
+        brightness(90%) 
+        hue-rotate(-30deg);
+}
+
+/* Dramatic effect */
+.dramatic {
+    filter: 
+        contrast(150%) 
+        brightness(90%) 
+        grayscale(50%);
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Advanced Filter Techniques</h2>
+                
+                <div class="example-code">
+                    <h3>Filter Transitions</h3>
+                    <pre><code>
+/* Hover effects with filters */
+.hover-filter {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.hover-filter:hover {
+    filter: grayscale(0%);
+}
+
+/* Multiple filter transition */
+.complex-hover {
+    filter: 
+        grayscale(100%) 
+        blur(0px);
+    transition: filter 0.3s ease;
+}
+
+.complex-hover:hover {
+    filter: 
+        grayscale(0%) 
+        blur(2px);
+}
+
+/* Animated filters */
+@keyframes filter-animation {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.animated-filter {
+    animation: filter-animation 5s infinite linear;
+}
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Backdrop Filters</h3>
+                    <pre><code>
+/* Basic backdrop filter */
+.backdrop {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Glass effect */
+.glass {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: 
+        blur(10px) 
+        saturate(180%);
+}
+
+/* Dark overlay */
+.dark-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: 
+        blur(5px) 
+        brightness(70%);
+}
+
+/* Frosted glass */
+.frosted {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: 
+        blur(10px) 
+        contrast(90%) 
+        brightness(110%);
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create an image gallery with filter effects that includes:</p>
+                    <ul>
+                        <li>Hover transitions with filters</li>
+                        <li>Different filter combinations</li>
+                        <li>Backdrop filter overlays</li>
+                        <li>Animated filter effects</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+/* HTML Structure */
+&lt;div class="gallery"&gt;
+    &lt;div class="gallery-item"&gt;
+        &lt;img src="image1.jpg" alt="Gallery Image 1"&gt;
+        &lt;div class="overlay"&gt;
+            &lt;h3&gt;Image Title&lt;/h3&gt;
+            &lt;p&gt;Image description&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- More gallery items... --&gt;
+&lt;/div&gt;
+
+/* CSS Styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(90%);
+    transition: filter 0.3s ease,
+                transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    filter: grayscale(0%) brightness(100%);
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    color: white;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+/* Filter Variations */
+.vintage img {
+    filter: 
+        sepia(50%) 
+        contrast(150%) 
+        brightness(90%) 
+        hue-rotate(-30deg);
+}
+
+.dramatic img {
+    filter: 
+        contrast(150%) 
+        brightness(90%) 
+        grayscale(50%);
+}
+
+.vibrant img {
+    filter: 
+        brightness(110%) 
+        contrast(110%) 
+        saturate(150%);
+}
+
+/* Animated Filters */
+@keyframes hue-rotation {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.animated img {
+    animation: hue-rotation 10s infinite linear;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    .gallery-item img {
+        height: 250px;
+    }
+}
+
+/* Performance Optimization */
+.gallery-item img {
+    will-change: filter, transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery-item img,
+    .overlay {
+        transition: none;
+    }
+    
+    .animated img {
+        animation: none;
+    }
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which CSS filter function is used to add a blur effect to an element?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> blurry()</label>
+                            <label><input type="radio" name="q1" value="b"> blur()</label>
+                            <label><input type="radio" name="q1" value="c"> fuzzy()</label>
+                            <label><input type="radio" name="q1" value="d"> soften()</label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn check-answers">Check Answers</button>
+            </section>
+        </article>
+
+        <nav class="lesson-navigation">
+            <div class="lesson-controls">
+                <a href="effects-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="../../css-course.html" class="next-lesson">Back to Course →</a>
+            </div>
+        </nav>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2024 Web Development & Video Creation Course. All rights reserved.</p>
+            <p>Made by Ahyaan Farooqi</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+
+        document.querySelector('.check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'b'
+            };
+            // Add quiz checking logic
+        });
+    </script>
+</body>
+</html> 

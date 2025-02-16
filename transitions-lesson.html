@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions - CSS Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="site-title">
+            <h1>Complete Web Development & Video Creation Course</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="../../html-course.html">HTML</a>
+                    <div class="dropdown-content">
+                        <a href="../../html-course.html#basics">Basics</a>
+                        <a href="../../html-course.html#intermediate">Intermediate</a>
+                        <a href="../../html-course.html#advanced">Advanced</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../css-course.html" class="active">CSS</a>
+                    <div class="dropdown-content">
+                        <a href="../../css-course.html#basics">Basics</a>
+                        <a href="../../css-course.html#layouts">Layouts</a>
+                        <a href="../../css-course.html#responsive">Responsive Design</a>
+                        <a href="../../css-course.html#animations">Animations</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../video-creation.html">Video Creation</a>
+                    <div class="dropdown-content">
+                        <a href="../../video-creation.html#basics">Video Basics</a>
+                        <a href="../../video-creation.html#advanced">Advanced Techniques</a>
+                        <a href="../../video-creation.html#editing">Video Editing</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="transforms-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="effects-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>CSS Transitions</h1>
+            
+            <section class="lesson-section">
+                <h2>Basic Transitions</h2>
+                <p>Learn how to create smooth state changes between CSS properties.</p>
+                
+                <div class="example-code">
+                    <h3>Transition Properties</h3>
+                    <pre><code>
+/* Individual transition properties */
+.element {
+    /* Property to transition */
+    transition-property: background-color;
+    
+    /* Duration of transition */
+    transition-duration: 0.3s;
+    
+    /* Timing function */
+    transition-timing-function: ease;
+    
+    /* Delay before starting */
+    transition-delay: 0s;
+}
+
+/* Shorthand transition */
+.element {
+    transition: background-color 0.3s ease 0s;
+}
+
+/* Multiple transitions */
+.element {
+    transition: 
+        background-color 0.3s ease,
+        transform 0.5s ease-out,
+        opacity 0.2s linear;
+}
+
+/* All properties transition */
+.element {
+    transition: all 0.3s ease;
+}
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Timing Functions</h3>
+                    <pre><code>
+/* Common timing functions */
+.timing {
+    /* Linear - constant speed */
+    transition-timing-function: linear;
+    
+    /* Ease - slow start, fast middle, slow end */
+    transition-timing-function: ease;
+    
+    /* Ease-in - slow start */
+    transition-timing-function: ease-in;
+    
+    /* Ease-out - slow end */
+    transition-timing-function: ease-out;
+    
+    /* Ease-in-out - slow start and end */
+    transition-timing-function: ease-in-out;
+    
+    /* Step transitions */
+    transition-timing-function: steps(4, end);
+    
+    /* Custom cubic bezier */
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Common Use Cases</h2>
+                
+                <div class="example-code">
+                    <h3>Interactive Elements</h3>
+                    <pre><code>
+/* Button hover effect */
+.button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Card hover effect */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-out,
+                box-shadow 0.3s ease-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Navigation menu */
+.nav-link {
+    color: #333;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Advanced Techniques</h2>
+                
+                <div class="example-code">
+                    <h3>State Management</h3>
+                    <pre><code>
+/* Using CSS custom properties */
+:root {
+    --transition-speed: 0.3s;
+    --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.element {
+    transition: all var(--transition-speed) var(--transition-easing);
+}
+
+/* State classes */
+.element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease,
+                transform 0.3s ease;
+}
+
+.element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Media query considerations */
+@media (prefers-reduced-motion: reduce) {
+    .element {
+        transition: none;
+    }
+}
+
+/* Performance optimizations */
+.optimized {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a navigation menu with transitions that includes:</p>
+                    <ul>
+                        <li>Hover effects</li>
+                        <li>Dropdown animations</li>
+                        <li>Active state indicators</li>
+                        <li>Performance optimizations</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+/* HTML Structure */
+&lt;nav class="main-nav"&gt;
+    &lt;ul class="nav-list"&gt;
+        &lt;li class="nav-item"&gt;
+            &lt;a href="#" class="nav-link"&gt;Home&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item has-dropdown"&gt;
+            &lt;a href="#" class="nav-link"&gt;Products&lt;/a&gt;
+            &lt;ul class="dropdown"&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Item 1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Item 2&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Item 3&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+/* CSS Styles */
+:root {
+    --nav-height: 60px;
+    --transition-speed: 0.3s;
+    --primary-color: #007bff;
+    --hover-color: #0056b3;
+}
+
+.main-nav {
+    background: white;
+    height: var(--nav-height);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-list {
+    display: flex;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: var(--nav-height);
+    padding: 0 20px;
+    color: #333;
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+/* Hover effect */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width var(--transition-speed) ease,
+                left var(--transition-speed) ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity var(--transition-speed) ease,
+                transform var(--transition-speed) ease,
+                visibility 0s linear var(--transition-speed);
+}
+
+.has-dropdown:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0s;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color var(--transition-speed) ease,
+                color var(--transition-speed) ease;
+}
+
+.dropdown a:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Performance optimizations */
+.nav-link,
+.dropdown {
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .nav-link,
+    .dropdown,
+    .nav-link::after {
+        transition: none;
+    }
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which CSS property is used to specify the duration of a transition?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> transition-speed</label>
+                            <label><input type="radio" name="q1" value="b"> transition-duration</label>
+                            <label><input type="radio" name="q1" value="c"> transition-time</label>
+                            <label><input type="radio" name="q1" value="d"> transition-length</label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn check-answers">Check Answers</button>
+            </section>
+        </article>
+
+        <nav class="lesson-navigation">
+            <div class="lesson-controls">
+                <a href="transforms-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="effects-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2024 Web Development & Video Creation Course. All rights reserved.</p>
+            <p>Made by Ahyaan Farooqi</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+
+        document.querySelector('.check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'b'
+            };
+            // Add quiz checking logic
+        });
+    </script>
+</body>
+</html> 

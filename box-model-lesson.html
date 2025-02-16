@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model - CSS Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="site-title">
+            <h1>Complete Web Development & Video Creation Course</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="../../html-course.html">HTML</a>
+                    <div class="dropdown-content">
+                        <a href="../../html-course.html#basics">Basics</a>
+                        <a href="../../html-course.html#intermediate">Intermediate</a>
+                        <a href="../../html-course.html#advanced">Advanced</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../css-course.html" class="active">CSS</a>
+                    <div class="dropdown-content">
+                        <a href="../../css-course.html#basics">Basics</a>
+                        <a href="../../css-course.html#layouts">Layouts</a>
+                        <a href="../../css-course.html#responsive">Responsive Design</a>
+                        <a href="../../css-course.html#animations">Animations</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../video-creation.html">Video Creation</a>
+                    <div class="dropdown-content">
+                        <a href="../../video-creation.html#basics">Video Basics</a>
+                        <a href="../../video-creation.html#advanced">Advanced Techniques</a>
+                        <a href="../../video-creation.html#editing">Video Editing</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="colors-typography-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="flexbox-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>The CSS Box Model</h1>
+            
+            <section class="lesson-section">
+                <h2>Understanding the Box Model</h2>
+                <p>The CSS box model is fundamental to layout and spacing in CSS. Every element is represented as a rectangular box with content, padding, border, and margin areas.</p>
+                
+                <div class="example-code">
+                    <h3>Box Model Components</h3>
+                    <pre><code>
+/* Box Model Properties */
+.box {
+    /* Content */
+    width: 200px;
+    height: 100px;
+    
+    /* Padding */
+    padding: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    
+    /* Border */
+    border: 2px solid black;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    
+    /* Margin */
+    margin: 20px;
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+/* Shorthand Properties */
+.box {
+    /* All sides equal */
+    padding: 20px;
+    margin: 20px;
+    
+    /* Top/Bottom Left/Right */
+    padding: 10px 20px;
+    margin: 10px 20px;
+    
+    /* Top Right Bottom Left */
+    padding: 10px 20px 15px 25px;
+    margin: 10px 20px 15px 25px;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Box Sizing</h2>
+                
+                <div class="example-code">
+                    <h3>Box Sizing Properties</h3>
+                    <pre><code>
+/* Default Box Sizing */
+.content-box {
+    box-sizing: content-box;
+    width: 200px;
+    padding: 20px;
+    border: 2px solid black;
+    /* Total width = 200px + 40px + 4px = 244px */
+}
+
+/* Border Box */
+.border-box {
+    box-sizing: border-box;
+    width: 200px;
+    padding: 20px;
+    border: 2px solid black;
+    /* Total width = 200px (includes padding and border) */
+}
+
+/* Global Box Sizing Reset */
+* {
+    box-sizing: border-box;
+}
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Advanced Box Properties</h3>
+                    <pre><code>
+/* Border Radius */
+.rounded-box {
+    border-radius: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 25px;
+}
+
+/* Box Shadow */
+.shadow-box {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 
+        2px 2px 5px rgba(0, 0, 0, 0.3),
+        inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Outline */
+.outline-box {
+    outline: 2px solid red;
+    outline-offset: 5px;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a webpage that demonstrates:</p>
+                    <ul>
+                        <li>Different box model properties</li>
+                        <li>Box sizing variations</li>
+                        <li>Border radius and box shadow effects</li>
+                        <li>Margin and padding combinations</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+/* styles.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.box-demo {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.content-box {
+    width: 200px;
+    padding: 20px;
+    border: 2px solid #333;
+    margin: 20px;
+    background-color: white;
+}
+
+.border-box {
+    width: 200px;
+    padding: 20px;
+    border: 2px solid #333;
+    margin: 20px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.fancy-box {
+    width: 200px;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #2193b0;
+    border-radius: 10px;
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.08);
+    margin: 20px;
+}
+
+.outline-box {
+    width: 200px;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #333;
+    margin: 20px;
+    outline: 2px dashed #2193b0;
+    outline-offset: 5px;
+}
+
+/* HTML File */
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;Box Model Demo&lt;/h1&gt;
+        
+        &lt;div class="box-demo"&gt;
+            &lt;h2&gt;Content Box&lt;/h2&gt;
+            &lt;div class="content-box"&gt;
+                This box uses the default content-box model
+            &lt;/div&gt;
+            
+            &lt;h2&gt;Border Box&lt;/h2&gt;
+            &lt;div class="border-box"&gt;
+                This box uses the border-box model
+            &lt;/div&gt;
+            
+            &lt;h2&gt;Fancy Box&lt;/h2&gt;
+            &lt;div class="fancy-box"&gt;
+                This box has rounded corners and a shadow
+            &lt;/div&gt;
+            
+            &lt;h2&gt;Outline Box&lt;/h2&gt;
+            &lt;div class="outline-box"&gt;
+                This box has an outline with offset
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which box-sizing value includes padding and border in the element's total width and height?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> content-box</label>
+                            <label><input type="radio" name="q1" value="b"> border-box</label>
+                            <label><input type="radio" name="q1" value="c"> padding-box</label>
+                            <label><input type="radio" name="q1" value="d"> margin-box</label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn check-answers">Check Answers</button>
+            </section>
+        </article>
+
+        <nav class="lesson-navigation">
+            <div class="lesson-controls">
+                <a href="colors-typography-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="flexbox-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2024 Web Development & Video Creation Course. All rights reserved.</p>
+            <p>Made by Ahyaan Farooqi</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+
+        document.querySelector('.check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'b'
+            };
+            // Add quiz checking logic
+        });
+    </script>
+</body>
+</html> 

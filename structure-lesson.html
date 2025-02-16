@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Structure - Web Development Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../lessons.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-page">
+        <nav class="lesson-nav">
+            <a href="../../html-course.html" class="back-btn">← Back to Course</a>
+            <div class="lesson-progress">
+                <span>Lesson 1 of 12</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 8%"></div>
+                </div>
+            </div>
+        </nav>
+
+        <article class="lesson-content">
+            <h1>HTML Document Structure</h1>
+            
+            <section class="theory-section">
+                <h2>Understanding HTML Structure</h2>
+                <p>Every HTML document follows a standard structure that includes several key elements:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;My First Page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello World!&lt;/h1&gt;
+        &lt;p&gt;This is my first webpage.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h3>Let's break it down:</h3>
+                    <ul>
+                        <li><strong>&lt;!DOCTYPE html&gt;</strong> - Declares this is an HTML5 document</li>
+                        <li><strong>&lt;html&gt;</strong> - The root element of the page</li>
+                        <li><strong>&lt;head&gt;</strong> - Contains meta information and links</li>
+                        <li><strong>&lt;body&gt;</strong> - Contains the visible content</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a basic HTML page with the following:</p>
+                    <ul>
+                        <li>Proper DOCTYPE declaration</li>
+                        <li>Title of your choice</li>
+                        <li>A heading and a paragraph</li>
+                    </ul>
+                    <div class="code-editor">
+                        <textarea id="code-input" rows="10"></textarea>
+                        <button class="btn" onclick="checkCode()">Check Your Code</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Quick Quiz</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which element contains the visible content of a webpage?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="head"> &lt;head&gt;</label>
+                            <label><input type="radio" name="q1" value="body"> &lt;body&gt;</label>
+                            <label><input type="radio" name="q1" value="html"> &lt;html&gt;</label>
+                            <label><input type="radio" name="q1" value="meta"> &lt;meta&gt;</label>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="checkQuiz()">Submit Answer</button>
+                </div>
+            </section>
+
+            <nav class="lesson-navigation">
+                <a href="#" class="prev-lesson">← Previous Lesson</a>
+                <a href="elements-lesson.html" class="next-lesson">Next Lesson: Basic Elements →</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+    <script src="../../lessons.js"></script>
+</body>
+</html> 

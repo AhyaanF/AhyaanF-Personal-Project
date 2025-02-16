@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Best Practices - Web Development Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../lessons.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-page" data-lesson-type="best-practices">
+        <nav class="lesson-nav">
+            <a href="../../html-course.html" class="back-btn">← Back to Course</a>
+            <div class="lesson-progress">
+                <span>Lesson 10 of 12</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%"></div>
+                </div>
+            </div>
+        </nav>
+
+        <article class="lesson-content">
+            <h1>HTML Best Practices</h1>
+            
+            <section class="theory-section">
+                <h2>Writing Clean and Maintainable HTML</h2>
+                <p>Follow these best practices to write high-quality HTML code:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;!-- ❌ Bad Practice --&gt;
+&lt;div class="header"&gt;
+    &lt;div class="nav"&gt;&lt;a href="#"&gt;Link&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="main"&gt;
+    &lt;div class="content"&gt;
+        &lt;img src="pic.jpg"&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;font color="red"&gt;Text&lt;/font&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- ✅ Good Practice --&gt;
+&lt;!-- Use semantic elements --&gt;
+&lt;header&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;!-- Always include alt text --&gt;
+        &lt;img src="pic.jpg" alt="Description"&gt;
+        
+        &lt;!-- Use CSS for styling --&gt;
+        &lt;p class="highlight"&gt;Text&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/main&gt;
+
+&lt;!-- Proper indentation and formatting --&gt;
+&lt;section class="features"&gt;
+    &lt;h2&gt;Features&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Feature 1&lt;/li&gt;
+        &lt;li&gt;Feature 2&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+
+&lt;!-- Proper form structure --&gt;
+&lt;form method="post" action="/submit"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Contact Information&lt;/legend&gt;
+        &lt;label for="name"&gt;Name:&lt;/label&gt;
+        &lt;input type="text" id="name" required&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h3>Best Practices:</h3>
+                    <ul>
+                        <li><strong>Use Semantic Elements</strong> - Choose meaningful tags</li>
+                        <li><strong>Proper Indentation</strong> - Maintain consistent spacing</li>
+                        <li><strong>Descriptive Classes</strong> - Use clear, meaningful names</li>
+                        <li><strong>Accessibility</strong> - Include alt text and ARIA attributes</li>
+                        <li><strong>Validate Code</strong> - Ensure HTML is valid</li>
+                        <li><strong>Avoid Deprecated Tags</strong> - Use modern HTML5 elements</li>
+                        <li><strong>Consistent Formatting</strong> - Follow a style guide</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Rewrite this poorly structured HTML following best practices:</p>
+                    <pre><code>
+&lt;div class="nav"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;img src="photo.jpg"&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;font size="4"&gt;Welcome&lt;/font&gt;
+&lt;div class="text"&gt;Content here&lt;/div&gt;
+&lt;/div&gt;
+                    </code></pre>
+                    <div class="code-editor">
+                        <textarea id="code-input" rows="20"></textarea>
+                        <button class="btn" onclick="checkCode()">Check Your Code</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Quick Quiz</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which is NOT a recommended HTML best practice?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="semantic"> Using semantic elements</label>
+                            <label><input type="radio" name="q1" value="font"> Using font tags for styling</label>
+                            <label><input type="radio" name="q1" value="indent"> Proper indentation</label>
+                            <label><input type="radio" name="q1" value="alt"> Including alt text</label>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="checkQuiz()">Submit Answer</button>
+                </div>
+            </section>
+
+            <nav class="lesson-navigation">
+                <a href="accessibility-lesson.html" class="prev-lesson">← Previous: Accessibility</a>
+                <a href="validation-lesson.html" class="next-lesson">Next: HTML Validation →</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+    <script src="../../lessons.js"></script>
+</body>
+</html> 

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transforms - CSS Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="site-title">
+            <h1>Complete Web Development & Video Creation Course</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="../../html-course.html">HTML</a>
+                    <div class="dropdown-content">
+                        <a href="../../html-course.html#basics">Basics</a>
+                        <a href="../../html-course.html#intermediate">Intermediate</a>
+                        <a href="../../html-course.html#advanced">Advanced</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../css-course.html" class="active">CSS</a>
+                    <div class="dropdown-content">
+                        <a href="../../css-course.html#basics">Basics</a>
+                        <a href="../../css-course.html#layouts">Layouts</a>
+                        <a href="../../css-course.html#responsive">Responsive Design</a>
+                        <a href="../../css-course.html#animations">Animations</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../video-creation.html">Video Creation</a>
+                    <div class="dropdown-content">
+                        <a href="../../video-creation.html#basics">Video Basics</a>
+                        <a href="../../video-creation.html#advanced">Advanced Techniques</a>
+                        <a href="../../video-creation.html#editing">Video Editing</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="animations-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="transitions-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>CSS Transforms</h1>
+            
+            <section class="lesson-section">
+                <h2>2D Transforms</h2>
+                <p>Learn how to manipulate elements in two-dimensional space.</p>
+                
+                <div class="example-code">
+                    <h3>Basic 2D Transforms</h3>
+                    <pre><code>
+/* Translate */
+.translate {
+    transform: translate(50px, 100px);
+    transform: translateX(50px);
+    transform: translateY(100px);
+}
+
+/* Scale */
+.scale {
+    transform: scale(1.5);
+    transform: scale(2, 1.5);
+    transform: scaleX(2);
+    transform: scaleY(1.5);
+}
+
+/* Rotate */
+.rotate {
+    transform: rotate(45deg);
+    transform: rotate(-45deg);
+}
+
+/* Skew */
+.skew {
+    transform: skew(20deg);
+    transform: skew(20deg, 10deg);
+    transform: skewX(20deg);
+    transform: skewY(10deg);
+}
+
+/* Multiple transforms */
+.combined {
+    transform: translate(50px, 50px) rotate(45deg) scale(1.5);
+}
+
+/* Transform origin */
+.origin {
+    transform-origin: top left;
+    transform-origin: 50% 50%;
+    transform-origin: center center;
+}
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Transform Matrix</h3>
+                    <pre><code>
+/* Matrix transformation */
+.matrix {
+    transform: matrix(1, 0, 0, 1, 0, 0); /* Identity matrix */
+    transform: matrix(
+        scaleX, skewY,
+        skewX, scaleY,
+        translateX, translateY
+    );
+}
+
+/* Common matrix transformations */
+.matrix-scale {
+    transform: matrix(2, 0, 0, 2, 0, 0); /* Scale 2x */
+}
+
+.matrix-rotate {
+    transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 0); /* Rotate 45deg */
+}
+
+.matrix-translate {
+    transform: matrix(1, 0, 0, 1, 100, 100); /* Translate 100px x,y */
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>3D Transforms</h2>
+                
+                <div class="example-code">
+                    <h3>3D Transform Properties</h3>
+                    <pre><code>
+/* 3D Transforms */
+.transform-3d {
+    /* Translate */
+    transform: translate3d(x, y, z);
+    transform: translateZ(50px);
+    
+    /* Scale */
+    transform: scale3d(2, 2, 2);
+    transform: scaleZ(2);
+    
+    /* Rotate */
+    transform: rotate3d(1, 1, 1, 45deg);
+    transform: rotateX(45deg);
+    transform: rotateY(45deg);
+    transform: rotateZ(45deg);
+    
+    /* Perspective */
+    perspective: 1000px;
+    perspective-origin: center center;
+}
+
+/* 3D Space */
+.container-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.child-3d {
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+/* Multiple 3D transforms */
+.complex-3d {
+    transform: 
+        perspective(1000px)
+        rotateX(45deg)
+        rotateY(45deg)
+        translateZ(100px);
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Performance and Best Practices</h2>
+                
+                <div class="example-code">
+                    <h3>Optimizing Transforms</h3>
+                    <pre><code>
+/* Hardware acceleration */
+.accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Composite layers */
+.composite {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+}
+
+/* Transform vs position */
+/* Better performance */
+.better {
+    transform: translate(100px, 100px);
+}
+
+/* Worse performance */
+.worse {
+    left: 100px;
+    top: 100px;
+}
+
+/* Smooth animations */
+.smooth {
+    transition: transform 0.3s ease-out;
+    will-change: transform;
+}
+
+/* Reduce repaints */
+.efficient {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a 3D card flip effect that includes:</p>
+                    <ul>
+                        <li>3D perspective</li>
+                        <li>Smooth rotation</li>
+                        <li>Backface visibility handling</li>
+                        <li>Performance optimizations</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+/* HTML Structure */
+&lt;div class="card-container"&gt;
+    &lt;div class="card"&gt;
+        &lt;div class="card-front"&gt;
+            &lt;h3&gt;Front Side&lt;/h3&gt;
+            &lt;p&gt;Hover to flip&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="card-back"&gt;
+            &lt;h3&gt;Back Side&lt;/h3&gt;
+            &lt;p&gt;Hover to flip back&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+/* CSS Styles */
+.card-container {
+    perspective: 1000px;
+    width: 300px;
+    height: 200px;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+    will-change: transform;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-front {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+}
+
+.card-back {
+    background: linear-gradient(135deg, #a777e3, #6e8efb);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* Performance Optimizations */
+.card-container {
+    transform: translateZ(0);
+}
+
+.card-front,
+.card-back {
+    transform: translateZ(1px);
+    -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card {
+        transition: none;
+    }
+    
+    .card:hover {
+        transform: none;
+    }
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which CSS property is required on a parent element to enable 3D transforms on its children?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> transform-3d</label>
+                            <label><input type="radio" name="q1" value="b"> transform-style: preserve-3d</label>
+                            <label><input type="radio" name="q1" value="c"> perspective-3d</label>
+                            <label><input type="radio" name="q1" value="d"> transform: preserve-3d</label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn check-answers">Check Answers</button>
+            </section>
+        </article>
+
+        <nav class="lesson-navigation">
+            <div class="lesson-controls">
+                <a href="animations-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="transitions-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2024 Web Development & Video Creation Course. All rights reserved.</p>
+            <p>Made by Ahyaan Farooqi</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+
+        document.querySelector('.check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'b'
+            };
+            // Add quiz checking logic
+        });
+    </script>
+</body>
+</html> 

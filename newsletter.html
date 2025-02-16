@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter - Web Development Master Course</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="site-title">
+            <h1>Complete Web Development & Video Creation Course</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="html-course.html">HTML</a>
+                    <div class="dropdown-content">
+                        <a href="html-course.html#basics">Basics</a>
+                        <a href="html-course.html#intermediate">Intermediate</a>
+                        <a href="html-course.html#advanced">Advanced</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="css-course.html">CSS</a>
+                    <div class="dropdown-content">
+                        <a href="css-course.html#basics">Basics</a>
+                        <a href="css-course.html#layouts">Layouts</a>
+                        <a href="css-course.html#responsive">Responsive Design</a>
+                        <a href="css-course.html#animations">Animations</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="video-creation.html">Video Creation</a>
+                    <div class="dropdown-content">
+                        <a href="video-creation.html#basics">Video Basics</a>
+                        <a href="video-creation.html#advanced">Advanced Techniques</a>
+                        <a href="video-creation.html#editing">Video Editing</a>
+                    </div>
+                </li>
+                <li><a href="projects.html">Practice Projects</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="newsletter-page">
+        <section class="newsletter-hero">
+            <h2>Stay Updated with Our Newsletter</h2>
+            <p>Get weekly tips, tutorials, and web development insights delivered straight to your inbox!</p>
+        </section>
+
+        <div class="newsletter-container">
+            <section class="newsletter-benefits">
+                <h3>Why Subscribe?</h3>
+                <ul class="benefits-list">
+                    <li>
+                        <i class="icon-tutorial"></i>
+                        <div>
+                            <h4>Weekly Tutorials</h4>
+                            <p>Get exclusive access to new tutorials and learning resources.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="icon-tips"></i>
+                        <div>
+                            <h4>Pro Tips & Tricks</h4>
+                            <p>Learn time-saving techniques from industry experts.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="icon-community"></i>
+                        <div>
+                            <h4>Community Updates</h4>
+                            <p>Stay connected with our growing developer community.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="icon-special"></i>
+                        <div>
+                            <h4>Special Offers</h4>
+                            <p>Get exclusive discounts on premium courses and resources.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="newsletter-signup">
+                <h3>Subscribe Now</h3>
+                <form class="signup-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interests">Interests</label>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" name="interests" value="html"> HTML
+                            </label>
+                            <label>
+                                <input type="checkbox" name="interests" value="css"> CSS
+                            </label>
+                            <label>
+                                <input type="checkbox" name="interests" value="video"> Video Creation
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="terms" required>
+                            I agree to receive emails and accept the <a href="#">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn">Subscribe to Newsletter</button>
+                </form>
+            </section>
+        </div>
+
+        <section class="newsletter-preview">
+            <h3>Previous Newsletters</h3>
+            <div class="preview-grid">
+                <article class="preview-card">
+                    <span class="date">March 15, 2024</span>
+                    <h4>Getting Started with CSS Grid</h4>
+                    <p>Learn how to create responsive layouts with CSS Grid...</p>
+                    <a href="#" class="btn btn-outline">Read Now</a>
+                </article>
+                <!-- More preview cards... -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+</body>
+</html> 

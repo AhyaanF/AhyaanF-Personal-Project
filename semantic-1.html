@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic HTML - HTML Course</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../../html-course.html" class="back-to-course">← Back to HTML Course</a>
+            <div class="lesson-controls">
+                <a href="images-media.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="../advanced/meta-seo.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>Semantic HTML</h1>
+            
+            <section class="lesson-section">
+                <h2>What is Semantic HTML?</h2>
+                <p>Semantic HTML uses elements that clearly describe their meaning to both the browser and the developer. This improves accessibility, SEO, and code maintainability.</p>
+                
+                <div class="example-code">
+                    <h3>Page Structure Elements</h3>
+                    <pre><code>
+&lt;!-- Non-semantic structure --&gt;
+&lt;div class="header"&gt;
+    &lt;div class="nav"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="main"&gt;
+    &lt;div class="article"&gt;...&lt;/div&gt;
+    &lt;div class="sidebar"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="footer"&gt;...&lt;/div&gt;
+
+&lt;!-- Semantic structure --&gt;
+&lt;header&gt;
+    &lt;nav&gt;...&lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+    &lt;article&gt;...&lt;/article&gt;
+    &lt;aside&gt;...&lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt;...&lt;/footer&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Semantic Elements</h2>
+                
+                <div class="example-code">
+                    <h3>Content Sectioning</h3>
+                    <pre><code>
+&lt;article&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Article Title&lt;/h1&gt;
+        &lt;time datetime="2024-01-15"&gt;January 15, 2024&lt;/time&gt;
+    &lt;/header&gt;
+    
+    &lt;section&gt;
+        &lt;h2&gt;Section Heading&lt;/h2&gt;
+        &lt;p&gt;Section content...&lt;/p&gt;
+    &lt;/section&gt;
+    
+    &lt;aside&gt;
+        &lt;h3&gt;Related Content&lt;/h3&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Related Link 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Related Link 2&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/aside&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;Author: John Doe&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Text Semantics</h3>
+                    <pre><code>
+&lt;!-- Text meaning --&gt;
+&lt;p&gt;The &lt;em&gt;most important&lt;/em&gt; thing to remember is...&lt;/p&gt;
+&lt;p&gt;This is &lt;strong&gt;critical&lt;/strong&gt; information.&lt;/p&gt;
+
+&lt;!-- Citations and quotes --&gt;
+&lt;blockquote cite="https://example.com"&gt;
+    &lt;p&gt;This is a long quotation...&lt;/p&gt;
+    &lt;cite&gt;- Author Name&lt;/cite&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The author said &lt;q&gt;this is a short quote&lt;/q&gt;.&lt;/p&gt;
+
+&lt;!-- Definition --&gt;
+&lt;p&gt;The &lt;dfn&gt;HTML&lt;/dfn&gt; is the standard markup language for documents designed to be displayed in a web browser.&lt;/p&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Semantic Forms</h2>
+                
+                <div class="example-code">
+                    <h3>Form Structure</h3>
+                    <pre><code>
+&lt;form&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Personal Information&lt;/legend&gt;
+        
+        &lt;label for="name"&gt;Name:&lt;/label&gt;
+        &lt;input type="text" id="name" name="name" required&gt;
+        
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" required&gt;
+    &lt;/fieldset&gt;
+    
+    &lt;fieldset&gt;
+        &lt;legend&gt;Your Message&lt;/legend&gt;
+        
+        &lt;label for="subject"&gt;Subject:&lt;/label&gt;
+        &lt;input type="text" id="subject" name="subject"&gt;
+        
+        &lt;label for="message"&gt;Message:&lt;/label&gt;
+        &lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a semantic HTML structure for a blog post that includes:</p>
+                    <ul>
+                        <li>A header with navigation</li>
+                        <li>Main content area with an article</li>
+                        <li>Article sections with headings</li>
+                        <li>A sidebar with related content</li>
+                        <li>A footer with author information</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;My Blog&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;header&gt;
+                &lt;h2&gt;Blog Post Title&lt;/h2&gt;
+                &lt;time datetime="2024-01-15"&gt;January 15, 2024&lt;/time&gt;
+            &lt;/header&gt;
+
+            &lt;section&gt;
+                &lt;h3&gt;Introduction&lt;/h3&gt;
+                &lt;p&gt;Blog post introduction...&lt;/p&gt;
+            &lt;/section&gt;
+
+            &lt;section&gt;
+                &lt;h3&gt;Main Content&lt;/h3&gt;
+                &lt;p&gt;Main content here...&lt;/p&gt;
+            &lt;/section&gt;
+
+            &lt;footer&gt;
+                &lt;p&gt;Written by: John Doe&lt;/p&gt;
+            &lt;/footer&gt;
+        &lt;/article&gt;
+
+        &lt;aside&gt;
+            &lt;h3&gt;Related Posts&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Related Post 1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Related Post 2&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;© 2024 My Blog. All rights reserved.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which semantic element should be used for the main content area of a webpage?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> &lt;div&gt;</label>
+                            <label><input type="radio" name="q1" value="b"> &lt;content&gt;</label>
+                            <label><input type="radio" name="q1" value="c"> &lt;main&gt;</label>
+                            <label><input type="radio" name="q1" value="d"> &lt;section&gt;</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+    </script>
+</body>
+</html> 

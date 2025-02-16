@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Features - Web Development Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../lessons.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-page" data-lesson-type="html5">
+        <nav class="lesson-nav">
+            <a href="../../html-course.html" class="back-btn">← Back to Course</a>
+            <div class="lesson-progress">
+                <span>Lesson 12 of 12</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 96%"></div>
+                </div>
+            </div>
+        </nav>
+
+        <article class="lesson-content">
+            <h1>Modern HTML5 Features</h1>
+            
+            <section class="theory-section">
+                <h2>New HTML5 Elements and APIs</h2>
+                <p>HTML5 introduces powerful new features and elements:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;!-- New Semantic Elements --&gt;
+&lt;header&gt;
+    &lt;nav&gt;
+        &lt;menu&gt;
+            &lt;menuitem&gt;Home&lt;/menuitem&gt;
+        &lt;/menu&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;!-- Canvas for Graphics --&gt;
+&lt;canvas id="myCanvas" width="200" height="100"&gt;
+    Your browser does not support canvas
+&lt;/canvas&gt;
+
+&lt;!-- Audio and Video --&gt;
+&lt;video controls preload="auto"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    &lt;track src="subtitles.vtt" kind="subtitles" srclang="en"&gt;
+&lt;/video&gt;
+
+&lt;!-- Form Improvements --&gt;
+&lt;form&gt;
+    &lt;input type="email" required&gt;
+    &lt;input type="date"&gt;
+    &lt;input type="range" min="0" max="100"&gt;
+    &lt;input type="search" placeholder="Search..."&gt;
+    &lt;input type="color"&gt;
+    &lt;datalist id="browsers"&gt;
+        &lt;option value="Chrome"&gt;
+        &lt;option value="Firefox"&gt;
+    &lt;/datalist&gt;
+&lt;/form&gt;
+
+&lt;!-- Local Storage --&gt;
+&lt;script&gt;
+localStorage.setItem('username', 'John');
+sessionStorage.setItem('temp', 'data');
+&lt;/script&gt;
+
+&lt;!-- Drag and Drop --&gt;
+&lt;div draggable="true" ondragstart="drag(event)"&gt;
+    Drag me!
+&lt;/div&gt;
+&lt;div ondrop="drop(event)" ondragover="allowDrop(event)"&gt;
+    Drop here
+&lt;/div&gt;
+
+&lt;!-- Geolocation --&gt;
+&lt;button onclick="getLocation()"&gt;Get Location&lt;/button&gt;
+
+&lt;!-- Web Workers --&gt;
+&lt;script&gt;
+const worker = new Worker('worker.js');
+worker.postMessage('Start working');
+&lt;/script&gt;
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h3>HTML5 Features:</h3>
+                    <ul>
+                        <li><strong>Semantic Elements</strong> - Better structure</li>
+                        <li><strong>Canvas & SVG</strong> - Graphics and animations</li>
+                        <li><strong>Media Elements</strong> - Native audio and video</li>
+                        <li><strong>Form Improvements</strong> - New input types</li>
+                        <li><strong>Web Storage</strong> - Local and session storage</li>
+                        <li><strong>Drag & Drop</strong> - Native drag and drop</li>
+                        <li><strong>Geolocation</strong> - Location services</li>
+                        <li><strong>Web Workers</strong> - Background processing</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a modern HTML5 page that includes:</p>
+                    <ul>
+                        <li>A canvas element with basic drawing</li>
+                        <li>A video player with controls</li>
+                        <li>New HTML5 form elements</li>
+                        <li>Local storage usage</li>
+                        <li>Drag and drop functionality</li>
+                    </ul>
+                    <div class="code-editor">
+                        <textarea id="code-input" rows="20"></textarea>
+                        <button class="btn" onclick="checkCode()">Check Your Code</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Quick Quiz</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which HTML5 element is used for drawing graphics?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="draw"> &lt;draw&gt;</label>
+                            <label><input type="radio" name="q1" value="canvas"> &lt;canvas&gt;</label>
+                            <label><input type="radio" name="q1" value="graphic"> &lt;graphic&gt;</label>
+                            <label><input type="radio" name="q1" value="paint"> &lt;paint&gt;</label>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="checkQuiz()">Submit Answer</button>
+                </div>
+            </section>
+
+            <nav class="lesson-navigation">
+                <a href="validation-lesson.html" class="prev-lesson">← Previous: HTML Validation</a>
+                <a href="../../html-course.html" class="next-lesson">Complete Course →</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+    <script src="../../lessons.js"></script>
+</body>
+</html> 

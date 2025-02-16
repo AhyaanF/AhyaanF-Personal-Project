@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Elements - HTML Course</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../../html-course.html" class="back-to-course">← Back to HTML Course</a>
+            <div class="lesson-controls">
+                <a href="structure.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="attributes.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>Basic HTML Elements</h1>
+            
+            <section class="lesson-section">
+                <h2>Common HTML Elements</h2>
+                <p>HTML provides various elements to structure your content. Let's explore the most commonly used ones.</p>
+                
+                <div class="example-code">
+                    <h3>Text Elements</h3>
+                    <pre><code>
+&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Subheading&lt;/h2&gt;
+&lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+&lt;br&gt; &lt;!-- Line break --&gt;
+&lt;hr&gt; &lt;!-- Horizontal rule --&gt;
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Links and Images</h3>
+                    <pre><code>
+&lt;a href="https://example.com"&gt;Click here&lt;/a&gt;
+&lt;img src="image.jpg" alt="Description"&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a simple webpage that includes:</p>
+                    <ul>
+                        <li>A main heading</li>
+                        <li>Two paragraphs of text</li>
+                        <li>An image</li>
+                        <li>A link to your favorite website</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;title&gt;My Practice Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Page&lt;/h1&gt;
+    
+    &lt;p&gt;This is my first paragraph. I'm learning HTML!&lt;/p&gt;
+    &lt;p&gt;This is my second paragraph. Web development is fun!&lt;/p&gt;
+    
+    &lt;img src="cat.jpg" alt="A cute cat"&gt;
+    
+    &lt;p&gt;&lt;a href="https://www.example.com"&gt;Visit my favorite website&lt;/a&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which tag is used to create a hyperlink?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> &lt;link&gt;</label>
+                            <label><input type="radio" name="q1" value="b"> &lt;a&gt;</label>
+                            <label><input type="radio" name="q1" value="c"> &lt;href&gt;</label>
+                            <label><input type="radio" name="q1" value="d"> &lt;url&gt;</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+    </script>
+</body>
+</html> 

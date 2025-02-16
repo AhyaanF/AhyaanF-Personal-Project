@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tables & Data - Web Development Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../lessons.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-page" data-lesson-type="tables">
+        <nav class="lesson-nav">
+            <a href="../../html-course.html" class="back-btn">← Back to Course</a>
+            <div class="lesson-progress">
+                <span>Lesson 5 of 12</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 40%"></div>
+                </div>
+            </div>
+        </nav>
+
+        <article class="lesson-content">
+            <h1>HTML Tables & Data Structure</h1>
+            
+            <section class="theory-section">
+                <h2>Creating Tables</h2>
+                <p>Tables are used to organize data into rows and columns:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;table border="1"&gt;
+    &lt;!-- Table Header --&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Age&lt;/th&gt;
+            &lt;th&gt;Country&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+
+    &lt;!-- Table Body --&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;John Doe&lt;/td&gt;
+            &lt;td&gt;25&lt;/td&gt;
+            &lt;td&gt;USA&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Jane Smith&lt;/td&gt;
+            &lt;td&gt;30&lt;/td&gt;
+            &lt;td&gt;Canada&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+
+    &lt;!-- Table Footer --&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td colspan="3"&gt;Total Entries: 2&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+
+&lt;!-- Complex Table with Spanning --&gt;
+&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;td rowspan="2"&gt;Region&lt;/td&gt;
+        &lt;td colspan="2"&gt;Sales&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;2022&lt;/td&gt;
+        &lt;td&gt;2023&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h3>Table Elements:</h3>
+                    <ul>
+                        <li><strong>&lt;table&gt;</strong> - Defines a table</li>
+                        <li><strong>&lt;tr&gt;</strong> - Table row</li>
+                        <li><strong>&lt;th&gt;</strong> - Table header cell</li>
+                        <li><strong>&lt;td&gt;</strong> - Table data cell</li>
+                        <li><strong>&lt;thead&gt;</strong> - Groups header content</li>
+                        <li><strong>&lt;tbody&gt;</strong> - Groups body content</li>
+                        <li><strong>&lt;tfoot&gt;</strong> - Groups footer content</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a table for a class schedule that includes:</p>
+                    <ul>
+                        <li>Headers for Time, Monday through Friday</li>
+                        <li>At least three time slots</li>
+                        <li>Use rowspan or colspan where appropriate</li>
+                        <li>Include a footer with total hours</li>
+                    </ul>
+                    <div class="code-editor">
+                        <textarea id="code-input" rows="20"></textarea>
+                        <button class="btn" onclick="checkCode()">Check Your Code</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Quick Quiz</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which attribute is used to make a cell span multiple columns?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="rowspan"> rowspan</label>
+                            <label><input type="radio" name="q1" value="colspan"> colspan</label>
+                            <label><input type="radio" name="q1" value="span"> span</label>
+                            <label><input type="radio" name="q1" value="merge"> merge</label>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="checkQuiz()">Submit Answer</button>
+                </div>
+            </section>
+
+            <nav class="lesson-navigation">
+                <a href="forms-lesson.html" class="prev-lesson">← Previous: Forms & Input</a>
+                <a href="semantic-lesson.html" class="next-lesson">Next: Semantic HTML →</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+    <script src="../../lessons.js"></script>
+</body>
+</html> 

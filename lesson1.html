@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Structure - HTML Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="site-title">
+            <h1>Complete Web Development & Video Creation Course</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="../../html-course.html" class="active">HTML</a>
+                    <div class="dropdown-content">
+                        <a href="../../html-course.html#basics">Basics</a>
+                        <a href="../../html-course.html#intermediate">Intermediate</a>
+                        <a href="../../html-course.html#advanced">Advanced</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../css-course.html">CSS</a>
+                    <div class="dropdown-content">
+                        <a href="../../css-course.html#basics">Basics</a>
+                        <a href="../../css-course.html#layouts">Layouts</a>
+                        <a href="../../css-course.html#responsive">Responsive Design</a>
+                        <a href="../../css-course.html#animations">Animations</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../video-creation.html">Video Creation</a>
+                    <div class="dropdown-content">
+                        <a href="../../video-creation.html#basics">Video Basics</a>
+                        <a href="../../video-creation.html#advanced">Advanced Techniques</a>
+                        <a href="../../video-creation.html#editing">Video Editing</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../html-course.html" class="back-to-course">← Back to HTML Course</a>
+            <div class="lesson-controls">
+                <span class="prev-lesson disabled">Previous Lesson</span>
+                <a href="lesson2.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>HTML Structure</h1>
+            
+            <section class="lesson-section">
+                <h2>What is HTML?</h2>
+                <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages. It describes the structure of a web page using various elements and tags.</p>
+                
+                <div class="example-code">
+                    <h3>Basic HTML Structure</h3>
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;My First Web Page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello, World!&lt;/h1&gt;
+        &lt;p&gt;This is my first web page.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>HTML Elements</h2>
+                <p>HTML elements are the building blocks of HTML pages. An HTML element is defined by a start tag, some content, and an end tag.</p>
+                
+                <div class="example-box">
+                    <h3>Common HTML Elements:</h3>
+                    <ul>
+                        <li><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> - Headings</li>
+                        <li><code>&lt;p&gt;</code> - Paragraphs</li>
+                        <li><code>&lt;a&gt;</code> - Links</li>
+                        <li><code>&lt;img&gt;</code> - Images</li>
+                        <li><code>&lt;div&gt;</code> - Container</li>
+                        <li><code>&lt;span&gt;</code> - Inline container</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a simple HTML page that includes:</p>
+                    <ul>
+                        <li>A main heading</li>
+                        <li>Two paragraphs</li>
+                        <li>A link to another website</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;title&gt;My Practice Page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+        &lt;p&gt;This is my first paragraph.&lt;/p&gt;
+        &lt;p&gt;This is my second paragraph.&lt;/p&gt;
+        &lt;a href="https://www.example.com"&gt;Visit Example.com&lt;/a&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>What does HTML stand for?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> Hyper Text Markup Language</label>
+                            <label><input type="radio" name="q1" value="b"> High Tech Modern Language</label>
+                            <label><input type="radio" name="q1" value="c"> Hyperlinks and Text Markup Language</label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn check-answers">Check Answers</button>
+            </section>
+        </article>
+
+        <nav class="lesson-navigation">
+            <div class="lesson-controls">
+                <span class="prev-lesson disabled">Previous Lesson</span>
+                <a href="lesson2.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2024 Web Development & Video Creation Course. All rights reserved.</p>
+            <p>Made by Ahyaan Farooqi</p>
+        </div>
+    </footer>
+
+    <script>
+        // Show/Hide solution
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+
+        // Quiz functionality
+        document.querySelector('.check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'a'
+            };
+            // Add quiz checking logic
+        });
+    </script>
+</body>
+</html> 

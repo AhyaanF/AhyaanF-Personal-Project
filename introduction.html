@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to CSS - CSS Course</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="../../html/advanced/html5-features.html" class="prev-lesson">← Previous: HTML5 Features</a>
+                <a href="colors-typography.html" class="next-lesson">Next: Colors & Typography →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>Introduction to CSS</h1>
+            
+            <section class="lesson-section">
+                <h2>What is CSS?</h2>
+                <p>CSS (Cascading Style Sheets) is a style sheet language used to describe the presentation of HTML documents. It defines how elements should be displayed on screen, on paper, or in other media.</p>
+                
+                <div class="example-code">
+                    <h3>CSS Syntax</h3>
+                    <pre><code>
+/* Basic CSS syntax */
+selector {
+    property: value;
+    another-property: value;
+}
+
+/* Example with actual properties */
+h1 {
+    color: blue;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Ways to Include CSS</h2>
+                
+                <div class="example-code">
+                    <h3>External CSS</h3>
+                    <pre><code>
+&lt;!-- In your HTML file --&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+
+/* In styles.css */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+                    </code></pre>
+
+                    <h3>Internal CSS</h3>
+                    <pre><code>
+&lt;head&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        
+        h1 {
+            color: navy;
+            text-align: center;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+                    </code></pre>
+
+                    <h3>Inline CSS</h3>
+                    <pre><code>
+&lt;p style="color: red; font-size: 16px;"&gt;
+    This is a paragraph with inline styles
+&lt;/p&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Selectors and Specificity</h2>
+                
+                <div class="example-code">
+                    <h3>Basic Selectors</h3>
+                    <pre><code>
+/* Element selector */
+p {
+    color: black;
+}
+
+/* Class selector */
+.highlight {
+    background-color: yellow;
+}
+
+/* ID selector */
+#header {
+    background-color: navy;
+    color: white;
+}
+
+/* Descendant selector */
+article p {
+    margin-bottom: 15px;
+}
+
+/* Child selector */
+nav > ul {
+    list-style: none;
+}
+
+/* Multiple selectors */
+h1, h2, h3 {
+    font-family: Georgia, serif;
+}
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Specificity Rules</h3>
+                    <pre><code>
+/* Specificity increases from top to bottom */
+
+/* Universal selector */
+* {
+    margin: 0;
+}
+
+/* Element selector */
+p {
+    color: blue;
+}
+
+/* Class selector */
+.text {
+    color: red;
+}
+
+/* ID selector */
+#unique {
+    color: green;
+}
+
+/* Inline styles (highest specificity) */
+&lt;p style="color: purple;"&gt;Text&lt;/p&gt;
+
+/* !important (use sparingly) */
+p {
+    color: orange !important;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>The Cascade</h2>
+                
+                <div class="example-code">
+                    <h3>How Styles Cascade</h3>
+                    <pre><code>
+/* Later styles override earlier ones */
+p {
+    color: blue;
+}
+
+p {
+    color: red;  /* This wins */
+}
+
+/* More specific selectors override less specific ones */
+p {
+    color: blue;
+}
+
+.special p {
+    color: red;  /* This wins due to higher specificity */
+}
+
+/* Inheritance */
+body {
+    font-family: Arial, sans-serif;  /* Inherited by all children */
+    color: #333;                     /* Inherited by all children */
+}
+
+/* Some properties don't inherit by default */
+button {
+    border: none;  /* Not inherited */
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a simple webpage with the following requirements:</p>
+                    <ul>
+                        <li>External CSS file</li>
+                        <li>Different types of selectors</li>
+                        <li>Demonstrate specificity</li>
+                        <li>Show inheritance</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+/* styles.css */
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Element selectors */
+h1 {
+    color: navy;
+    text-align: center;
+}
+
+/* Class selectors */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+/* ID selector */
+#main-header {
+    background-color: #f4f4f4;
+    padding: 1rem;
+}
+
+/* Combining selectors */
+.container p {
+    margin-bottom: 1.5rem;
+}
+
+/* Specificity example */
+p {
+    color: blue;
+}
+
+.container p {
+    color: green;  /* This wins due to higher specificity */
+}
+
+&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;CSS Practice&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header id="main-header"&gt;
+        &lt;h1&gt;Welcome to CSS Practice&lt;/h1&gt;
+    &lt;/header&gt;
+    
+    &lt;div class="container"&gt;
+        &lt;p&gt;This is a regular paragraph.&lt;/p&gt;
+        &lt;p class="highlight"&gt;
+            This is a highlighted paragraph.
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which selector has the highest specificity?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> Element selector (p)</label>
+                            <label><input type="radio" name="q1" value="b"> Class selector (.class)</label>
+                            <label><input type="radio" name="q1" value="c"> ID selector (#id)</label>
+                            <label><input type="radio" name="q1" value="d"> Universal selector (*)</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+    </script>
+</body>
+</html> 

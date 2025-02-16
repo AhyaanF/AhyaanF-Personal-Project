@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid - CSS Course</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="flexbox.html" class="prev-lesson">← Previous: Flexbox</a>
+                <a href="../animations/transitions.html" class="next-lesson">Next: Transitions →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>CSS Grid</h1>
+            
+            <section class="lesson-section">
+                <h2>Grid Container Properties</h2>
+                <p>CSS Grid is a two-dimensional layout system that lets you create complex grid-based layouts with rows and columns.</p>
+                
+                <div class="example-code">
+                    <h3>Basic Grid Container</h3>
+                    <pre><code>
+/* Basic grid container */
+.container {
+    display: grid;
+    /* or */
+    display: inline-grid;
+}
+
+/* Define columns and rows */
+.grid {
+    /* Fixed units */
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 100px 100px;
+
+    /* Flexible units */
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto minmax(100px, auto);
+
+    /* Repeat patterns */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    /* Named grid areas */
+    grid-template-areas:
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+}
+
+/* Grid gaps */
+.grid {
+    gap: 20px;              /* Both row and column gaps */
+    row-gap: 20px;          /* Row gap only */
+    column-gap: 20px;       /* Column gap only */
+}
+
+/* Alignment properties */
+.grid {
+    /* Align grid items along row axis */
+    justify-items: start;   /* Default */
+    justify-items: end;
+    justify-items: center;
+    justify-items: stretch;
+
+    /* Align grid items along column axis */
+    align-items: start;
+    align-items: end;
+    align-items: center;
+    align-items: stretch;   /* Default */
+
+    /* Align entire grid within container */
+    justify-content: start;
+    justify-content: end;
+    justify-content: center;
+    justify-content: space-between;
+    justify-content: space-around;
+    justify-content: space-evenly;
+
+    align-content: start;
+    align-content: end;
+    align-content: center;
+    align-content: space-between;
+    align-content: space-around;
+    align-content: space-evenly;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Grid Item Properties</h2>
+                <p>Grid items can be placed and sized within the grid using various properties.</p>
+                
+                <div class="example-code">
+                    <h3>Item Placement</h3>
+                    <pre><code>
+/* Grid item placement */
+.item {
+    /* Using line numbers */
+    grid-column: 1 / 3;         /* Start at line 1, end at line 3 */
+    grid-row: 2 / 4;           /* Start at line 2, end at line 4 */
+
+    /* Shorthand for both */
+    grid-area: 2 / 1 / 4 / 3;  /* row-start/column-start/row-end/column-end */
+
+    /* Using named areas */
+    grid-area: header;         /* Must match grid-template-areas name */
+
+    /* Spanning */
+    grid-column: span 2;       /* Span 2 columns */
+    grid-row: span 3;          /* Span 3 rows */
+
+    /* Auto placement */
+    grid-column: auto;
+    grid-row: auto;
+}
+
+/* Individual alignment */
+.item {
+    justify-self: start;
+    justify-self: end;
+    justify-self: center;
+    justify-self: stretch;     /* Default */
+
+    align-self: start;
+    align-self: end;
+    align-self: center;
+    align-self: stretch;       /* Default */
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Advanced Grid Techniques</h2>
+                <p>Learn advanced grid techniques for creating complex layouts.</p>
+                
+                <div class="example-code">
+                    <h3>Complex Grid Patterns</h3>
+                    <pre><code>
+/* Auto-fit vs Auto-fill */
+.responsive-grid {
+    /* Auto-fit: Expands items to fill space */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    /* Auto-fill: Creates empty tracks */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+/* Dense grid packing */
+.dense-grid {
+    grid-auto-flow: dense;     /* Fill in holes in the grid */
+}
+
+/* Implicit grid handling */
+.implicit-grid {
+    grid-auto-rows: minmax(100px, auto);
+    grid-auto-columns: minmax(100px, auto);
+    grid-auto-flow: row;       /* or column */
+}
+
+/* Nested grids */
+.parent-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.child-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Overlapping items */
+.overlap {
+    display: grid;
+    grid-template: repeat(4, 100px) / repeat(4, 100px);
+}
+
+.overlap-item {
+    grid-area: 1 / 1 / 3 / 3;  /* Creates overlap */
+    z-index: 1;                /* Controls stacking */
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a responsive photo gallery layout that:</p>
+                    <ul>
+                        <li>Uses CSS Grid for layout</li>
+                        <li>Features different sized images</li>
+                        <li>Adapts to different screen sizes</li>
+                        <li>Includes overlapping effects</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+&lt;!-- index.html --&gt;
+&lt;div class="gallery"&gt;
+    &lt;div class="gallery-item featured"&gt;
+        &lt;img src="featured.jpg" alt="Featured image"&gt;
+        &lt;div class="overlay"&gt;Featured&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="gallery-item"&gt;
+        &lt;img src="image1.jpg" alt="Gallery image"&gt;
+        &lt;div class="overlay"&gt;Image 1&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="gallery-item tall"&gt;
+        &lt;img src="image2.jpg" alt="Gallery image"&gt;
+        &lt;div class="overlay"&gt;Image 2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="gallery-item wide"&gt;
+        &lt;img src="image3.jpg" alt="Gallery image"&gt;
+        &lt;div class="overlay"&gt;Image 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+/* styles.css */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+    grid-auto-flow: dense;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.featured {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.wide {
+    grid-column: span 2;
+}
+
+.tall {
+    grid-row: span 2;
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-auto-rows: 200px;
+    }
+
+    .featured, .wide, .tall {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which unit is used in CSS Grid to distribute remaining space proportionally?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> px</label>
+                            <label><input type="radio" name="q1" value="b"> %</label>
+                            <label><input type="radio" name="q1" value="c"> fr</label>
+                            <label><input type="radio" name="q1" value="d"> em</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+    </script>
+</body>
+</html> 

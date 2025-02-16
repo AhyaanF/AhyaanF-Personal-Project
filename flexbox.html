@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox - CSS Course</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="../responsive/responsive-images.html" class="prev-lesson">← Previous: Responsive Images</a>
+                <a href="grid.html" class="next-lesson">Next: Grid →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>CSS Flexbox</h1>
+            
+            <section class="lesson-section">
+                <h2>Flex Container Properties</h2>
+                <p>The flex container is the parent element that holds flex items. Its properties control the layout direction and alignment of items.</p>
+                
+                <div class="example-code">
+                    <h3>Container Basics</h3>
+                    <pre><code>
+/* Basic flex container */
+.container {
+    display: flex;
+    /* or */
+    display: inline-flex;
+}
+
+/* Direction and wrap */
+.container {
+    /* Main axis direction */
+    flex-direction: row; /* default */
+    flex-direction: row-reverse;
+    flex-direction: column;
+    flex-direction: column-reverse;
+
+    /* Wrapping behavior */
+    flex-wrap: nowrap; /* default */
+    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
+
+    /* Shorthand for direction and wrap */
+    flex-flow: row wrap;
+}
+
+/* Alignment properties */
+.container {
+    /* Main axis alignment */
+    justify-content: flex-start; /* default */
+    justify-content: flex-end;
+    justify-content: center;
+    justify-content: space-between;
+    justify-content: space-around;
+    justify-content: space-evenly;
+
+    /* Cross axis alignment */
+    align-items: stretch; /* default */
+    align-items: flex-start;
+    align-items: flex-end;
+    align-items: center;
+    align-items: baseline;
+
+    /* Multi-line alignment */
+    align-content: flex-start;
+    align-content: flex-end;
+    align-content: center;
+    align-content: space-between;
+    align-content: space-around;
+    align-content: stretch; /* default */
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Flex Item Properties</h2>
+                <p>Flex items are the children of a flex container. Their properties control how they grow, shrink, and align individually.</p>
+                
+                <div class="example-code">
+                    <h3>Item Properties</h3>
+                    <pre><code>
+/* Flex item sizing */
+.item {
+    /* Growth factor */
+    flex-grow: 0; /* default */
+    flex-grow: 1;
+    flex-grow: 2;
+
+    /* Shrink factor */
+    flex-shrink: 1; /* default */
+    flex-shrink: 0;
+    flex-shrink: 2;
+
+    /* Base size */
+    flex-basis: auto; /* default */
+    flex-basis: 0;
+    flex-basis: 200px;
+    flex-basis: 50%;
+
+    /* Shorthand for grow, shrink, and basis */
+    flex: 0 1 auto; /* default */
+    flex: 1; /* 1 1 0% */
+    flex: auto; /* 1 1 auto */
+    flex: none; /* 0 0 auto */
+}
+
+/* Individual alignment */
+.item {
+    align-self: auto; /* default */
+    align-self: flex-start;
+    align-self: flex-end;
+    align-self: center;
+    align-self: baseline;
+    align-self: stretch;
+
+    /* Order modification */
+    order: 0; /* default */
+    order: 1;
+    order: -1;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Common Flex Patterns</h2>
+                <p>Learn common layout patterns that can be achieved using Flexbox.</p>
+                
+                <div class="example-code">
+                    <h3>Layout Examples</h3>
+                    <pre><code>
+/* Navigation bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Card layout */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card {
+    flex: 1 1 300px;
+    max-width: calc(33.333% - 1rem);
+}
+
+/* Holy grail layout */
+.holy-grail {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+
+.header, .footer {
+    flex: 1 1 100%;
+}
+
+.main-content {
+    flex: 1 1 60%;
+}
+
+.sidebar {
+    flex: 1 1 20%;
+}
+
+/* Centering content */
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Equal height columns */
+.columns {
+    display: flex;
+    gap: 1rem;
+}
+
+.column {
+    flex: 1;
+    padding: 1rem;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Responsive Flexbox</h2>
+                <p>Learn how to create responsive layouts using Flexbox and media queries.</p>
+                
+                <div class="example-code">
+                    <h3>Responsive Patterns</h3>
+                    <pre><code>
+/* Mobile-first approach */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .item {
+        flex: 1 1 calc(50% - 1rem);
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .item {
+        flex: 1 1 calc(33.333% - 1rem);
+    }
+}
+
+/* Responsive navigation */
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a responsive dashboard layout that includes:</p>
+                    <ul>
+                        <li>A header with navigation</li>
+                        <li>A sidebar with menu items</li>
+                        <li>A main content area with cards</li>
+                        <li>A footer with multiple columns</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+&lt;!-- index.html --&gt;
+&lt;div class="dashboard"&gt;
+    &lt;header class="header"&gt;
+        &lt;div class="logo"&gt;Dashboard&lt;/div&gt;
+        &lt;nav class="nav"&gt;
+            &lt;a href="#"&gt;Home&lt;/a&gt;
+            &lt;a href="#"&gt;Profile&lt;/a&gt;
+            &lt;a href="#"&gt;Settings&lt;/a&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;div class="content"&gt;
+        &lt;aside class="sidebar"&gt;
+            &lt;nav class="menu"&gt;
+                &lt;a href="#"&gt;Dashboard&lt;/a&gt;
+                &lt;a href="#"&gt;Analytics&lt;/a&gt;
+                &lt;a href="#"&gt;Reports&lt;/a&gt;
+            &lt;/nav&gt;
+        &lt;/aside&gt;
+
+        &lt;main class="main-content"&gt;
+            &lt;div class="card-grid"&gt;
+                &lt;div class="card"&gt;Card 1&lt;/div&gt;
+                &lt;div class="card"&gt;Card 2&lt;/div&gt;
+                &lt;div class="card"&gt;Card 3&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/main&gt;
+    &lt;/div&gt;
+
+    &lt;footer class="footer"&gt;
+        &lt;div class="footer-col"&gt;Column 1&lt;/div&gt;
+        &lt;div class="footer-col"&gt;Column 2&lt;/div&gt;
+        &lt;div class="footer-col"&gt;Column 3&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/div&gt;
+
+/* styles.css */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.content {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    width: 200px;
+    padding: 1rem;
+    background: #f1f3f5;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.main-content {
+    flex: 1;
+    padding: 1rem;
+}
+
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card {
+    flex: 1 1 300px;
+    padding: 1rem;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    background: #343a40;
+    color: white;
+}
+
+.footer-col {
+    flex: 1;
+    padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which property is used to control how flex items grow in relation to each other?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> flex-direction</label>
+                            <label><input type="radio" name="q1" value="b"> flex-grow</label>
+                            <label><input type="radio" name="q1" value="c"> flex-wrap</label>
+                            <label><input type="radio" name="q1" value="d"> flex-basis</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+    </script>
+</body>
+</html> 

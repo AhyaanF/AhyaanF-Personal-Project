@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Accessibility - Web Development Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../lessons.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-page" data-lesson-type="accessibility">
+        <nav class="lesson-nav">
+            <a href="../../html-course.html" class="back-btn">← Back to Course</a>
+            <div class="lesson-progress">
+                <span>Lesson 9 of 12</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 72%"></div>
+                </div>
+            </div>
+        </nav>
+
+        <article class="lesson-content">
+            <h1>Web Accessibility (a11y)</h1>
+            
+            <section class="theory-section">
+                <h2>Making Web Content Accessible</h2>
+                <p>Accessibility ensures web content is usable by people with disabilities:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;!-- Proper Heading Structure --&gt;
+&lt;h1&gt;Main Page Title&lt;/h1&gt;
+&lt;h2&gt;Section Title&lt;/h2&gt;
+&lt;h3&gt;Subsection Title&lt;/h3&gt;
+
+&lt;!-- Image Accessibility --&gt;
+&lt;img src="logo.png" alt="Company Logo" aria-label="Company Logo"&gt;
+&lt;img src="decorative.png" alt="" role="presentation"&gt;
+
+&lt;!-- Form Accessibility --&gt;
+&lt;form&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input 
+        type="text" 
+        id="name" 
+        name="name" 
+        aria-required="true"
+        aria-describedby="name-help"
+    &gt;
+    &lt;span id="name-help"&gt;Enter your full name&lt;/span&gt;
+&lt;/form&gt;
+
+&lt;!-- ARIA Landmarks --&gt;
+&lt;header role="banner"&gt;
+    &lt;nav role="navigation" aria-label="Main navigation"&gt;
+        &lt;!-- Navigation items --&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main role="main"&gt;
+    &lt;article role="article"&gt;
+        &lt;!-- Content --&gt;
+    &lt;/article&gt;
+    &lt;aside role="complementary"&gt;
+        &lt;!-- Sidebar content --&gt;
+    &lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;!-- Skip Navigation --&gt;
+&lt;a href="#main-content" class="skip-link"&gt;
+    Skip to main content
+&lt;/a&gt;
+
+&lt;!-- Accessible Tables --&gt;
+&lt;table role="grid"&gt;
+    &lt;caption&gt;Monthly Sales Data&lt;/caption&gt;
+    &lt;th scope="col"&gt;Month&lt;/th&gt;
+    &lt;th scope="col"&gt;Sales&lt;/th&gt;
+&lt;/table&gt;
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h3>Accessibility Features:</h3>
+                    <ul>
+                        <li><strong>ARIA roles</strong> - Define element purposes</li>
+                        <li><strong>ARIA labels</strong> - Provide text alternatives</li>
+                        <li><strong>Alt text</strong> - Describe images</li>
+                        <li><strong>Form labels</strong> - Associate labels with inputs</li>
+                        <li><strong>Semantic structure</strong> - Use proper heading hierarchy</li>
+                        <li><strong>Skip links</strong> - Allow keyboard navigation</li>
+                        <li><strong>Table headers</strong> - Properly scope table headers</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create an accessible webpage that includes:</p>
+                    <ul>
+                        <li>Proper heading structure</li>
+                        <li>Accessible images with alt text</li>
+                        <li>A form with proper labels and ARIA attributes</li>
+                        <li>ARIA landmarks for major sections</li>
+                        <li>A skip navigation link</li>
+                    </ul>
+                    <div class="code-editor">
+                        <textarea id="code-input" rows="20"></textarea>
+                        <button class="btn" onclick="checkCode()">Check Your Code</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Quick Quiz</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which attribute is used to provide a text description for images?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="title"> title</label>
+                            <label><input type="radio" name="q1" value="alt"> alt</label>
+                            <label><input type="radio" name="q1" value="description"> description</label>
+                            <label><input type="radio" name="q1" value="text"> text</label>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="checkQuiz()">Submit Answer</button>
+                </div>
+            </section>
+
+            <nav class="lesson-navigation">
+                <a href="meta-tags-lesson.html" class="prev-lesson">← Previous: Meta Tags & SEO</a>
+                <a href="best-practices-lesson.html" class="next-lesson">Next: Best Practices →</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+    <script src="../../lessons.js"></script>
+</body>
+</html> 

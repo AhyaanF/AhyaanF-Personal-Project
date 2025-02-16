@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Preprocessors - Web Development Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../lessons.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-page" data-lesson-type="preprocessors">
+        <nav class="lesson-nav">
+            <a href="../../css-course.html" class="back-btn">← Back to Course</a>
+            <div class="lesson-progress">
+                <span>Lesson 11 of 12</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 88%"></div>
+                </div>
+            </div>
+        </nav>
+
+        <article class="lesson-content">
+            <h1>CSS Preprocessors (SASS/SCSS)</h1>
+            
+            <section class="theory-section">
+                <h2>Extending CSS with Preprocessors</h2>
+                <p>Learn how to use SASS/SCSS to write more maintainable CSS:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+// Variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$spacing-unit: 8px;
+$font-stack: 'Arial', sans-serif;
+
+// Nesting
+.header {
+    background: $primary-color;
+    padding: $spacing-unit * 2;
+
+    nav {
+        display: flex;
+        
+        ul {
+            list-style: none;
+            
+            li {
+                margin-right: $spacing-unit;
+                
+                a {
+                    color: white;
+                    
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin media-query($width) {
+    @media screen and (min-width: $width) {
+        @content;
+    }
+}
+
+// Using Mixins
+.container {
+    @include flex-center;
+    
+    @include media-query(768px) {
+        flex-direction: row;
+    }
+}
+
+// Functions
+@function calculate-width($n) {
+    @return $n * $spacing-unit;
+}
+
+// Extend/Inheritance
+%button-base {
+    padding: $spacing-unit $spacing-unit * 2;
+    border-radius: 4px;
+    border: none;
+}
+
+.button-primary {
+    @extend %button-base;
+    background: $primary-color;
+}
+
+.button-secondary {
+    @extend %button-base;
+    background: $secondary-color;
+}
+
+// Control Directives
+@for $i from 1 through 3 {
+    .col-#{$i} {
+        width: $i * 25%;
+    }
+}
+
+// Color Functions
+.card {
+    background: lighten($primary-color, 10%);
+    border-color: darken($primary-color, 10%);
+    
+    &:hover {
+        background: mix($primary-color, white, 80%);
+    }
+}
+
+// Lists and Maps
+$sizes: (
+    small: $spacing-unit,
+    medium: $spacing-unit * 2,
+    large: $spacing-unit * 3
+);
+
+.element {
+    padding: map-get($sizes, medium);
+}
+
+// Import Partials
+@import 'variables';
+@import 'mixins';
+@import 'functions';
+
+// Operators
+.sidebar {
+    width: (100% / 3);
+    margin: $spacing-unit + 5px;
+}
+
+// Parent Selector
+.link {
+    color: blue;
+    
+    .sidebar & {
+        color: red;
+    }
+}
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h3>Preprocessor Features:</h3>
+                    <ul>
+                        <li><strong>Variables</strong> - Store reusable values</li>
+                        <li><strong>Nesting</strong> - Write nested selectors</li>
+                        <li><strong>Mixins</strong> - Reusable style blocks</li>
+                        <li><strong>Functions</strong> - Custom calculations</li>
+                        <li><strong>Inheritance</strong> - Share styles between selectors</li>
+                        <li><strong>Control Directives</strong> - Loops and conditions</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create SCSS code that demonstrates:</p>
+                    <ul>
+                        <li>Variables and nesting</li>
+                        <li>Custom mixins with parameters</li>
+                        <li>Extended placeholder selectors</li>
+                        <li>Control directives (loops)</li>
+                        <li>Color functions and calculations</li>
+                    </ul>
+                    <div class="code-editor">
+                        <textarea id="code-input" rows="20"></textarea>
+                        <button class="btn" onclick="checkCode()">Check Your Code</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Quick Quiz</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which symbol is used for variables in SASS?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="@"> @</label>
+                            <label><input type="radio" name="q1" value="$"> $</label>
+                            <label><input type="radio" name="q1" value="--"> --</label>
+                            <label><input type="radio" name="q1" value="#"> #</label>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="checkQuiz()">Submit Answer</button>
+                </div>
+            </section>
+
+            <nav class="lesson-navigation">
+                <a href="variables-lesson.html" class="prev-lesson">← Previous: CSS Variables</a>
+                <a href="modern-features-lesson.html" class="next-lesson">Next: Modern CSS Features →</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+    <script src="../../lessons.js"></script>
+</body>
+</html> 

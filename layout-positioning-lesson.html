@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout & Positioning - CSS Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="site-title">
+            <h1>Complete Web Development & Video Creation Course</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="../../html-course.html">HTML</a>
+                    <div class="dropdown-content">
+                        <a href="../../html-course.html#basics">Basics</a>
+                        <a href="../../html-course.html#intermediate">Intermediate</a>
+                        <a href="../../html-course.html#advanced">Advanced</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../css-course.html" class="active">CSS</a>
+                    <div class="dropdown-content">
+                        <a href="../../css-course.html#basics">Basics</a>
+                        <a href="../../css-course.html#layouts">Layouts</a>
+                        <a href="../../css-course.html#responsive">Responsive Design</a>
+                        <a href="../../css-course.html#animations">Animations</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../video-creation.html">Video Creation</a>
+                    <div class="dropdown-content">
+                        <a href="../../video-creation.html#basics">Video Basics</a>
+                        <a href="../../video-creation.html#advanced">Advanced Techniques</a>
+                        <a href="../../video-creation.html#editing">Video Editing</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="grid-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="responsive-design-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>CSS Layout & Positioning</h1>
+            
+            <section class="lesson-section">
+                <h2>CSS Position Property</h2>
+                <p>The position property determines how an element is positioned in the document flow.</p>
+                
+                <div class="example-code">
+                    <h3>Position Values</h3>
+                    <pre><code>
+/* Static Positioning (Default) */
+.static {
+    position: static;
+}
+
+/* Relative Positioning */
+.relative {
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+
+/* Absolute Positioning */
+.absolute {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* Fixed Positioning */
+.fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Sticky Positioning */
+.sticky {
+    position: sticky;
+    top: 0;
+}
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Z-Index and Stacking Context</h3>
+                    <pre><code>
+/* Z-Index */
+.overlay {
+    position: fixed;
+    z-index: 100;
+}
+
+.modal {
+    position: fixed;
+    z-index: 101;
+}
+
+/* Stacking Context Example */
+.parent {
+    position: relative;
+    z-index: 1;
+}
+
+.child {
+    position: absolute;
+    z-index: 2;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Float and Clear</h2>
+                
+                <div class="example-code">
+                    <h3>Float Properties</h3>
+                    <pre><code>
+/* Float Elements */
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+/* Clear Floats */
+.clear {
+    clear: both;
+}
+
+/* Clearfix Hack */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Modern Alternative */
+.container {
+    display: flow-root;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Display Property</h2>
+                
+                <div class="example-code">
+                    <h3>Display Values</h3>
+                    <pre><code>
+/* Common Display Values */
+.block {
+    display: block;
+}
+
+.inline {
+    display: inline;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.none {
+    display: none;
+}
+
+/* Modern Display Values */
+.grid {
+    display: grid;
+}
+
+.flex {
+    display: flex;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a layout that demonstrates:</p>
+                    <ul>
+                        <li>A fixed header at the top</li>
+                        <li>A sticky sidebar</li>
+                        <li>Absolutely positioned elements</li>
+                        <li>Proper z-index management</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+/* HTML Structure */
+&lt;header class="main-header"&gt;Fixed Header&lt;/header&gt;
+
+&lt;div class="page-container"&gt;
+    &lt;aside class="sidebar"&gt;
+        &lt;nav class="sticky-nav"&gt;
+            Navigation Items
+        &lt;/nav&gt;
+    &lt;/aside&gt;
+    
+    &lt;main class="content"&gt;
+        &lt;div class="relative-container"&gt;
+            Main Content
+            &lt;div class="absolute-element"&gt;
+                Overlay Content
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+&lt;/div&gt;
+
+/* CSS Styles */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: #333;
+    color: white;
+    z-index: 100;
+}
+
+.page-container {
+    margin-top: 60px;
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background: #f4f4f4;
+}
+
+.sticky-nav {
+    position: sticky;
+    top: 70px;
+    padding: 20px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.relative-container {
+    position: relative;
+    min-height: 400px;
+}
+
+.absolute-element {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    z-index: 1;
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which position value removes an element from the normal document flow and positions it relative to its closest positioned ancestor?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> relative</label>
+                            <label><input type="radio" name="q1" value="b"> absolute</label>
+                            <label><input type="radio" name="q1" value="c"> fixed</label>
+                            <label><input type="radio" name="q1" value="d"> static</label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn check-answers">Check Answers</button>
+            </section>
+        </article>
+
+        <nav class="lesson-navigation">
+            <div class="lesson-controls">
+                <a href="grid-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="responsive-design-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2024 Web Development & Video Creation Course. All rights reserved.</p>
+            <p>Made by Ahyaan Farooqi</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+
+        document.querySelector('.check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'b'
+            };
+            // Add quiz checking logic
+        });
+    </script>
+</body>
+</html> 

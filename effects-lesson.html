@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effects - CSS Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="site-title">
+            <h1>Complete Web Development & Video Creation Course</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="../../html-course.html">HTML</a>
+                    <div class="dropdown-content">
+                        <a href="../../html-course.html#basics">Basics</a>
+                        <a href="../../html-course.html#intermediate">Intermediate</a>
+                        <a href="../../html-course.html#advanced">Advanced</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../css-course.html" class="active">CSS</a>
+                    <div class="dropdown-content">
+                        <a href="../../css-course.html#basics">Basics</a>
+                        <a href="../../css-course.html#layouts">Layouts</a>
+                        <a href="../../css-course.html#responsive">Responsive Design</a>
+                        <a href="../../css-course.html#animations">Animations</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../video-creation.html">Video Creation</a>
+                    <div class="dropdown-content">
+                        <a href="../../video-creation.html#basics">Video Basics</a>
+                        <a href="../../video-creation.html#advanced">Advanced Techniques</a>
+                        <a href="../../video-creation.html#editing">Video Editing</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="transitions-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="filters-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>CSS Effects</h1>
+            
+            <section class="lesson-section">
+                <h2>Box Shadow Effects</h2>
+                <p>Learn how to create depth and dimension with shadows.</p>
+                
+                <div class="example-code">
+                    <h3>Basic Shadows</h3>
+                    <pre><code>
+/* Basic box shadow */
+.shadow {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Multiple shadows */
+.layered-shadow {
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.1),
+        0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Inset shadow */
+.inset-shadow {
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Colored shadows */
+.colored-shadow {
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.25);
+}
+
+/* Material Design shadow */
+.material-shadow {
+    box-shadow: 
+        0 1px 3px rgba(0, 0, 0, 0.12),
+        0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: box-shadow 0.3s ease;
+}
+
+.material-shadow:hover {
+    box-shadow: 
+        0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+}
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Text Shadow Effects</h3>
+                    <pre><code>
+/* Basic text shadow */
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Multiple text shadows */
+.neon-text {
+    color: #fff;
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 15px #0073e6,
+        0 0 20px #0073e6,
+        0 0 25px #0073e6;
+}
+
+/* 3D text effect */
+.text-3d {
+    color: #333;
+    text-shadow:
+        1px 1px 1px #ccc,
+        2px 2px 1px #ccc,
+        3px 3px 1px #ccc;
+}
+
+/* Outline text */
+.outline-text {
+    color: white;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Gradient Effects</h2>
+                
+                <div class="example-code">
+                    <h3>Linear and Radial Gradients</h3>
+                    <pre><code>
+/* Linear gradients */
+.linear-gradient {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+}
+
+/* Multiple color stops */
+.multi-gradient {
+    background: linear-gradient(
+        to right,
+        #ff6b6b,
+        #4ecdc4 50%,
+        #45b7d1
+    );
+}
+
+/* Repeating gradient */
+.repeating-gradient {
+    background: repeating-linear-gradient(
+        45deg,
+        #ff6b6b,
+        #ff6b6b 10px,
+        #4ecdc4 10px,
+        #4ecdc4 20px
+    );
+}
+
+/* Radial gradient */
+.radial-gradient {
+    background: radial-gradient(
+        circle at center,
+        #ff6b6b,
+        #4ecdc4
+    );
+}
+
+/* Conic gradient */
+.conic-gradient {
+    background: conic-gradient(
+        from 45deg,
+        #ff6b6b,
+        #4ecdc4,
+        #45b7d1,
+        #ff6b6b
+    );
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Blend Mode Effects</h2>
+                
+                <div class="example-code">
+                    <h3>Background and Mix Blend Modes</h3>
+                    <pre><code>
+/* Background blend mode */
+.blend-bg {
+    background-image: 
+        linear-gradient(45deg, #ff6b6b, #4ecdc4),
+        url('pattern.png');
+    background-blend-mode: multiply;
+}
+
+/* Mix blend mode */
+.blend-element {
+    mix-blend-mode: overlay;
+}
+
+/* Multiple backgrounds with blend */
+.complex-blend {
+    background:
+        linear-gradient(red, transparent),
+        linear-gradient(to right, blue, transparent),
+        linear-gradient(to bottom, green, transparent);
+    background-blend-mode: screen;
+}
+
+/* Text with blend mode */
+.blend-text {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    color: white;
+    mix-blend-mode: difference;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a modern card design that includes:</p>
+                    <ul>
+                        <li>Layered shadows</li>
+                        <li>Gradient backgrounds</li>
+                        <li>Text effects</li>
+                        <li>Hover animations</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+/* HTML Structure */
+&lt;div class="card"&gt;
+    &lt;div class="card-header"&gt;
+        &lt;h3 class="card-title"&gt;Modern Card&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class="card-body"&gt;
+        &lt;p&gt;Card content goes here...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="card-footer"&gt;
+        &lt;button class="card-btn"&gt;Learn More&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+/* CSS Styles */
+:root {
+    --gradient-start: #6e8efb;
+    --gradient-end: #a777e3;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow:
+        0 4px 8px var(--shadow-color),
+        0 8px 16px var(--shadow-color);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 8px 16px var(--shadow-color),
+        0 16px 32px var(--shadow-color);
+}
+
+.card-header {
+    background: linear-gradient(
+        135deg,
+        var(--gradient-start),
+        var(--gradient-end)
+    );
+    padding: 1.5rem;
+    position: relative;
+}
+
+.card-header::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: inherit;
+    filter: blur(10px);
+    opacity: 0.5;
+}
+
+.card-title {
+    color: white;
+    margin: 0;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    padding: 1.5rem;
+    background: linear-gradient(
+        to bottom,
+        white,
+        rgba(255, 255, 255, 0.9)
+    );
+}
+
+.card-footer {
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(
+        135deg,
+        var(--gradient-start),
+        var(--gradient-end)
+    );
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.card-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Glass effect variant */
+.card.glass {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card.glass .card-header {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.card.glass .card-body {
+    background: transparent;
+}
+
+.card.glass .card-footer {
+    background: rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which CSS property is used to create a shadow effect on text?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> box-shadow</label>
+                            <label><input type="radio" name="q1" value="b"> text-shadow</label>
+                            <label><input type="radio" name="q1" value="c"> shadow-effect</label>
+                            <label><input type="radio" name="q1" value="d"> font-shadow</label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn check-answers">Check Answers</button>
+            </section>
+        </article>
+
+        <nav class="lesson-navigation">
+            <div class="lesson-controls">
+                <a href="transitions-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="filters-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2024 Web Development & Video Creation Course. All rights reserved.</p>
+            <p>Made by Ahyaan Farooqi</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+
+        document.querySelector('.check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'b'
+            };
+            // Add quiz checking logic
+        });
+    </script>
+</body>
+</html> 

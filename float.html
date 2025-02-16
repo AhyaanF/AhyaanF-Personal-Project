@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Float - CSS Course</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="positioning.html" class="prev-lesson">← Previous: Positioning</a>
+                <a href="../responsive/media-queries.html" class="next-lesson">Next: Media Queries →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>CSS Float</h1>
+            
+            <section class="lesson-section">
+                <h2>Float Property Basics</h2>
+                <p>The float property is used to place an element on the left or right side of its container, allowing text and inline elements to wrap around it.</p>
+                
+                <div class="example-code">
+                    <h3>Basic Float Usage</h3>
+                    <pre><code>
+/* Basic float values */
+.float-left {
+    float: left;
+    margin-right: 15px;
+}
+
+.float-right {
+    float: right;
+    margin-left: 15px;
+}
+
+/* Clear float */
+.clear {
+    clear: both;
+}
+
+/* Common image float pattern */
+.article-image {
+    float: left;
+    width: 300px;
+    margin: 0 20px 20px 0;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Clearing Floats</h2>
+                <p>When elements are floated, they are removed from the normal document flow. This can cause container collapse issues that need to be addressed.</p>
+                
+                <div class="example-code">
+                    <h3>Clearfix Solutions</h3>
+                    <pre><code>
+/* Modern clearfix */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Alternative clearfix methods */
+.overflow-auto {
+    overflow: auto;
+}
+
+.clear-both {
+    clear: both;
+}
+
+/* Container with floated children */
+.container {
+    border: 1px solid #ccc;
+}
+
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Float Layout Patterns</h2>
+                
+                <div class="example-code">
+                    <h3>Common Float Layouts</h3>
+                    <pre><code>
+/* Two-column layout */
+.sidebar {
+    float: left;
+    width: 25%;
+    padding: 15px;
+}
+
+.main-content {
+    float: right;
+    width: 75%;
+    padding: 15px;
+}
+
+/* Image gallery */
+.gallery-item {
+    float: left;
+    width: calc(33.333% - 20px);
+    margin: 10px;
+}
+
+/* Text wrap around image */
+.article {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.article img {
+    float: left;
+    max-width: 300px;
+    margin: 0 20px 20px 0;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Float Considerations</h2>
+                
+                <div class="example-code">
+                    <h3>Common Issues and Solutions</h3>
+                    <pre><code>
+/* Equal height columns */
+.column {
+    float: left;
+    width: 33.333%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Responsive float handling */
+@media (max-width: 768px) {
+    .column {
+        float: none;
+        width: 100%;
+    }
+    
+    .article img {
+        float: none;
+        display: block;
+        margin: 0 auto 20px;
+    }
+}
+
+/* Float alternatives */
+.modern-layout {
+    display: flex;
+    /* or */
+    display: grid;
+    /* Preferred over floats for modern layouts */
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a responsive blog layout with:</p>
+                    <ul>
+                        <li>A main content area with floated images</li>
+                        <li>A sidebar with floated widgets</li>
+                        <li>Proper clearfix implementation</li>
+                        <li>Responsive behavior for mobile devices</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+&lt;!-- index.html --&gt;
+&lt;div class="blog-container clearfix"&gt;
+    &lt;main class="blog-content"&gt;
+        &lt;article&gt;
+            &lt;img src="blog-image.jpg" class="article-image"&gt;
+            &lt;h2&gt;Blog Post Title&lt;/h2&gt;
+            &lt;p&gt;Article content...&lt;/p&gt;
+        &lt;/article&gt;
+    &lt;/main&gt;
+    
+    &lt;aside class="blog-sidebar"&gt;
+        &lt;div class="widget"&gt;
+            &lt;h3&gt;Recent Posts&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Post 1&lt;/li&gt;
+                &lt;li&gt;Post 2&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/aside&gt;
+&lt;/div&gt;
+
+/* styles.css */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.blog-content {
+    float: left;
+    width: 70%;
+    padding-right: 30px;
+}
+
+.blog-sidebar {
+    float: right;
+    width: 30%;
+}
+
+.article-image {
+    float: left;
+    max-width: 300px;
+    margin: 0 20px 20px 0;
+}
+
+.widget {
+    background: #f5f5f5;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .blog-content,
+    .blog-sidebar {
+        float: none;
+        width: 100%;
+        padding-right: 0;
+    }
+    
+    .article-image {
+        float: none;
+        display: block;
+        margin: 0 auto 20px;
+    }
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>What CSS property is used to prevent elements from floating on both sides of a floated element?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> float</label>
+                            <label><input type="radio" name="q1" value="b"> clear</label>
+                            <label><input type="radio" name="q1" value="c"> display</label>
+                            <label><input type="radio" name="q1" value="d"> position</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spacing & Borders - CSS Course</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="colors-typography.html" class="prev-lesson">← Previous: Colors & Typography</a>
+                <a href="../layouts/flexbox.html" class="next-lesson">Next: Flexbox →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>Spacing and Borders in CSS</h1>
+            
+            <section class="lesson-section">
+                <h2>The Box Model</h2>
+                <p>Every element in CSS follows the box model, which consists of content, padding, border, and margin.</p>
+                
+                <div class="example-code">
+                    <h3>Box Model Properties</h3>
+                    <pre><code>
+.box-model {
+    /* Content dimensions */
+    width: 300px;
+    height: 200px;
+
+    /* Padding (inner spacing) */
+    padding: 20px;                /* All sides */
+    padding: 10px 20px;          /* Vertical | Horizontal */
+    padding: 10px 20px 15px 25px; /* Top | Right | Bottom | Left */
+    
+    /* Border */
+    border: 1px solid black;     /* Width | Style | Color */
+    
+    /* Margin (outer spacing) */
+    margin: 20px;                /* All sides */
+    margin: 10px auto;           /* Vertical | Horizontal auto (center) */
+    margin: 10px 20px 15px 25px; /* Top | Right | Bottom | Left */
+}
+
+/* Box Sizing */
+* {
+    box-sizing: border-box;  /* Include padding and border in width/height */
+}
+
+.content-box {
+    box-sizing: content-box; /* Default - width/height only includes content */
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Border Styles</h2>
+                
+                <div class="example-code">
+                    <h3>Border Properties</h3>
+                    <pre><code>
+/* Border Styles */
+.border-styles {
+    border-style: solid;
+    border-style: dashed;
+    border-style: dotted;
+    border-style: double;
+    border-style: groove;
+    border-style: ridge;
+    border-style: inset;
+    border-style: outset;
+}
+
+/* Border Width */
+.border-width {
+    border-width: thin;          /* 1px */
+    border-width: medium;        /* 3px */
+    border-width: thick;         /* 5px */
+    border-width: 2px;           /* Custom width */
+}
+
+/* Border Color */
+.border-color {
+    border-color: red;
+    border-color: #ff0000;
+    border-color: rgb(255, 0, 0);
+}
+
+/* Individual Borders */
+.individual-borders {
+    border-top: 2px solid red;
+    border-right: 3px dashed blue;
+    border-bottom: 4px dotted green;
+    border-left: 5px double yellow;
+}
+
+/* Border Radius */
+.rounded-corners {
+    border-radius: 10px;                    /* All corners */
+    border-radius: 10px 20px;               /* Top-left/bottom-right | Top-right/bottom-left */
+    border-radius: 10px 20px 15px 25px;     /* Top-left | Top-right | Bottom-right | Bottom-left */
+    border-radius: 50%;                     /* Circle (if width = height) */
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Spacing Techniques</h2>
+                
+                <div class="example-code">
+                    <h3>Margin Collapse</h3>
+                    <pre><code>
+/* Margin Collapse Example */
+.first-paragraph {
+    margin-bottom: 20px;
+}
+
+.second-paragraph {
+    margin-top: 30px;
+    /* The actual space between paragraphs will be 30px, not 50px */
+}
+
+/* Preventing Margin Collapse */
+.container {
+    padding: 1px;  /* Or border, or overflow: hidden */
+}
+
+/* Negative Margins */
+.overlap {
+    margin-top: -20px;  /* Pull element up */
+    margin-left: -10px; /* Pull element left */
+}
+                    </code></pre>
+
+                    <h3>Spacing Units</h3>
+                    <pre><code>
+/* Different Units for Spacing */
+.spacing-units {
+    /* Absolute units */
+    margin: 20px;     /* Pixels */
+    padding: 1in;     /* Inches */
+    border: 1cm;      /* Centimeters */
+
+    /* Relative units */
+    margin: 1em;      /* Relative to font-size */
+    padding: 1rem;    /* Relative to root font-size */
+    border: 1vw;      /* 1% of viewport width */
+    margin: 2vh;      /* 2% of viewport height */
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a card design with the following requirements:</p>
+                    <ul>
+                        <li>Fixed width and height</li>
+                        <li>Padding for inner spacing</li>
+                        <li>Styled borders with rounded corners</li>
+                        <li>Margin for outer spacing</li>
+                        <li>Box shadow for depth</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+&lt;!-- index.html --&gt;
+&lt;div class="card-container"&gt;
+    &lt;div class="card"&gt;
+        &lt;img src="image.jpg" alt="Card image" class="card-image"&gt;
+        &lt;div class="card-content"&gt;
+            &lt;h2&gt;Card Title&lt;/h2&gt;
+            &lt;p&gt;Card description goes here...&lt;/p&gt;
+            &lt;button class="card-button"&gt;Learn More&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+/* styles.css */
+.card-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.card {
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h2 {
+    margin: 0 0 1rem 0;
+    color: #333;
+}
+
+.card-content p {
+    margin: 0 0 1.5rem 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+.card-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.card-button:hover {
+    background: #0056b3;
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which box-sizing value includes padding and border in the element's total width and height?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> content-box</label>
+                            <label><input type="radio" name="q1" value="b"> border-box</label>
+                            <label><input type="radio" name="q1" value="c"> padding-box</label>
+                            <label><input type="radio" name="q1" value="d"> margin-box</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+    </script>
+</body>
+</html> 

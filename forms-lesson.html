@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms & Input - Web Development Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../lessons.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-page">
+        <nav class="lesson-nav">
+            <a href="../../html-course.html" class="back-btn">← Back to Course</a>
+            <div class="lesson-progress">
+                <span>Lesson 4 of 12</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 32%"></div>
+                </div>
+            </div>
+        </nav>
+
+        <article class="lesson-content">
+            <h1>HTML Forms & Input Elements</h1>
+            
+            <section class="theory-section">
+                <h2>Creating Forms</h2>
+                <p>Forms allow users to input data and submit it to a server for processing:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;form action="/submit" method="POST"&gt;
+    &lt;!-- Text Input --&gt;
+    &lt;label for="username"&gt;Username:&lt;/label&gt;
+    &lt;input type="text" id="username" name="username" required&gt;
+
+    &lt;!-- Password Input --&gt;
+    &lt;label for="password"&gt;Password:&lt;/label&gt;
+    &lt;input type="password" id="password" name="password"&gt;
+
+    &lt;!-- Radio Buttons --&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Select Gender:&lt;/legend&gt;
+        &lt;input type="radio" id="male" name="gender" value="male"&gt;
+        &lt;label for="male"&gt;Male&lt;/label&gt;
+        &lt;input type="radio" id="female" name="gender" value="female"&gt;
+        &lt;label for="female"&gt;Female&lt;/label&gt;
+    &lt;/fieldset&gt;
+
+    &lt;!-- Checkboxes --&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Interests:&lt;/legend&gt;
+        &lt;input type="checkbox" id="coding" name="interests" value="coding"&gt;
+        &lt;label for="coding"&gt;Coding&lt;/label&gt;
+        &lt;input type="checkbox" id="design" name="interests" value="design"&gt;
+        &lt;label for="design"&gt;Design&lt;/label&gt;
+    &lt;/fieldset&gt;
+
+    &lt;!-- Select Dropdown --&gt;
+    &lt;label for="country"&gt;Country:&lt;/label&gt;
+    &lt;select id="country" name="country"&gt;
+        &lt;option value=""&gt;Select a country&lt;/option&gt;
+        &lt;option value="us"&gt;United States&lt;/option&gt;
+        &lt;option value="uk"&gt;United Kingdom&lt;/option&gt;
+        &lt;option value="ca"&gt;Canada&lt;/option&gt;
+    &lt;/select&gt;
+
+    &lt;!-- Textarea --&gt;
+    &lt;label for="message"&gt;Message:&lt;/label&gt;
+    &lt;textarea id="message" name="message" rows="4"&gt;&lt;/textarea&gt;
+
+    &lt;!-- Submit Button --&gt;
+    &lt;button type="submit"&gt;Submit Form&lt;/button&gt;
+&lt;/form&gt;
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h3>Form Elements:</h3>
+                    <ul>
+                        <li><strong>&lt;form&gt;</strong> - Container for form elements</li>
+                        <li><strong>&lt;input&gt;</strong> - Various input types (text, password, radio, checkbox)</li>
+                        <li><strong>&lt;select&gt;</strong> - Dropdown lists</li>
+                        <li><strong>&lt;textarea&gt;</strong> - Multiline text input</li>
+                        <li><strong>&lt;button&gt;</strong> - Clickable buttons</li>
+                        <li><strong>&lt;label&gt;</strong> - Labels for form elements</li>
+                        <li><strong>&lt;fieldset&gt;</strong> - Groups related form elements</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a registration form that includes:</p>
+                    <ul>
+                        <li>Text inputs for name and email</li>
+                        <li>A password field</li>
+                        <li>Radio buttons for subscription type</li>
+                        <li>Checkboxes for interests</li>
+                        <li>A submit button</li>
+                    </ul>
+                    <div class="code-editor">
+                        <textarea id="code-input" rows="20"></textarea>
+                        <button class="btn" onclick="checkCode()">Check Your Code</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Quick Quiz</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which attribute is required to link a label to its input element?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="name"> name</label>
+                            <label><input type="radio" name="q1" value="for"> for</label>
+                            <label><input type="radio" name="q1" value="link"> link</label>
+                            <label><input type="radio" name="q1" value="ref"> ref</label>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="checkQuiz()">Submit Answer</button>
+                </div>
+            </section>
+
+            <nav class="lesson-navigation">
+                <a href="attributes-lesson.html" class="prev-lesson">← Previous: HTML Attributes</a>
+                <a href="tables-lesson.html" class="next-lesson">Next: Tables & Data →</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+    <script src="../../lessons.js"></script>
+</body>
+</html> 

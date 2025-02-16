@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern CSS Features - Web Development Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../lessons.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-page" data-lesson-type="modern-css">
+        <nav class="lesson-nav">
+            <a href="../../css-course.html" class="back-btn">← Back to Course</a>
+            <div class="lesson-progress">
+                <span>Lesson 12 of 12</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 96%"></div>
+                </div>
+            </div>
+        </nav>
+
+        <article class="lesson-content">
+            <h1>Modern CSS Features</h1>
+            
+            <section class="theory-section">
+                <h2>Latest CSS Features and Properties</h2>
+                <p>Explore modern CSS capabilities and new features:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+/* Container Queries */
+.container {
+    container-type: inline-size;
+    container-name: sidebar;
+}
+
+@container sidebar (min-width: 400px) {
+    .card {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+/* Logical Properties */
+.element {
+    margin-block-start: 1em;
+    margin-inline-end: 2em;
+    padding-inline: 1rem;
+    border-block: 1px solid;
+}
+
+/* Custom Properties with @property */
+@property --gradient-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* Scroll Snap */
+.scroll-container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+.scroll-item {
+    scroll-snap-align: start;
+    height: 100vh;
+}
+
+/* Aspect Ratio */
+.responsive-image {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Backdrop Filter */
+.glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Content Visibility */
+.lazy-section {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+}
+
+/* Subgrid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.nested-grid {
+    display: grid;
+    grid-template-columns: subgrid;
+}
+
+/* :has() Selector */
+.card:has(img) {
+    padding: 1rem;
+}
+
+article:has(> img) {
+    margin-bottom: 2rem;
+}
+
+/* Color Functions */
+.modern-colors {
+    color: rgb(from var(--brand-color) r g b);
+    background: color-mix(in srgb, #34c9eb 25%, white);
+}
+
+/* Layers */
+@layer base, components, utilities;
+
+@layer base {
+    /* Base styles */
+}
+
+/* Parent Selector */
+.parent {
+    &:hover {
+        & > .child {
+            color: blue;
+        }
+    }
+}
+
+/* Custom Media Queries */
+@custom-media --mobile (width <= 768px);
+
+@media (--mobile) {
+    /* Mobile styles */
+}
+
+/* Masonry Layout */
+.masonry {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: masonry;
+}
+
+/* Accent Color */
+.form-element {
+    accent-color: var(--brand-color);
+}
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h3>Modern CSS Features:</h3>
+                    <ul>
+                        <li><strong>Container Queries</strong> - Style based on container size</li>
+                        <li><strong>Logical Properties</strong> - Direction-independent properties</li>
+                        <li><strong>Custom Properties</strong> - Advanced variable features</li>
+                        <li><strong>Modern Selectors</strong> - :has() and other new selectors</li>
+                        <li><strong>Layout Features</strong> - Subgrid, masonry, etc.</li>
+                        <li><strong>Performance Features</strong> - content-visibility, contain</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create styles using modern CSS features:</p>
+                    <ul>
+                        <li>Container queries</li>
+                        <li>Logical properties</li>
+                        <li>Modern selectors</li>
+                        <li>New color features</li>
+                        <li>Advanced layout techniques</li>
+                    </ul>
+                    <div class="code-editor">
+                        <textarea id="code-input" rows="20"></textarea>
+                        <button class="btn" onclick="checkCode()">Check Your Code</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Quick Quiz</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which feature allows styling based on a parent container's size?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="media"> Media Queries</label>
+                            <label><input type="radio" name="q1" value="container"> Container Queries</label>
+                            <label><input type="radio" name="q1" value="element"> Element Queries</label>
+                            <label><input type="radio" name="q1" value="size"> Size Queries</label>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="checkQuiz()">Submit Answer</button>
+                </div>
+            </section>
+
+            <nav class="lesson-navigation">
+                <a href="preprocessors-lesson.html" class="prev-lesson">← Previous: CSS Preprocessors</a>
+                <a href="../../css-course.html" class="next-lesson">Complete Course →</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+    <script src="../../lessons.js"></script>
+</body>
+</html> 

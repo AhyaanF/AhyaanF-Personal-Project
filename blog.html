@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Web Development Master Course</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="site-title">
+            <h1>Complete Web Development & Video Creation Course</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="html-course.html">HTML</a>
+                    <div class="dropdown-content">
+                        <a href="html-course.html#basics">Basics</a>
+                        <a href="html-course.html#intermediate">Intermediate</a>
+                        <a href="html-course.html#advanced">Advanced</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="css-course.html">CSS</a>
+                    <div class="dropdown-content">
+                        <a href="css-course.html#basics">Basics</a>
+                        <a href="css-course.html#layouts">Layouts</a>
+                        <a href="css-course.html#responsive">Responsive Design</a>
+                        <a href="css-course.html#animations">Animations</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="video-creation.html">Video Creation</a>
+                    <div class="dropdown-content">
+                        <a href="video-creation.html#basics">Video Basics</a>
+                        <a href="video-creation.html#advanced">Advanced Techniques</a>
+                        <a href="video-creation.html#editing">Video Editing</a>
+                    </div>
+                </li>
+                <li><a href="projects.html">Practice Projects</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="blog-page">
+        <section class="blog-header">
+            <h2>Latest Articles</h2>
+            <div class="blog-categories">
+                <a href="#" class="category-tag active">All</a>
+                <a href="#" class="category-tag">HTML</a>
+                <a href="#" class="category-tag">CSS</a>
+                <a href="#" class="category-tag">Video</a>
+                <a href="#" class="category-tag">Tips</a>
+            </div>
+        </section>
+
+        <div class="blog-grid">
+            <article class="blog-post">
+                <div class="post-image">
+                    <img src="images/blog1.jpg" alt="HTML5 Features">
+                    <span class="category">HTML</span>
+                </div>
+                <div class="post-content">
+                    <h3>New Features in HTML5 You Should Know</h3>
+                    <p class="post-meta">By John Smith | March 15, 2024</p>
+                    <p class="post-excerpt">Discover the latest HTML5 features that are revolutionizing web development...</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-post">
+                <div class="post-image">
+                    <img src="images/blog2.jpg" alt="CSS Grid">
+                    <span class="category">CSS</span>
+                </div>
+                <div class="post-content">
+                    <h3>Mastering CSS Grid Layout</h3>
+                    <p class="post-meta">By Sarah Johnson | March 12, 2024</p>
+                    <p class="post-excerpt">Learn how to create complex layouts easily with CSS Grid...</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <!-- More blog posts... -->
+        </div>
+
+        <div class="pagination">
+            <a href="#" class="page-link active">1</a>
+            <a href="#" class="page-link">2</a>
+            <a href="#" class="page-link">3</a>
+            <span class="page-dots">...</span>
+            <a href="#" class="page-link">10</a>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+</body>
+</html> 

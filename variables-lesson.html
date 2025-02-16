@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables - Web Development Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../lessons.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-page" data-lesson-type="variables">
+        <nav class="lesson-nav">
+            <a href="../../css-course.html" class="back-btn">← Back to Course</a>
+            <div class="lesson-progress">
+                <span>Lesson 10 of 12</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%"></div>
+                </div>
+            </div>
+        </nav>
+
+        <article class="lesson-content">
+            <h1>CSS Variables (Custom Properties)</h1>
+            
+            <section class="theory-section">
+                <h2>Using CSS Custom Properties</h2>
+                <p>Learn how to create and use CSS variables for more maintainable styles:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+/* Declaring Variables */
+:root {
+    /* Colors */
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --text-color: #333333;
+    --background-color: #ffffff;
+    
+    /* Typography */
+    --font-main: 'Arial', sans-serif;
+    --font-heading: 'Georgia', serif;
+    --font-size-base: 16px;
+    --line-height: 1.5;
+    
+    /* Spacing */
+    --spacing-unit: 8px;
+    --spacing-small: calc(var(--spacing-unit) * 1);
+    --spacing-medium: calc(var(--spacing-unit) * 2);
+    --spacing-large: calc(var(--spacing-unit) * 3);
+    
+    /* Layout */
+    --container-width: 1200px;
+    --border-radius: 4px;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Using Variables */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: var(--spacing-medium);
+}
+
+.button {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: var(--spacing-small) var(--spacing-medium);
+    border-radius: var(--border-radius);
+    font-family: var(--font-main);
+}
+
+/* Scoped Variables */
+.dark-theme {
+    --background-color: #333333;
+    --text-color: #ffffff;
+}
+
+/* Fallback Values */
+.element {
+    color: var(--undefined-color, #666666);
+}
+
+/* Media Query Variations */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #1a1a1a;
+        --text-color: #ffffff;
+    }
+}
+
+/* Dynamic Values */
+.gradient {
+    --gradient-start: #ff0000;
+    --gradient-end: #00ff00;
+    background: linear-gradient(
+        to right,
+        var(--gradient-start),
+        var(--gradient-end)
+    );
+}
+
+/* JavaScript Integration */
+.theme-switcher {
+    background: var(--theme-color);
+}
+
+/* JavaScript example:
+document.documentElement.style.setProperty('--theme-color', '#ff0000');
+*/
+
+/* Calculations with Variables */
+.responsive-element {
+    --base-size: 20px;
+    font-size: calc(var(--base-size) + 1vw);
+    padding: calc(var(--spacing-unit) * 2);
+    margin: calc(var(--spacing-medium) / 2);
+}
+
+/* Variable in Multiple Properties */
+.card {
+    --card-color: #4CAF50;
+    background-color: var(--card-color);
+    border-color: var(--card-color);
+    box-shadow: 0 0 10px var(--card-color);
+}
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h3>CSS Variables Concepts:</h3>
+                    <ul>
+                        <li><strong>Declaration</strong> - Using -- prefix in :root</li>
+                        <li><strong>Usage</strong> - var() function to use variables</li>
+                        <li><strong>Scope</strong> - Global and local variable scope</li>
+                        <li><strong>Calculations</strong> - Using calc() with variables</li>
+                        <li><strong>Fallbacks</strong> - Default values for undefined variables</li>
+                        <li><strong>Dynamic Updates</strong> - JavaScript integration</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a theme system using CSS variables that includes:</p>
+                    <ul>
+                        <li>Global color variables</li>
+                        <li>Typography variables with calculations</li>
+                        <li>Spacing system with variables</li>
+                        <li>Theme variations (light/dark)</li>
+                        <li>Variable calculations and fallbacks</li>
+                    </ul>
+                    <div class="code-editor">
+                        <textarea id="code-input" rows="20"></textarea>
+                        <button class="btn" onclick="checkCode()">Check Your Code</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Quick Quiz</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>What prefix is used to declare CSS variables?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="$"> $</label>
+                            <label><input type="radio" name="q1" value="--"> --</label>
+                            <label><input type="radio" name="q1" value="@"> @</label>
+                            <label><input type="radio" name="q1" value="_"> _</label>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="checkQuiz()">Submit Answer</button>
+                </div>
+            </section>
+
+            <nav class="lesson-navigation">
+                <a href="transitions-animations-lesson.html" class="prev-lesson">← Previous: Transitions & Animations</a>
+                <a href="preprocessors-lesson.html" class="next-lesson">Next: CSS Preprocessors →</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+    <script src="../../lessons.js"></script>
+</body>
+</html> 

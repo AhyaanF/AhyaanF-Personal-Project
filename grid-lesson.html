@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid - CSS Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="site-title">
+            <h1>Complete Web Development & Video Creation Course</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="../../html-course.html">HTML</a>
+                    <div class="dropdown-content">
+                        <a href="../../html-course.html#basics">Basics</a>
+                        <a href="../../html-course.html#intermediate">Intermediate</a>
+                        <a href="../../html-course.html#advanced">Advanced</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../css-course.html" class="active">CSS</a>
+                    <div class="dropdown-content">
+                        <a href="../../css-course.html#basics">Basics</a>
+                        <a href="../../css-course.html#layouts">Layouts</a>
+                        <a href="../../css-course.html#responsive">Responsive Design</a>
+                        <a href="../../css-course.html#animations">Animations</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../video-creation.html">Video Creation</a>
+                    <div class="dropdown-content">
+                        <a href="../../video-creation.html#basics">Video Basics</a>
+                        <a href="../../video-creation.html#advanced">Advanced Techniques</a>
+                        <a href="../../video-creation.html#editing">Video Editing</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="flexbox-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="layout-positioning-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>CSS Grid Layout</h1>
+            
+            <section class="lesson-section">
+                <h2>Understanding CSS Grid</h2>
+                <p>CSS Grid is a two-dimensional layout system that lets you create complex web layouts with rows and columns.</p>
+                
+                <div class="example-code">
+                    <h3>Grid Container Properties</h3>
+                    <pre><code>
+/* Grid Container */
+.container {
+    display: grid;
+    /* or display: inline-grid */
+    
+    /* Define columns */
+    grid-template-columns: 200px 200px 200px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: minmax(100px, 1fr) 2fr 1fr;
+    
+    /* Define rows */
+    grid-template-rows: 100px auto 100px;
+    grid-template-rows: repeat(3, minmax(100px, auto));
+    
+    /* Grid gaps */
+    gap: 20px;
+    column-gap: 20px;
+    row-gap: 20px;
+    
+    /* Grid areas */
+    grid-template-areas:
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+}
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Grid Item Properties</h3>
+                    <pre><code>
+/* Grid Items */
+.item {
+    /* Grid lines positioning */
+    grid-column: 1 / 3;
+    grid-column: span 2;
+    grid-row: 1 / 3;
+    grid-row: span 2;
+    
+    /* Shorthand */
+    grid-area: 1 / 1 / 3 / 3;
+    
+    /* Named grid areas */
+    grid-area: header;
+    
+    /* Alignment */
+    justify-self: start | end | center | stretch;
+    align-self: start | end | center | stretch;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Advanced Grid Features</h2>
+                
+                <div class="example-code">
+                    <h3>Grid Alignment and Auto Features</h3>
+                    <pre><code>
+.container {
+    /* Container alignment */
+    justify-content: start | end | center | stretch | space-around | space-between | space-evenly;
+    align-content: start | end | center | stretch | space-around | space-between | space-evenly;
+    
+    /* Items alignment */
+    justify-items: start | end | center | stretch;
+    align-items: start | end | center | stretch;
+    
+    /* Auto features */
+    grid-auto-columns: 100px;
+    grid-auto-rows: minmax(100px, auto);
+    grid-auto-flow: row | column | dense;
+}
+
+/* Responsive grid */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a responsive webpage layout using CSS Grid that includes:</p>
+                    <ul>
+                        <li>A header spanning the full width</li>
+                        <li>A main content area with sidebar</li>
+                        <li>A footer spanning the full width</li>
+                        <li>Responsive behavior on mobile devices</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+/* HTML Structure */
+&lt;div class="grid-container"&gt;
+    &lt;header class="header"&gt;Header&lt;/header&gt;
+    &lt;nav class="sidebar"&gt;Sidebar&lt;/nav&gt;
+    &lt;main class="main-content"&gt;Main Content&lt;/main&gt;
+    &lt;footer class="footer"&gt;Footer&lt;/footer&gt;
+&lt;/div&gt;
+
+/* CSS Styles */
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+    grid-template-columns: 200px 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 20px;
+    min-height: 100vh;
+}
+
+.header {
+    grid-area: header;
+    background: #333;
+    color: white;
+    padding: 1rem;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background: #f4f4f4;
+    padding: 1rem;
+}
+
+.main-content {
+    grid-area: main;
+    padding: 1rem;
+}
+
+.footer {
+    grid-area: footer;
+    background: #333;
+    color: white;
+    padding: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which property is used to define the size and structure of grid columns?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> grid-columns</label>
+                            <label><input type="radio" name="q1" value="b"> grid-template-columns</label>
+                            <label><input type="radio" name="q1" value="c"> grid-column-template</label>
+                            <label><input type="radio" name="q1" value="d"> column-template</label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn check-answers">Check Answers</button>
+            </section>
+        </article>
+
+        <nav class="lesson-navigation">
+            <div class="lesson-controls">
+                <a href="flexbox-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="layout-positioning-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2024 Web Development & Video Creation Course. All rights reserved.</p>
+            <p>Made by Ahyaan Farooqi</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+
+        document.querySelector('.check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'b'
+            };
+            // Add quiz checking logic
+        });
+    </script>
+</body>
+</html> 

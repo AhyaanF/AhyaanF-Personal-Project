@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colors & Typography - CSS Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="site-title">
+            <h1>Complete Web Development & Video Creation Course</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="../../html-course.html">HTML</a>
+                    <div class="dropdown-content">
+                        <a href="../../html-course.html#basics">Basics</a>
+                        <a href="../../html-course.html#intermediate">Intermediate</a>
+                        <a href="../../html-course.html#advanced">Advanced</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../css-course.html" class="active">CSS</a>
+                    <div class="dropdown-content">
+                        <a href="../../css-course.html#basics">Basics</a>
+                        <a href="../../css-course.html#layouts">Layouts</a>
+                        <a href="../../css-course.html#responsive">Responsive Design</a>
+                        <a href="../../css-course.html#animations">Animations</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../video-creation.html">Video Creation</a>
+                    <div class="dropdown-content">
+                        <a href="../../video-creation.html#basics">Video Basics</a>
+                        <a href="../../video-creation.html#advanced">Advanced Techniques</a>
+                        <a href="../../video-creation.html#editing">Video Editing</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="introduction-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="box-model-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>Colors & Typography</h1>
+            
+            <section class="lesson-section">
+                <h2>Working with Colors</h2>
+                <p>CSS provides several ways to specify colors for elements.</p>
+                
+                <div class="example-code">
+                    <h3>Color Values</h3>
+                    <pre><code>
+/* Color Keywords */
+color: red;
+color: blue;
+color: white;
+
+/* Hexadecimal Colors */
+color: #ff0000;    /* Red */
+color: #0000ff;    /* Blue */
+color: #ffffff;    /* White */
+
+/* RGB Colors */
+color: rgb(255, 0, 0);      /* Red */
+color: rgb(0, 0, 255);      /* Blue */
+color: rgb(255, 255, 255);  /* White */
+
+/* RGBA Colors (with opacity) */
+color: rgba(255, 0, 0, 0.5);    /* Semi-transparent red */
+color: rgba(0, 0, 255, 0.7);    /* Semi-transparent blue */
+
+/* HSL Colors */
+color: hsl(0, 100%, 50%);       /* Red */
+color: hsl(240, 100%, 50%);     /* Blue */
+
+/* HSLA Colors (with opacity) */
+color: hsla(0, 100%, 50%, 0.5);     /* Semi-transparent red */
+color: hsla(240, 100%, 50%, 0.7);   /* Semi-transparent blue */
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Background Colors</h3>
+                    <pre><code>
+/* Solid Background */
+background-color: #f0f0f0;
+
+/* Background with Opacity */
+background-color: rgba(240, 240, 240, 0.8);
+
+/* Multiple Background Properties */
+background: #f0f0f0 url('pattern.png') repeat-x center;
+
+/* Gradient Background */
+background: linear-gradient(to right, #ff0000, #00ff00);
+background: radial-gradient(circle, #ff0000, #00ff00);
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Typography in CSS</h2>
+                
+                <div class="example-code">
+                    <h3>Font Properties</h3>
+                    <pre><code>
+/* Font Family */
+font-family: Arial, Helvetica, sans-serif;
+font-family: 'Times New Roman', Times, serif;
+font-family: 'Open Sans', sans-serif;
+
+/* Font Size */
+font-size: 16px;
+font-size: 1.2em;
+font-size: 1.5rem;
+font-size: 120%;
+
+/* Font Weight */
+font-weight: normal;
+font-weight: bold;
+font-weight: 400;
+font-weight: 700;
+
+/* Font Style */
+font-style: normal;
+font-style: italic;
+font-style: oblique;
+
+/* Line Height */
+line-height: 1.6;
+line-height: 24px;
+line-height: 150%;
+
+/* Text Properties */
+text-align: left;
+text-align: center;
+text-align: right;
+text-align: justify;
+
+text-decoration: none;
+text-decoration: underline;
+text-decoration: line-through;
+
+text-transform: uppercase;
+text-transform: lowercase;
+text-transform: capitalize;
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Web Fonts</h3>
+                    <pre><code>
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+/* Local Font Face */
+@font-face {
+    font-family: 'CustomFont';
+    src: url('custom-font.woff2') format('woff2'),
+         url('custom-font.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Using Custom Fonts */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.custom-text {
+    font-family: 'CustomFont', Arial, sans-serif;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a webpage that demonstrates:</p>
+                    <ul>
+                        <li>Different color formats (HEX, RGB, HSL)</li>
+                        <li>Gradient backgrounds</li>
+                        <li>Custom fonts from Google Fonts</li>
+                        <li>Various text styling properties</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:ital@0;1&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.header {
+    background: linear-gradient(45deg, #2193b0, #6dd5ed);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.content {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.section {
+    background-color: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    color: #2193b0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.highlight {
+    background-color: hsl(45, 100%, 50%, 0.2);
+    padding: 0.5rem;
+}
+
+.quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    color: #666;
+    border-left: 4px solid #2193b0;
+    padding-left: 1rem;
+    margin: 1rem 0;
+}
+
+/* HTML File */
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header class="header"&gt;
+        &lt;h1 class="title"&gt;Typography & Colors&lt;/h1&gt;
+        &lt;p class="subtitle"&gt;A demonstration of CSS styling&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;main class="content"&gt;
+        &lt;section class="section"&gt;
+            &lt;h2 class="section-title"&gt;About Typography&lt;/h2&gt;
+            &lt;p&gt;This text uses the &lt;span class="highlight"&gt;
+            Roboto&lt;/span&gt; font family.&lt;/p&gt;
+            &lt;blockquote class="quote"&gt;
+                Typography is the art and technique of 
+                arranging type to make written language 
+                legible, readable, and appealing.
+            &lt;/blockquote&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which color format allows you to specify opacity?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> HEX</label>
+                            <label><input type="radio" name="q1" value="b"> RGB</label>
+                            <label><input type="radio" name="q1" value="c"> RGBA</label>
+                            <label><input type="radio" name="q1" value="d"> None of the above</label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn check-answers">Check Answers</button>
+            </section>
+        </article>
+
+        <nav class="lesson-navigation">
+            <div class="lesson-controls">
+                <a href="introduction-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="box-model-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2024 Web Development & Video Creation Course. All rights reserved.</p>
+            <p>Made by Ahyaan Farooqi</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+
+        document.querySelector('.check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'c'
+            };
+            // Add quiz checking logic
+        });
+    </script>
+</body>
+</html> 

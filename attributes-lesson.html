@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Attributes - Web Development Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../lessons.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-page">
+        <nav class="lesson-nav">
+            <a href="../../html-course.html" class="back-btn">← Back to Course</a>
+            <div class="lesson-progress">
+                <span>Lesson 3 of 12</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 24%"></div>
+                </div>
+            </div>
+        </nav>
+
+        <article class="lesson-content">
+            <h1>HTML Attributes</h1>
+            
+            <section class="theory-section">
+                <h2>Understanding HTML Attributes</h2>
+                <p>Attributes provide additional information about HTML elements and modify their behavior:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;!-- Link Attributes --&gt;
+&lt;a href="https://example.com" target="_blank" title="Visit Example"&gt;
+    Click here
+&lt;/a&gt;
+
+&lt;!-- Image Attributes --&gt;
+&lt;img src="photo.jpg" alt="A beautiful sunset" width="300" height="200"&gt;
+
+&lt;!-- Input Attributes --&gt;
+&lt;input type="text" placeholder="Enter your name" required&gt;
+
+&lt;!-- Class and ID Attributes --&gt;
+&lt;div class="container" id="main-content"&gt;
+    &lt;p class="text-large"&gt;Styled text&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Data Attributes --&gt;
+&lt;button data-action="submit" data-id="123"&gt;
+    Submit Form
+&lt;/button&gt;
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h3>Common Attributes:</h3>
+                    <ul>
+                        <li><strong>href</strong> - Specifies URL for links</li>
+                        <li><strong>src</strong> - Specifies source for images and scripts</li>
+                        <li><strong>alt</strong> - Alternative text for images</li>
+                        <li><strong>class</strong> - Assigns CSS classes</li>
+                        <li><strong>id</strong> - Unique identifier for elements</li>
+                        <li><strong>style</strong> - Inline CSS styles</li>
+                        <li><strong>title</strong> - Tooltip text</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create an HTML structure using various attributes:</p>
+                    <ul>
+                        <li>A link that opens in a new tab</li>
+                        <li>An image with alt text and dimensions</li>
+                        <li>A div with both class and id attributes</li>
+                        <li>An input field with a placeholder</li>
+                    </ul>
+                    <div class="code-editor">
+                        <textarea id="code-input" rows="15"></textarea>
+                        <button class="btn" onclick="checkCode()">Check Your Code</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Quick Quiz</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which attribute is used to provide alternative text for images?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="src"> src</label>
+                            <label><input type="radio" name="q1" value="alt"> alt</label>
+                            <label><input type="radio" name="q1" value="title"> title</label>
+                            <label><input type="radio" name="q1" value="text"> text</label>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="checkQuiz()">Submit Answer</button>
+                </div>
+            </section>
+
+            <nav class="lesson-navigation">
+                <a href="elements-lesson.html" class="prev-lesson">← Previous: Basic Elements</a>
+                <a href="forms-lesson.html" class="next-lesson">Next: Forms & Input →</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+    <script src="../../lessons.js"></script>
+</body>
+</html> 

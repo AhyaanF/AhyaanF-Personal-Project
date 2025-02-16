@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Tutorials - Web Development Master Course</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="site-title">
+            <h1>Complete Web Development & Video Creation Course</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="html-course.html">HTML</a>
+                    <div class="dropdown-content">
+                        <a href="html-course.html#basics">Basics</a>
+                        <a href="html-course.html#intermediate">Intermediate</a>
+                        <a href="html-course.html#advanced">Advanced</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="css-course.html">CSS</a>
+                    <div class="dropdown-content">
+                        <a href="css-course.html#basics">Basics</a>
+                        <a href="css-course.html#layouts">Layouts</a>
+                        <a href="css-course.html#responsive">Responsive Design</a>
+                        <a href="css-course.html#animations">Animations</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="video-creation.html">Video Creation</a>
+                    <div class="dropdown-content">
+                        <a href="video-creation.html#basics">Video Basics</a>
+                        <a href="video-creation.html#advanced">Advanced Techniques</a>
+                        <a href="video-creation.html#editing">Video Editing</a>
+                    </div>
+                </li>
+                <li><a href="projects.html">Practice Projects</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="tutorials-page">
+        <section class="tutorials-header">
+            <h2>Video Tutorials</h2>
+            <p class="page-intro">Learn through our comprehensive video tutorials</p>
+            
+            <div class="tutorial-filters">
+                <div class="filter-group">
+                    <label for="level">Level:</label>
+                    <select id="level">
+                        <option value="all">All Levels</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="category">Category:</label>
+                    <select id="category">
+                        <option value="all">All Categories</option>
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="video">Video Creation</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <div class="tutorials-grid">
+            <article class="tutorial-card">
+                <div class="tutorial-preview">
+                    <img src="images/tutorial1.jpg" alt="HTML Basics">
+                    <span class="duration">15:30</span>
+                    <span class="level">Beginner</span>
+                </div>
+                <div class="tutorial-content">
+                    <h3>Introduction to HTML</h3>
+                    <p class="instructor">By John Smith</p>
+                    <p class="description">Learn the fundamentals of HTML and start building your first webpage.</p>
+                    <div class="tutorial-meta">
+                        <span class="views">1.2K views</span>
+                        <span class="rating">⭐ 4.8</span>
+                    </div>
+                    <a href="#" class="btn">Watch Now</a>
+                </div>
+            </article>
+
+            <article class="tutorial-card">
+                <div class="tutorial-preview">
+                    <img src="images/tutorial2.jpg" alt="CSS Layouts">
+                    <span class="duration">20:45</span>
+                    <span class="level">Intermediate</span>
+                </div>
+                <div class="tutorial-content">
+                    <h3>CSS Grid Mastery</h3>
+                    <p class="instructor">By Sarah Johnson</p>
+                    <p class="description">Master CSS Grid layout with practical examples and exercises.</p>
+                    <div class="tutorial-meta">
+                        <span class="views">980 views</span>
+                        <span class="rating">⭐ 4.9</span>
+                    </div>
+                    <a href="#" class="btn">Watch Now</a>
+                </div>
+            </article>
+
+            <!-- More tutorial cards... -->
+        </div>
+
+        <div class="load-more">
+            <button class="btn btn-outline">Load More Tutorials</button>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+</body>
+</html> 

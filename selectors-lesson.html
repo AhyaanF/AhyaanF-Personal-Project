@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors & Specificity - Web Development Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../lessons.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-page" data-lesson-type="css-selectors">
+        <nav class="lesson-nav">
+            <a href="../../css-course.html" class="back-btn">← Back to Course</a>
+            <div class="lesson-progress">
+                <span>Lesson 2 of 12</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 16%"></div>
+                </div>
+            </div>
+        </nav>
+
+        <article class="lesson-content">
+            <h1>CSS Selectors and Specificity</h1>
+            
+            <section class="theory-section">
+                <h2>Types of Selectors and Their Specificity</h2>
+                <p>CSS selectors determine which elements to style and their specificity determines which styles take precedence:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+/* Basic Selectors */
+* { /* Universal selector */
+    margin: 0;
+    padding: 0;
+}
+
+div { /* Element selector */
+    background: #f0f0f0;
+}
+
+.class-name { /* Class selector */
+    color: blue;
+}
+
+#unique-id { /* ID selector */
+    font-weight: bold;
+}
+
+/* Combinators */
+div p { /* Descendant selector */
+    margin: 10px;
+}
+
+div > p { /* Child selector */
+    padding: 5px;
+}
+
+h2 + p { /* Adjacent sibling */
+    font-size: 1.1em;
+}
+
+h2 ~ p { /* General sibling */
+    line-height: 1.5;
+}
+
+/* Attribute Selectors */
+[type="text"] { /* Exact match */
+    border: 1px solid gray;
+}
+
+[class^="btn-"] { /* Starts with */
+    padding: 10px;
+}
+
+[href*="example"] { /* Contains */
+    color: purple;
+}
+
+[data-type$="post"] { /* Ends with */
+    margin-bottom: 20px;
+}
+
+/* Pseudo-classes */
+a:hover {
+    text-decoration: underline;
+}
+
+li:first-child {
+    font-weight: bold;
+}
+
+input:focus {
+    outline: 2px solid blue;
+}
+
+/* Pseudo-elements */
+p::first-line {
+    font-size: 1.2em;
+}
+
+.quote::before {
+    content: "❝";
+}
+
+/* Specificity Examples */
+/* Specificity: 0-0-1 */
+p { color: blue; }
+
+/* Specificity: 0-1-0 */
+.text { color: red; }
+
+/* Specificity: 1-0-0 */
+#header { color: green; }
+
+/* Specificity: 0-2-1 */
+.nav .list li { color: purple; }
+
+/* Specificity: 1-1-1 */
+#main .content p { color: orange; }
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h3>Selector Types:</h3>
+                    <ul>
+                        <li><strong>Basic Selectors</strong> - Elements, classes, IDs</li>
+                        <li><strong>Combinators</strong> - Relationships between elements</li>
+                        <li><strong>Attribute Selectors</strong> - Element attributes</li>
+                        <li><strong>Pseudo-classes</strong> - Element states</li>
+                        <li><strong>Pseudo-elements</strong> - Parts of elements</li>
+                    </ul>
+                    <h3>Specificity Rules (from highest to lowest):</h3>
+                    <ol>
+                        <li>Inline styles</li>
+                        <li>ID selectors</li>
+                        <li>Class, attribute, and pseudo-class selectors</li>
+                        <li>Element and pseudo-element selectors</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create CSS selectors that demonstrate:</p>
+                    <ul>
+                        <li>Multiple types of basic selectors</li>
+                        <li>At least two different combinators</li>
+                        <li>Attribute selectors</li>
+                        <li>Pseudo-classes and pseudo-elements</li>
+                        <li>Different levels of specificity</li>
+                    </ul>
+                    <div class="code-editor">
+                        <textarea id="code-input" rows="20"></textarea>
+                        <button class="btn" onclick="checkCode()">Check Your Code</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Quick Quiz</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which selector has the highest specificity?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="element"> p { color: blue; }</label>
+                            <label><input type="radio" name="q1" value="class"> .text { color: red; }</label>
+                            <label><input type="radio" name="q1" value="id"> #header { color: green; }</label>
+                            <label><input type="radio" name="q1" value="tag"> div { color: yellow; }</label>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="checkQuiz()">Submit Answer</button>
+                </div>
+            </section>
+
+            <nav class="lesson-navigation">
+                <a href="introduction-lesson.html" class="prev-lesson">← Previous: CSS Introduction</a>
+                <a href="box-model-lesson.html" class="next-lesson">Next: Box Model →</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+    <script src="../../lessons.js"></script>
+</body>
+</html> 

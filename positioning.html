@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Positioning - CSS Course</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="grid.html" class="prev-lesson">← Previous: Grid</a>
+                <a href="../responsive/media-queries.html" class="next-lesson">Next: Media Queries →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>CSS Positioning</h1>
+            
+            <section class="lesson-section">
+                <h2>Position Property</h2>
+                <p>The position property specifies how an element is positioned in a document.</p>
+                
+                <div class="example-code">
+                    <h3>Position Values</h3>
+                    <pre><code>
+/* Static positioning (default) */
+.static {
+    position: static;
+    /* Offset properties have no effect */
+}
+
+/* Relative positioning */
+.relative {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    /* Offset from normal position */
+}
+
+/* Absolute positioning */
+.absolute {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* Positioned relative to nearest positioned ancestor */
+}
+
+/* Fixed positioning */
+.fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    /* Positioned relative to viewport */
+}
+
+/* Sticky positioning */
+.sticky {
+    position: sticky;
+    top: 0;
+    /* Sticks to viewport when scrolling past threshold */
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Z-Index and Stacking Context</h2>
+                
+                <div class="example-code">
+                    <h3>Z-Index Usage</h3>
+                    <pre><code>
+/* Basic z-index */
+.overlay {
+    position: fixed;
+    z-index: 100;
+    /* Higher values appear on top */
+}
+
+/* Stacking context example */
+.parent {
+    position: relative;
+    z-index: 1;
+}
+
+.child {
+    position: absolute;
+    z-index: 999;
+    /* Only compared with siblings */
+}
+
+/* Common z-index values */
+:root {
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-modal: 1030;
+    --z-popover: 1040;
+    --z-tooltip: 1050;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Offset Properties</h2>
+                
+                <div class="example-code">
+                    <h3>Positioning with Offsets</h3>
+                    <pre><code>
+/* Basic offsets */
+.element {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* Fills entire container */
+}
+
+/* Centering with absolute positioning */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Perfect centering */
+}
+
+/* Responsive offsets */
+.responsive-element {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    /* Percentage-based positioning */
+}
+
+/* Negative offsets */
+.overlap {
+    position: relative;
+    left: -20px;
+    /* Moves element left */
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Common Use Cases</h2>
+                
+                <div class="example-code">
+                    <h3>Modal Dialog</h3>
+                    <pre><code>
+/* Modal overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: var(--z-modal);
+}
+
+/* Modal content */
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    z-index: calc(var(--z-modal) + 1);
+}
+
+/* Sticky header */
+.header {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: var(--z-sticky);
+}
+
+/* Dropdown menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    z-index: var(--z-dropdown);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a layout with the following features:</p>
+                    <ul>
+                        <li>Sticky header with dropdown navigation</li>
+                        <li>Modal dialog with overlay</li>
+                        <li>Fixed social media buttons</li>
+                        <li>Positioned tooltips</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+&lt;!-- index.html --&gt;
+&lt;header class="sticky-header"&gt;
+    &lt;nav&gt;
+        &lt;div class="dropdown"&gt;
+            &lt;button&gt;Menu&lt;/button&gt;
+            &lt;div class="dropdown-content"&gt;
+                &lt;a href="#"&gt;Item 1&lt;/a&gt;
+                &lt;a href="#"&gt;Item 2&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;div class="social-buttons"&gt;
+    &lt;button class="tooltip-parent"&gt;
+        Share
+        &lt;span class="tooltip"&gt;Share on social media&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class="modal-overlay"&gt;
+    &lt;div class="modal-content"&gt;
+        &lt;h2&gt;Modal Title&lt;/h2&gt;
+        &lt;p&gt;Modal content here...&lt;/p&gt;
+        &lt;button&gt;Close&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+/* styles.css */
+:root {
+    --z-header: 1000;
+    --z-dropdown: 1010;
+    --z-modal: 1020;
+    --z-tooltip: 1030;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: var(--z-header);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: var(--z-dropdown);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.social-buttons {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.tooltip-parent {
+    position: relative;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background: black;
+    color: white;
+    border-radius: 4px;
+    display: none;
+    z-index: var(--z-tooltip);
+}
+
+.tooltip-parent:hover .tooltip {
+    display: block;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: var(--z-modal);
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+    max-width: 500px;
+    width: 90%;
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which position value creates positioning relative to the viewport?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> relative</label>
+                            <label><input type="radio" name="q1" value="b"> absolute</label>
+                            <label><input type="radio" name="q1" value="c"> fixed</label>
+                            <label><input type="radio" name="q1" value="d"> static</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+    </script>
+</body>
+</html> 

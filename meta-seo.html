@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Tags & SEO - HTML Course</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../../html-course.html" class="back-to-course">← Back to HTML Course</a>
+            <div class="lesson-controls">
+                <a href="../intermediate/semantic.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="accessibility.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>Meta Tags and SEO</h1>
+            
+            <section class="lesson-section">
+                <h2>Essential Meta Tags</h2>
+                <p>Meta tags provide information about your webpage to browsers and search engines. They are crucial for SEO and proper webpage rendering.</p>
+                
+                <div class="example-code">
+                    <h3>Basic Meta Tags</h3>
+                    <pre><code>
+&lt;head&gt;
+    &lt;!-- Character encoding --&gt;
+    &lt;meta charset="UTF-8"&gt;
+
+    &lt;!-- Viewport settings for responsive design --&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+    &lt;!-- Page title (important for SEO) --&gt;
+    &lt;title&gt;Your Page Title | Your Brand&lt;/title&gt;
+
+    &lt;!-- Meta description (shown in search results) --&gt;
+    &lt;meta name="description" content="A clear, concise description of your page content (150-160 characters)"&gt;
+
+    &lt;!-- Keywords (less important for modern SEO but still used) --&gt;
+    &lt;meta name="keywords" content="keyword1, keyword2, keyword3"&gt;
+
+    &lt;!-- Author information --&gt;
+    &lt;meta name="author" content="Your Name"&gt;
+&lt;/head&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Social Media Meta Tags</h2>
+                
+                <div class="example-code">
+                    <h3>Open Graph Protocol (Facebook)</h3>
+                    <pre><code>
+&lt;head&gt;
+    &lt;!-- Open Graph tags for social sharing --&gt;
+    &lt;meta property="og:title" content="Your Page Title"&gt;
+    &lt;meta property="og:description" content="Your page description"&gt;
+    &lt;meta property="og:image" content="https://example.com/image.jpg"&gt;
+    &lt;meta property="og:url" content="https://example.com/page"&gt;
+    &lt;meta property="og:type" content="website"&gt;
+
+    &lt;!-- Twitter Card tags --&gt;
+    &lt;meta name="twitter:card" content="summary_large_image"&gt;
+    &lt;meta name="twitter:site" content="@yourusername"&gt;
+    &lt;meta name="twitter:title" content="Your Page Title"&gt;
+    &lt;meta name="twitter:description" content="Your page description"&gt;
+    &lt;meta name="twitter:image" content="https://example.com/image.jpg"&gt;
+&lt;/head&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>SEO Best Practices</h2>
+                
+                <div class="example-code">
+                    <h3>Structured Data (Schema.org)</h3>
+                    <pre><code>
+&lt;script type="application/ld+json"&gt;
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Article Title",
+    "author": {
+        "@type": "Person",
+        "name": "Author Name"
+    },
+    "datePublished": "2024-01-15",
+    "description": "Article description"
+}
+&lt;/script&gt;
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Robots Meta Tags</h3>
+                    <pre><code>
+&lt;!-- Allow indexing and following links --&gt;
+&lt;meta name="robots" content="index, follow"&gt;
+
+&lt;!-- Prevent indexing but allow following links --&gt;
+&lt;meta name="robots" content="noindex, follow"&gt;
+
+&lt;!-- Prevent indexing and following links --&gt;
+&lt;meta name="robots" content="noindex, nofollow"&gt;
+
+&lt;!-- Control specific search engines --&gt;
+&lt;meta name="googlebot" content="index, follow"&gt;
+&lt;meta name="bingbot" content="index, follow"&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a complete &lt;head&gt; section for a blog post that includes:</p>
+                    <ul>
+                        <li>All essential meta tags</li>
+                        <li>Social media sharing tags</li>
+                        <li>Structured data for the article</li>
+                        <li>Proper SEO optimization</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    
+    &lt;title&gt;How to Master SEO | Web Development Blog&lt;/title&gt;
+    &lt;meta name="description" content="Learn the essential techniques and best practices for mastering SEO and improving your website's visibility in search engines."&gt;
+    &lt;meta name="keywords" content="SEO, meta tags, search engine optimization, web development"&gt;
+    &lt;meta name="author" content="John Doe"&gt;
+    
+    &lt;!-- Open Graph tags --&gt;
+    &lt;meta property="og:title" content="How to Master SEO"&gt;
+    &lt;meta property="og:description" content="Learn essential SEO techniques and best practices"&gt;
+    &lt;meta property="og:image" content="https://example.com/seo-image.jpg"&gt;
+    &lt;meta property="og:url" content="https://example.com/seo-guide"&gt;
+    &lt;meta property="og:type" content="article"&gt;
+    
+    &lt;!-- Twitter Card tags --&gt;
+    &lt;meta name="twitter:card" content="summary_large_image"&gt;
+    &lt;meta name="twitter:site" content="@webdevblog"&gt;
+    &lt;meta name="twitter:title" content="How to Master SEO"&gt;
+    &lt;meta name="twitter:description" content="Learn essential SEO techniques"&gt;
+    &lt;meta name="twitter:image" content="https://example.com/seo-image.jpg"&gt;
+    
+    &lt;!-- Robots meta --&gt;
+    &lt;meta name="robots" content="index, follow"&gt;
+    
+    &lt;!-- Structured Data --&gt;
+    &lt;script type="application/ld+json"&gt;
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How to Master SEO",
+        "author": {
+            "@type": "Person",
+            "name": "John Doe"
+        },
+        "datePublished": "2024-01-15",
+        "description": "Learn the essential techniques and best practices for mastering SEO",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Web Development Blog"
+        }
+    }
+    &lt;/script&gt;
+    
+    &lt;link rel="canonical" href="https://example.com/seo-guide"&gt;
+&lt;/head&gt;
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which meta tag is most important for mobile responsiveness?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> &lt;meta charset="UTF-8"&gt;</label>
+                            <label><input type="radio" name="q1" value="b"> &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</label>
+                            <label><input type="radio" name="q1" value="c"> &lt;meta name="description"&gt;</label>
+                            <label><input type="radio" name="q1" value="d"> &lt;meta name="keywords"&gt;</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+    </script>
+</body>
+</html> 

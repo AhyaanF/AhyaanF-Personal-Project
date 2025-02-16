@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images & Media - HTML Course</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../../html-course.html" class="back-to-course">← Back to HTML Course</a>
+            <div class="lesson-controls">
+                <a href="forms-input.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="semantic.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>Images and Media in HTML</h1>
+            
+            <section class="lesson-section">
+                <h2>Images</h2>
+                <p>Images are essential for creating engaging web content. Learn how to properly embed and optimize images.</p>
+                
+                <div class="example-code">
+                    <h3>Basic Image Syntax</h3>
+                    <pre><code>
+&lt;!-- Basic image --&gt;
+&lt;img src="path/to/image.jpg" alt="Description of image"&gt;
+
+&lt;!-- Image with size attributes --&gt;
+&lt;img src="photo.jpg" alt="A beautiful landscape" width="800" height="600"&gt;
+
+&lt;!-- Image with title tooltip --&gt;
+&lt;img src="icon.png" alt="Settings icon" title="Click to open settings"&gt;
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Responsive Images</h3>
+                    <pre><code>
+&lt;!-- Responsive image with srcset --&gt;
+&lt;img srcset="small.jpg 300w,
+             medium.jpg 600w,
+             large.jpg 900w"
+     sizes="(max-width: 320px) 280px,
+            (max-width: 640px) 580px,
+            880px"
+     src="large.jpg" 
+     alt="Responsive image"&gt;
+
+&lt;!-- Picture element for art direction --&gt;
+&lt;picture&gt;
+    &lt;source media="(min-width: 800px)" srcset="hero.jpg"&gt;
+    &lt;source media="(min-width: 400px)" srcset="hero-tablet.jpg"&gt;
+    &lt;img src="hero-mobile.jpg" alt="Hero image"&gt;
+&lt;/picture&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Video Content</h2>
+                
+                <div class="example-code">
+                    <h3>Video Element</h3>
+                    <pre><code>
+&lt;!-- Basic video --&gt;
+&lt;video width="640" height="360" controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+
+&lt;!-- Video with attributes --&gt;
+&lt;video width="640" height="360" 
+       controls autoplay muted loop 
+       poster="thumbnail.jpg"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;track src="subtitles.vtt" kind="subtitles" srclang="en" label="English"&gt;
+&lt;/video&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Audio Content</h2>
+                
+                <div class="example-code">
+                    <h3>Audio Element</h3>
+                    <pre><code>
+&lt;!-- Basic audio --&gt;
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    &lt;source src="audio.ogg" type="audio/ogg"&gt;
+    Your browser does not support the audio tag.
+&lt;/audio&gt;
+
+&lt;!-- Audio with attributes --&gt;
+&lt;audio controls autoplay loop&gt;
+    &lt;source src="background-music.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Embedding Content</h2>
+                
+                <div class="example-code">
+                    <h3>iframes</h3>
+                    <pre><code>
+&lt;!-- Embedding a YouTube video --&gt;
+&lt;iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/VIDEO_ID" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;!-- Embedding a map --&gt;
+&lt;iframe src="https://www.google.com/maps/embed?pb=LOCATION_DATA" 
+        width="600" height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy"&gt;&lt;/iframe&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a webpage that includes:</p>
+                    <ul>
+                        <li>A responsive image with different sizes</li>
+                        <li>A video player with controls and a poster image</li>
+                        <li>An audio player with controls</li>
+                        <li>An embedded YouTube video</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+&lt;!-- Responsive Image --&gt;
+&lt;picture&gt;
+    &lt;source media="(min-width: 800px)" srcset="large.jpg"&gt;
+    &lt;source media="(min-width: 400px)" srcset="medium.jpg"&gt;
+    &lt;img src="small.jpg" alt="Responsive image example"&gt;
+&lt;/picture&gt;
+
+&lt;!-- Video Player --&gt;
+&lt;video width="640" height="360" controls poster="thumbnail.jpg"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+
+&lt;!-- Audio Player --&gt;
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    Your browser does not support the audio tag.
+&lt;/audio&gt;
+
+&lt;!-- YouTube Embed --&gt;
+&lt;iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/VIDEO_ID" 
+        frameborder="0" 
+        allowfullscreen&gt;&lt;/iframe&gt;
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which attribute is required for the img element?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> width</label>
+                            <label><input type="radio" name="q1" value="b"> src</label>
+                            <label><input type="radio" name="q1" value="c"> title</label>
+                            <label><input type="radio" name="q1" value="d"> height</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+    </script>
+</body>
+</html> 

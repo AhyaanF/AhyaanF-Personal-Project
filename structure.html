@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Structure - HTML Course</title>
+    <link rel="stylesheet" href="/AhyaanF-Personal-Project/styles.css">
+</head>
+<body>
+    <header>
+        <a href="/AhyaanF-Personal-Project/index.html" class="site-title">
+            <h1>Complete Web Development & Video Creation Course</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="/AhyaanF-Personal-Project/index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="/AhyaanF-Personal-Project/html-course.html" class="active">HTML</a>
+                    <div class="dropdown-content">
+                        <a href="/AhyaanF-Personal-Project/html-course.html#basics">Basics</a>
+                        <a href="/AhyaanF-Personal-Project/html-course.html#intermediate">Intermediate</a>
+                        <a href="/AhyaanF-Personal-Project/html-course.html#advanced">Advanced</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="/AhyaanF-Personal-Project/html-course.html" class="back-to-course">← Back to HTML Course</a>
+            <div class="lesson-controls">
+                <span class="prev-lesson disabled">Previous Lesson</span>
+                <a href="/AhyaanF-Personal-Project/lessons/html/basic-elements.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>HTML Document Structure</h1>
+            
+            <section class="lesson-section">
+                <h2>Basic Document Structure</h2>
+                <p>Every HTML document follows a standard structure that includes essential elements.</p>
+                
+                <div class="example-code">
+                    <h3>Standard HTML Template</h3>
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;header&gt;
+            &lt;h1&gt;Welcome&lt;/h1&gt;
+        &lt;/header&gt;
+        &lt;main&gt;
+            &lt;p&gt;Main content goes here&lt;/p&gt;
+        &lt;/main&gt;
+        &lt;footer&gt;
+            &lt;p&gt;Footer content&lt;/p&gt;
+        &lt;/footer&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Understanding Each Part</h2>
+                <div class="concept-list">
+                    <ul>
+                        <li><strong>&lt;!DOCTYPE html&gt;</strong> - Declares the document type and version</li>
+                        <li><strong>&lt;html&gt;</strong> - The root element of the page</li>
+                        <li><strong>&lt;head&gt;</strong> - Contains metadata and document information</li>
+                        <li><strong>&lt;body&gt;</strong> - Contains the visible content</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a basic HTML document structure that includes:</p>
+                    <ul>
+                        <li>Proper DOCTYPE declaration</li>
+                        <li>HTML, head, and body sections</li>
+                        <li>A title for your page</li>
+                        <li>A main heading and paragraph</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <!-- Solution code here -->
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which element is the root element of an HTML document?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> &lt;head&gt;</label>
+                            <label><input type="radio" name="q1" value="b"> &lt;body&gt;</label>
+                            <label><input type="radio" name="q1" value="c"> &lt;html&gt;</label>
+                            <label><input type="radio" name="q1" value="d"> &lt;DOCTYPE&gt;</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        // Interactive functionality
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

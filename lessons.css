@@ -1,0 +1,115 @@
+/* Lesson Page Styles */
+.lesson-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.back-btn {
+    padding: 0.5rem 1rem;
+    background: #f0f0f0;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+}
+
+.lesson-progress {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 8px;
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: #007bff;
+    transition: width 0.3s ease;
+}
+
+/* Content Sections */
+.theory-section,
+.practice-section,
+.quiz-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.code-example {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+}
+
+.code-editor {
+    margin-top: 1.5rem;
+}
+
+.code-editor textarea {
+    width: 100%;
+    padding: 1rem;
+    font-family: 'Courier New', monospace;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* Quiz Styles */
+.quiz .options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.quiz label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.quiz label:hover {
+    background: #f0f0f0;
+}
+
+/* Navigation */
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+
+.prev-lesson,
+.next-lesson {
+    padding: 0.8rem 1.5rem;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.prev-lesson:hover,
+.next-lesson:hover {
+    background: #0056b3;
+} 

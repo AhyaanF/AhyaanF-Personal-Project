@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations - CSS Course</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="transitions.html" class="prev-lesson">← Previous: Transitions</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>CSS Animations</h1>
+            
+            <section class="lesson-section">
+                <h2>Keyframe Animations</h2>
+                <p>CSS animations allow you to create complex animations using keyframes, defining multiple states throughout the animation sequence.</p>
+                
+                <div class="example-code">
+                    <h3>Basic Animation</h3>
+                    <pre><code>
+/* Define keyframes */
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Apply animation */
+.element {
+    animation: slide-in 1s ease-out forwards;
+}
+
+/* Multiple keyframes */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animation properties */
+.animated-element {
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+
+    /* Shorthand */
+    animation: pulse 2s ease-in-out infinite;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Complex Animations</h2>
+                <p>Create more sophisticated animations by combining multiple properties and using advanced timing.</p>
+                
+                <div class="example-code">
+                    <h3>Advanced Animation Techniques</h3>
+                    <pre><code>
+/* Multiple animations */
+.multi-animated {
+    animation: 
+        slide-in 1s ease-out,
+        fade-in 1.5s ease-in,
+        scale-up 2s ease-in-out;
+}
+
+/* Staggered animations */
+.staggered-item:nth-child(1) { animation-delay: 0.1s; }
+.staggered-item:nth-child(2) { animation-delay: 0.2s; }
+.staggered-item:nth-child(3) { animation-delay: 0.3s; }
+
+/* Path animations */
+@keyframes move-along-path {
+    0% {
+        offset-distance: 0%;
+    }
+    100% {
+        offset-distance: 100%;
+    }
+}
+
+.path-element {
+    offset-path: path('M 0 0 C 50 100, 150 100, 200 0');
+    animation: move-along-path 3s linear infinite;
+}
+
+/* Sprite animations */
+@keyframes sprite-animation {
+    0% { background-position: 0 0; }
+    100% { background-position: -1000px 0; }
+}
+
+.sprite {
+    width: 100px;
+    height: 100px;
+    background: url('sprite-sheet.png');
+    animation: sprite-animation 1s steps(10) infinite;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Animation Performance</h2>
+                <p>Learn how to create smooth, performant animations that don't impact page performance.</p>
+                
+                <div class="example-code">
+                    <h3>Performance Optimization</h3>
+                    <pre><code>
+/* Hardware acceleration */
+.optimized-animation {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Performant properties */
+@keyframes good-performance {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate3d(100px, 100px, 0);
+        opacity: 1;
+    }
+}
+
+/* Avoid animating these properties */
+@keyframes avoid-these {
+    0% {
+        width: 100px;
+        height: 100px;
+        top: 0;
+        left: 0;
+    }
+    100% {
+        width: 200px;
+        height: 200px;
+        top: 100px;
+        left: 100px;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .animated-element {
+        animation: none;
+    }
+}
+
+/* Frame rate optimization */
+.smooth-animation {
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create an animated loading spinner that:</p>
+                    <ul>
+                        <li>Uses keyframe animations</li>
+                        <li>Includes multiple elements</li>
+                        <li>Features staggered timing</li>
+                        <li>Is optimized for performance</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+&lt;!-- index.html --&gt;
+&lt;div class="loader"&gt;
+    &lt;div class="dot"&gt;&lt;/div&gt;
+    &lt;div class="dot"&gt;&lt;/div&gt;
+    &lt;div class="dot"&gt;&lt;/div&gt;
+    &lt;div class="dot"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+/* styles.css */
+.loader {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    background: #007bff;
+    border-radius: 50%;
+    transform: translateY(0);
+    will-change: transform;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.dot {
+    animation: bounce 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.dot:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+/* Optional: Add fade effect */
+@keyframes fade {
+    0%, 100% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.dot {
+    animation: 
+        bounce 1s cubic-bezier(0.4, 0, 0.2, 1) infinite,
+        fade 1s ease-in-out infinite;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .dot {
+        animation: fade 1s ease-in-out infinite;
+    }
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which animation property determines what happens after the animation ends?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> animation-direction</label>
+                            <label><input type="radio" name="q1" value="b"> animation-iteration-count</label>
+                            <label><input type="radio" name="q1" value="c"> animation-fill-mode</label>
+                            <label><input type="radio" name="q1" value="d"> animation-play-state</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+    </script>
+</body>
+</html> 

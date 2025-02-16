@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Media Queries - CSS Course</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="../layouts/float.html" class="prev-lesson">← Previous: Float</a>
+                <a href="responsive-units.html" class="next-lesson">Next: Responsive Units →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>CSS Media Queries</h1>
+            
+            <section class="lesson-section">
+                <h2>Understanding Media Queries</h2>
+                <p>Media queries allow you to apply CSS styles based on device characteristics like screen width, height, orientation, and more. They are fundamental to responsive web design.</p>
+                
+                <div class="example-code">
+                    <h3>Basic Media Query Syntax</h3>
+                    <pre><code>
+/* Basic media query structure */
+@media screen and (max-width: 768px) {
+    /* Styles for screens up to 768px wide */
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+/* Multiple conditions */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Styles for screens between 768px and 1024px */
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none;
+    }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Common Breakpoints</h2>
+                <p>While breakpoints should be based on your content, here are common device-based breakpoints used in responsive design.</p>
+                
+                <div class="example-code">
+                    <h3>Standard Breakpoints</h3>
+                    <pre><code>
+/* Mobile First Approach */
+/* Base styles for mobile */
+.element {
+    width: 100%;
+}
+
+/* Tablet (Portrait) */
+@media (min-width: 768px) {
+    .element {
+        width: 50%;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .element {
+        width: 33.333%;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+    .element {
+        width: 25%;
+    }
+}
+
+/* High-DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+    /* High-resolution styles */
+    .logo {
+        background-image: url('logo@2x.png');
+    }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Media Features</h2>
+                
+                <div class="example-code">
+                    <h3>Common Media Features</h3>
+                    <pre><code>
+/* Width and Height */
+@media (max-width: 600px) { }
+@media (min-height: 800px) { }
+@media (aspect-ratio: 16/9) { }
+
+/* Orientation */
+@media (orientation: landscape) {
+    .sidebar {
+        float: left;
+        width: 30%;
+    }
+}
+
+/* Display Quality */
+@media (hover: hover) {
+    .button:hover {
+        background: #f0f0f0;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .animation {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #333;
+        color: #fff;
+    }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Best Practices</h2>
+                
+                <div class="example-code">
+                    <h3>Media Query Implementation</h3>
+                    <pre><code>
+/* Mobile First Approach */
+.card {
+    /* Base styles for mobile */
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* Progressive Enhancement */
+@media (min-width: 768px) {
+    .card {
+        width: calc(50% - 1rem);
+        float: left;
+        margin-right: 1rem;
+    }
+}
+
+/* Avoid Device-Specific Names */
+/* Bad */
+@media (min-width: 768px) { /* tablet styles */ }
+
+/* Good */
+@media (min-width: 48em) { /* medium viewport styles */ }
+
+/* Group Media Queries */
+/* Option 1: At the end of your CSS */
+/* styles.css */
+/* Base styles */
+/* ... */
+/* All media queries */
+@media (min-width: 768px) { /* ... */ }
+@media (min-width: 1024px) { /* ... */ }
+
+/* Option 2: Component-specific */
+.component {
+    /* Base styles */
+}
+@media (min-width: 768px) {
+    .component {
+        /* Responsive styles */
+    }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a responsive navigation menu that:</p>
+                    <ul>
+                        <li>Shows a hamburger menu on mobile</li>
+                        <li>Expands to a horizontal menu on desktop</li>
+                        <li>Has a dropdown submenu on larger screens</li>
+                        <li>Adapts to different screen sizes smoothly</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+&lt;!-- index.html --&gt;
+&lt;nav class="main-nav"&gt;
+    &lt;button class="menu-toggle"&gt;☰&lt;/button&gt;
+    &lt;ul class="nav-list"&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="has-dropdown"&gt;
+            &lt;a href="#"&gt;Products&lt;/a&gt;
+            &lt;ul class="dropdown"&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Category 1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Category 2&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+/* styles.css */
+.main-nav {
+    position: relative;
+    background: #333;
+    padding: 1rem;
+}
+
+.menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav-list {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list.active {
+    display: block;
+}
+
+.nav-list a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    display: block;
+}
+
+.dropdown {
+    display: none;
+    list-style: none;
+    padding-left: 1rem;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+    
+    .nav-list {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .has-dropdown {
+        position: relative;
+    }
+    
+    .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #333;
+        min-width: 200px;
+        padding: 0.5rem;
+    }
+    
+    .has-dropdown:hover .dropdown {
+        display: block;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .main-nav {
+        padding: 1rem 2rem;
+    }
+    
+    .nav-list {
+        gap: 2rem;
+    }
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which approach is recommended for responsive design?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> Desktop First</label>
+                            <label><input type="radio" name="q1" value="b"> Mobile First</label>
+                            <label><input type="radio" name="q1" value="c"> Tablet First</label>
+                            <label><input type="radio" name="q1" value="d"> Print First</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+    </script>
+</body>
+</html> 

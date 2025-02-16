@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic HTML - Web Development Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../lessons.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-page" data-lesson-type="semantic">
+        <nav class="lesson-nav">
+            <a href="../../html-course.html" class="back-btn">← Back to Course</a>
+            <div class="lesson-progress">
+                <span>Lesson 6 of 12</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 48%"></div>
+                </div>
+            </div>
+        </nav>
+
+        <article class="lesson-content">
+            <h1>Semantic HTML</h1>
+            
+            <section class="theory-section">
+                <h2>Understanding Semantic Elements</h2>
+                <p>Semantic HTML uses elements that clearly describe their meaning to both the browser and the developer:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;!-- Non-semantic Example --&gt;
+&lt;div class="header"&gt;
+    &lt;div class="nav"&gt;
+        &lt;div class="nav-item"&gt;Home&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="main"&gt;
+    &lt;div class="article"&gt;
+        &lt;div class="title"&gt;My Article&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="footer"&gt;Copyright 2024&lt;/div&gt;
+
+&lt;!-- Semantic Example --&gt;
+&lt;header&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;h1&gt;My Article&lt;/h1&gt;
+        &lt;section&gt;
+            &lt;h2&gt;Article Section&lt;/h2&gt;
+            &lt;p&gt;Content goes here...&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;aside&gt;
+            &lt;h3&gt;Related Content&lt;/h3&gt;
+            &lt;p&gt;Sidebar content...&lt;/p&gt;
+        &lt;/aside&gt;
+    &lt;/article&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;Copyright 2024&lt;/p&gt;
+&lt;/footer&gt;
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h3>Semantic Elements:</h3>
+                    <ul>
+                        <li><strong>&lt;header&gt;</strong> - Introductory content or navigation</li>
+                        <li><strong>&lt;nav&gt;</strong> - Navigation links</li>
+                        <li><strong>&lt;main&gt;</strong> - Main content of the page</li>
+                        <li><strong>&lt;article&gt;</strong> - Self-contained content</li>
+                        <li><strong>&lt;section&gt;</strong> - Thematic grouping of content</li>
+                        <li><strong>&lt;aside&gt;</strong> - Related but separate content</li>
+                        <li><strong>&lt;footer&gt;</strong> - Footer information</li>
+                        <li><strong>&lt;figure&gt;</strong> - Self-contained media content</li>
+                        <li><strong>&lt;figcaption&gt;</strong> - Caption for figure</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a semantic HTML structure for a blog post that includes:</p>
+                    <ul>
+                        <li>A header with navigation</li>
+                        <li>Main content area with an article</li>
+                        <li>Article sections with headings</li>
+                        <li>An aside with related content</li>
+                        <li>A footer with copyright information</li>
+                    </ul>
+                    <div class="code-editor">
+                        <textarea id="code-input" rows="20"></textarea>
+                        <button class="btn" onclick="checkCode()">Check Your Code</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Quick Quiz</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which semantic element should be used for the main content area of a webpage?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="header"> &lt;header&gt;</label>
+                            <label><input type="radio" name="q1" value="main"> &lt;main&gt;</label>
+                            <label><input type="radio" name="q1" value="content"> &lt;content&gt;</label>
+                            <label><input type="radio" name="q1" value="div"> &lt;div&gt;</label>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="checkQuiz()">Submit Answer</button>
+                </div>
+            </section>
+
+            <nav class="lesson-navigation">
+                <a href="tables-lesson.html" class="prev-lesson">← Previous: Tables & Data</a>
+                <a href="multimedia-lesson.html" class="next-lesson">Next: Multimedia →</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+    <script src="../../lessons.js"></script>
+</body>
+</html> 

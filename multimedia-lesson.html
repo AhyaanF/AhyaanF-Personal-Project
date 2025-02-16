@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Multimedia - Web Development Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../lessons.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-page" data-lesson-type="multimedia">
+        <nav class="lesson-nav">
+            <a href="../../html-course.html" class="back-btn">← Back to Course</a>
+            <div class="lesson-progress">
+                <span>Lesson 7 of 12</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 56%"></div>
+                </div>
+            </div>
+        </nav>
+
+        <article class="lesson-content">
+            <h1>HTML Multimedia Elements</h1>
+            
+            <section class="theory-section">
+                <h2>Working with Images, Video, and Audio</h2>
+                <p>HTML provides several elements for embedding multimedia content:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;!-- Images --&gt;
+&lt;img src="image.jpg" alt="Description" width="300" height="200"&gt;
+
+&lt;!-- Responsive Images --&gt;
+&lt;picture&gt;
+    &lt;source media="(min-width: 800px)" srcset="large.jpg"&gt;
+    &lt;source media="(min-width: 400px)" srcset="medium.jpg"&gt;
+    &lt;img src="small.jpg" alt="Responsive image"&gt;
+&lt;/picture&gt;
+
+&lt;!-- Video --&gt;
+&lt;video width="640" height="360" controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    Your browser does not support video.
+&lt;/video&gt;
+
+&lt;!-- Audio --&gt;
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    &lt;source src="audio.ogg" type="audio/ogg"&gt;
+    Your browser does not support audio.
+&lt;/audio&gt;
+
+&lt;!-- Embedded Content --&gt;
+&lt;iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/video-id" 
+    frameborder="0" 
+    allowfullscreen&gt;
+&lt;/iframe&gt;
+
+&lt;!-- Figure with Caption --&gt;
+&lt;figure&gt;
+    &lt;img src="diagram.jpg" alt="Diagram"&gt;
+    &lt;figcaption&gt;Figure 1: System Diagram&lt;/figcaption&gt;
+&lt;/figure&gt;
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h3>Multimedia Elements:</h3>
+                    <ul>
+                        <li><strong>&lt;img&gt;</strong> - Embeds images</li>
+                        <li><strong>&lt;picture&gt;</strong> - Container for multiple image sources</li>
+                        <li><strong>&lt;video&gt;</strong> - Embeds video content</li>
+                        <li><strong>&lt;audio&gt;</strong> - Embeds audio content</li>
+                        <li><strong>&lt;iframe&gt;</strong> - Embeds external content</li>
+                        <li><strong>&lt;figure&gt;</strong> - Self-contained media content</li>
+                        <li><strong>&lt;figcaption&gt;</strong> - Caption for figure</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a multimedia-rich webpage that includes:</p>
+                    <ul>
+                        <li>A responsive image with multiple sources</li>
+                        <li>A video player with controls</li>
+                        <li>An audio player</li>
+                        <li>An embedded YouTube video</li>
+                        <li>A figure with caption</li>
+                    </ul>
+                    <div class="code-editor">
+                        <textarea id="code-input" rows="20"></textarea>
+                        <button class="btn" onclick="checkCode()">Check Your Code</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Quick Quiz</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which attribute is required for the img element?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="src"> src</label>
+                            <label><input type="radio" name="q1" value="href"> href</label>
+                            <label><input type="radio" name="q1" value="link"> link</label>
+                            <label><input type="radio" name="q1" value="source"> source</label>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="checkQuiz()">Submit Answer</button>
+                </div>
+            </section>
+
+            <nav class="lesson-navigation">
+                <a href="semantic-lesson.html" class="prev-lesson">← Previous: Semantic HTML</a>
+                <a href="meta-tags-lesson.html" class="next-lesson">Next: Meta Tags & SEO →</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+    <script src="../../lessons.js"></script>
+</body>
+</html> 

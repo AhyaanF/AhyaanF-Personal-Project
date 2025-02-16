@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Validation - Web Development Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../lessons.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-page" data-lesson-type="validation">
+        <nav class="lesson-nav">
+            <a href="../../html-course.html" class="back-btn">← Back to Course</a>
+            <div class="lesson-progress">
+                <span>Lesson 11 of 12</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 88%"></div>
+                </div>
+            </div>
+        </nav>
+
+        <article class="lesson-content">
+            <h1>HTML Validation and Error Fixing</h1>
+            
+            <section class="theory-section">
+                <h2>Common HTML Validation Issues</h2>
+                <p>Learn to identify and fix common HTML validation errors:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;!-- ❌ Invalid HTML --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Invalid Page&lt;/title&gt;
+    &lt;meta charset="UTF-8"&gt;
+&lt;body&gt;
+    &lt;h1&gt;Missing Closing Tags
+    &lt;p&gt;Unclosed paragraph
+    &lt;div&gt;Nested incorrectly&lt;/p&gt;&lt;/div&gt;
+    &lt;img src="photo.jpg"&gt;
+    &lt;a href=#&gt;Invalid link&lt;/a&gt;
+&lt;/body&gt;
+
+&lt;!-- ✅ Valid HTML --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Valid Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Proper Structure&lt;/h1&gt;
+    &lt;p&gt;Properly closed paragraph&lt;/p&gt;
+    &lt;div&gt;
+        &lt;p&gt;Correctly nested elements&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;img src="photo.jpg" alt="Description"&gt;
+    &lt;a href="#"&gt;Valid link&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- Common Validation Issues --&gt;
+1. Missing required attributes:
+&lt;img src="photo.jpg"&gt; ❌
+&lt;img src="photo.jpg" alt="Description"&gt; ✅
+
+2. Invalid attribute values:
+&lt;div class=myClass&gt; ❌
+&lt;div class="myClass"&gt; ✅
+
+3. Improper nesting:
+&lt;b&gt;&lt;i&gt;Text&lt;/b&gt;&lt;/i&gt; ❌
+&lt;b&gt;&lt;i&gt;Text&lt;/i&gt;&lt;/b&gt; ✅
+
+4. Missing closing tags:
+&lt;p&gt;Text
+&lt;p&gt;More text ❌
+
+&lt;p&gt;Text&lt;/p&gt;
+&lt;p&gt;More text&lt;/p&gt; ✅
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h3>Validation Checklist:</h3>
+                    <ul>
+                        <li><strong>DOCTYPE Declaration</strong> - Must be first line</li>
+                        <li><strong>Required Attributes</strong> - Include all necessary attributes</li>
+                        <li><strong>Proper Nesting</strong> - Elements closed in correct order</li>
+                        <li><strong>Valid Values</strong> - Use correct attribute values</li>
+                        <li><strong>Complete Tags</strong> - All elements properly closed</li>
+                        <li><strong>Unique IDs</strong> - No duplicate ID attributes</li>
+                        <li><strong>Valid Characters</strong> - Use proper character encoding</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Fix the validation errors in this HTML code:</p>
+                    <pre><code>
+&lt;div&gt;
+    &lt;h1&gt;Welcome
+    &lt;p&gt;This is a &lt;b&gt;&lt;i&gt;test&lt;/b&gt;&lt;/i&gt; page
+    &lt;img src=photo.jpg&gt;
+    &lt;a href=https://example.com class=link&gt;Click here&lt;/a&gt;
+&lt;div&gt;
+                    </code></pre>
+                    <div class="code-editor">
+                        <textarea id="code-input" rows="20"></textarea>
+                        <button class="btn" onclick="checkCode()">Check Your Code</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Quick Quiz</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which of these is properly nested HTML?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> &lt;b&gt;&lt;i&gt;Text&lt;/b&gt;&lt;/i&gt;</label>
+                            <label><input type="radio" name="q1" value="b"> &lt;b&gt;&lt;i&gt;Text&lt;/i&gt;&lt;/b&gt;</label>
+                            <label><input type="radio" name="q1" value="c"> &lt;b&gt;&lt;i&gt;Text&lt;/i&gt;</label>
+                            <label><input type="radio" name="q1" value="d"> &lt;b&gt;Text&lt;i&gt;&lt;/b&gt;</label>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="checkQuiz()">Submit Answer</button>
+                </div>
+            </section>
+
+            <nav class="lesson-navigation">
+                <a href="best-practices-lesson.html" class="prev-lesson">← Previous: Best Practices</a>
+                <a href="html5-features-lesson.html" class="next-lesson">Next: HTML5 Features →</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+    <script src="../../lessons.js"></script>
+</body>
+</html> 

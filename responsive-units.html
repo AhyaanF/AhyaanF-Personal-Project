@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Responsive Units - CSS Course</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="media-queries.html" class="prev-lesson">← Previous: Media Queries</a>
+                <a href="responsive-images.html" class="next-lesson">Next: Responsive Images →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>CSS Responsive Units</h1>
+            
+            <section class="lesson-section">
+                <h2>Relative Length Units</h2>
+                <p>Relative units are essential for creating flexible, scalable layouts that adapt to different screen sizes and user preferences.</p>
+                
+                <div class="example-code">
+                    <h3>Common Relative Units</h3>
+                    <pre><code>
+/* em - Relative to parent font-size */
+.container {
+    font-size: 16px;
+}
+.child {
+    /* 1.5 × 16px = 24px */
+    font-size: 1.5em;
+    /* 2 × 24px = 48px (compounds from child's font-size) */
+    margin: 2em;
+}
+
+/* rem - Relative to root font-size */
+:root {
+    font-size: 16px;
+}
+.element {
+    /* Always 24px (1.5 × root 16px) */
+    font-size: 1.5rem;
+    /* Always 32px (2 × root 16px) */
+    margin: 2rem;
+}
+
+/* Percentage */
+.parent {
+    width: 800px;
+}
+.child {
+    /* 400px (50% of parent) */
+    width: 50%;
+    /* 40px (5% of parent) */
+    margin: 5%;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Viewport Units</h2>
+                <p>Viewport units are relative to the browser's viewport dimensions, making them perfect for responsive layouts and full-screen designs.</p>
+                
+                <div class="example-code">
+                    <h3>Viewport-Based Units</h3>
+                    <pre><code>
+/* Viewport Width (vw) */
+.hero {
+    /* Full viewport width */
+    width: 100vw;
+    /* Half viewport width */
+    font-size: 50vw;
+}
+
+/* Viewport Height (vh) */
+.full-screen {
+    /* Full viewport height */
+    height: 100vh;
+}
+
+/* Viewport Minimum (vmin) */
+.square {
+    /* Uses smaller viewport dimension */
+    width: 50vmin;
+    height: 50vmin;
+}
+
+/* Viewport Maximum (vmax) */
+.banner {
+    /* Uses larger viewport dimension */
+    width: 75vmax;
+}
+
+/* Dynamic Hero Section */
+.hero {
+    height: 80vh;
+    padding: 2vh 5vw;
+    font-size: calc(2rem + 2vw);
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Calc() Function</h2>
+                <p>The calc() function allows you to perform calculations with different units, creating flexible and responsive layouts.</p>
+                
+                <div class="example-code">
+                    <h3>Calculations with Units</h3>
+                    <pre><code>
+/* Basic Calculations */
+.sidebar {
+    /* Fixed sidebar with responsive width */
+    width: calc(100% - 200px);
+}
+
+/* Mixed Units */
+.header {
+    /* Minimum height plus viewport-based addition */
+    height: calc(60px + 10vh);
+    /* Fluid font size with minimum */
+    font-size: calc(1rem + 1vw);
+}
+
+/* Complex Calculations */
+.grid-item {
+    /* Three-column grid with gutters */
+    width: calc((100% - 2rem) / 3);
+    margin-right: 1rem;
+}
+
+/* Responsive Padding */
+.container {
+    /* Minimum padding that scales with viewport */
+    padding: calc(1rem + 2vw);
+}
+
+/* Dynamic Positioning */
+.overlay {
+    /* Center absolutely positioned element */
+    left: calc(50% - 150px);
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Best Practices</h2>
+                
+                <div class="example-code">
+                    <h3>Unit Selection Guidelines</h3>
+                    <pre><code>
+/* Typography */
+:root {
+    /* Base font size */
+    font-size: 16px;
+}
+
+body {
+    /* Use rem for consistent text sizing */
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+h1 {
+    /* Fluid typography */
+    font-size: calc(2rem + 1.5vw);
+}
+
+/* Layout */
+.container {
+    /* Max-width with responsive margin */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* Components */
+.card {
+    /* Fixed minimum with responsive scaling */
+    min-width: 300px;
+    width: calc(33.333% - 2rem);
+    margin: 1rem;
+}
+
+/* Responsive Spacing */
+.section {
+    /* Padding that scales with viewport */
+    padding: min(5vw, 50px);
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a responsive card layout that:</p>
+                    <ul>
+                        <li>Uses relative units for typography</li>
+                        <li>Implements fluid spacing</li>
+                        <li>Has responsive images</li>
+                        <li>Adapts to different screen sizes</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+&lt;!-- index.html --&gt;
+&lt;div class="card-container"&gt;
+    &lt;article class="card"&gt;
+        &lt;img src="image.jpg" alt="Card Image"&gt;
+        &lt;div class="card-content"&gt;
+            &lt;h2&gt;Card Title&lt;/h2&gt;
+            &lt;p&gt;Card description text...&lt;/p&gt;
+            &lt;button&gt;Learn More&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/article&gt;
+&lt;/div&gt;
+
+/* styles.css */
+:root {
+    --base-size: 16px;
+    --scale-ratio: 1.2;
+}
+
+.card-container {
+    display: grid;
+    gap: clamp(1rem, 2vw, 2rem);
+    padding: min(5vw, 3rem);
+}
+
+.card {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: calc(1rem + 1vw);
+}
+
+.card h2 {
+    font-size: calc(1.25rem + 0.5vw);
+    margin-bottom: 0.5em;
+}
+
+.card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5em;
+}
+
+.card button {
+    font-size: calc(0.875rem + 0.25vw);
+    padding: 0.75em 1.5em;
+    border-radius: 0.25em;
+}
+
+@media (min-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    }
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which unit is relative to the root element's font-size?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> em</label>
+                            <label><input type="radio" name="q1" value="b"> rem</label>
+                            <label><input type="radio" name="q1" value="c"> vw</label>
+                            <label><input type="radio" name="q1" value="d"> px</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+    </script>
+</body>
+</html> 

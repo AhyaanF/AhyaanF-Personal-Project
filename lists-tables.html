@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists & Tables - HTML Course</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../../html-course.html" class="back-to-course">← Back to HTML Course</a>
+            <div class="lesson-controls">
+                <a href="../basics/text-formatting.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="forms-input.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>Lists and Tables in HTML</h1>
+            
+            <section class="lesson-section">
+                <h2>HTML Lists</h2>
+                <p>HTML provides three types of lists to organize content: unordered, ordered, and description lists.</p>
+                
+                <div class="example-code">
+                    <h3>Unordered Lists</h3>
+                    <pre><code>
+&lt;ul&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+    &lt;li&gt;Third item&lt;/li&gt;
+&lt;/ul&gt;
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Ordered Lists</h3>
+                    <pre><code>
+&lt;ol&gt;
+    &lt;li&gt;First step&lt;/li&gt;
+    &lt;li&gt;Second step&lt;/li&gt;
+    &lt;li&gt;Third step&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- With different numbering --&gt;
+&lt;ol type="A"&gt; &lt;!-- A, B, C --&gt;
+    &lt;li&gt;Item A&lt;/li&gt;
+    &lt;li&gt;Item B&lt;/li&gt;
+&lt;/ol&gt;
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Description Lists</h3>
+                    <pre><code>
+&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+    
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;
+&lt;/dl&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>HTML Tables</h2>
+                <p>Tables are used to display data in rows and columns.</p>
+                
+                <div class="example-code">
+                    <h3>Basic Table Structure</h3>
+                    <pre><code>
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Header 1&lt;/th&gt;
+            &lt;th&gt;Header 2&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Data 1&lt;/td&gt;
+            &lt;td&gt;Data 2&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Footer 1&lt;/td&gt;
+            &lt;td&gt;Footer 2&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Table with Colspan and Rowspan</h3>
+                    <pre><code>
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th colspan="2"&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John&lt;/td&gt;
+        &lt;td&gt;Doe&lt;/td&gt;
+        &lt;td rowspan="2"&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a webpage that includes:</p>
+                    <ul>
+                        <li>An ordered list of your top 3 favorite foods</li>
+                        <li>An unordered list of ingredients for one of those foods</li>
+                        <li>A table showing a weekly schedule with merged cells</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+&lt;h2&gt;My Favorite Foods&lt;/h2&gt;
+&lt;ol&gt;
+    &lt;li&gt;Pizza&lt;/li&gt;
+    &lt;li&gt;Sushi&lt;/li&gt;
+    &lt;li&gt;Pasta&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;Pizza Ingredients&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Dough&lt;/li&gt;
+    &lt;li&gt;Tomato sauce&lt;/li&gt;
+    &lt;li&gt;Cheese&lt;/li&gt;
+    &lt;li&gt;Toppings&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Weekly Schedule&lt;/h3&gt;
+&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Time&lt;/th&gt;
+        &lt;th colspan="5"&gt;Weekdays&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;9:00 AM&lt;/td&gt;
+        &lt;td colspan="5"&gt;Morning Meeting&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;10:00 AM&lt;/td&gt;
+        &lt;td&gt;HTML&lt;/td&gt;
+        &lt;td&gt;CSS&lt;/td&gt;
+        &lt;td&gt;JavaScript&lt;/td&gt;
+        &lt;td&gt;Python&lt;/td&gt;
+        &lt;td&gt;Review&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which tag is used to create a table header cell?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> &lt;td&gt;</label>
+                            <label><input type="radio" name="q1" value="b"> &lt;th&gt;</label>
+                            <label><input type="radio" name="q1" value="c"> &lt;tr&gt;</label>
+                            <label><input type="radio" name="q1" value="d"> &lt;header&gt;</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+    </script>
+</body>
+</html> 

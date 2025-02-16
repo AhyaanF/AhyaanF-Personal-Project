@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility - HTML Course</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as other pages -->
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../../html-course.html" class="back-to-course">← Back to HTML Course</a>
+            <div class="lesson-controls">
+                <a href="meta-seo.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="best-practices.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>Web Accessibility (a11y)</h1>
+            
+            <section class="lesson-section">
+                <h2>ARIA Roles and Labels</h2>
+                <p>ARIA (Accessible Rich Internet Applications) helps make web content more accessible to people with disabilities.</p>
+                
+                <div class="example-code">
+                    <h3>Basic ARIA Attributes</h3>
+                    <pre><code>
+&lt;!-- Using roles --&gt;
+&lt;div role="navigation" aria-label="Main menu"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;!-- Using aria-labels --&gt;
+&lt;button aria-label="Close dialog" onclick="closeDialog()"&gt;×&lt;/button&gt;
+
+&lt;!-- Using aria-describedby --&gt;
+&lt;input type="text" aria-describedby="password-requirements"&gt;
+&lt;div id="password-requirements"&gt;Password must be at least 8 characters&lt;/div&gt;
+
+&lt;!-- Using aria-expanded --&gt;
+&lt;button aria-expanded="false" aria-controls="menu-content"&gt;
+    Toggle Menu
+&lt;/button&gt;
+&lt;div id="menu-content"&gt;Menu items here&lt;/div&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Semantic HTML for Accessibility</h2>
+                
+                <div class="example-code">
+                    <h3>Proper Heading Structure</h3>
+                    <pre><code>
+&lt;!-- Good heading structure --&gt;
+&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;section&gt;
+    &lt;h2&gt;Section Title&lt;/h2&gt;
+    &lt;h3&gt;Subsection Title&lt;/h3&gt;
+&lt;/section&gt;
+
+&lt;!-- Form accessibility --&gt;
+&lt;form&gt;
+    &lt;label for="username"&gt;Username:&lt;/label&gt;
+    &lt;input 
+        type="text" 
+        id="username" 
+        name="username" 
+        aria-required="true"
+        aria-invalid="false"
+    &gt;
+    
+    &lt;fieldset&gt;
+        &lt;legend&gt;Notification Preferences&lt;/legend&gt;
+        &lt;input type="checkbox" id="email" name="notifications"&gt;
+        &lt;label for="email"&gt;Email notifications&lt;/label&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Images and Media Accessibility</h2>
+                
+                <div class="example-code">
+                    <h3>Alt Text and Captions</h3>
+                    <pre><code>
+&lt;!-- Descriptive alt text for images --&gt;
+&lt;img 
+    src="chart.png" 
+    alt="Bar chart showing sales growth from 2020 to 2024"
+&gt;
+
+&lt;!-- Decorative images --&gt;
+&lt;img src="decoration.png" alt="" role="presentation"&gt;
+
+&lt;!-- Figure with caption --&gt;
+&lt;figure&gt;
+    &lt;img 
+        src="diagram.png" 
+        alt="System architecture diagram"
+    &gt;
+    &lt;figcaption&gt;Figure 1: System Architecture Overview&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;!-- Accessible video player --&gt;
+&lt;video controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;track 
+        kind="captions" 
+        src="captions.vtt" 
+        srclang="en" 
+        label="English"
+    &gt;
+    &lt;track 
+        kind="descriptions" 
+        src="descriptions.vtt" 
+        srclang="en" 
+        label="English descriptions"
+    &gt;
+&lt;/video&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Keyboard Navigation</h2>
+                
+                <div class="example-code">
+                    <h3>Focus Management</h3>
+                    <pre><code>
+&lt;!-- Proper tab order --&gt;
+&lt;div class="navigation"&gt;
+    &lt;a href="#main" class="skip-link"&gt;Skip to main content&lt;/a&gt;
+    &lt;nav&gt;
+        &lt;a href="#" tabindex="1"&gt;Home&lt;/a&gt;
+        &lt;a href="#" tabindex="2"&gt;About&lt;/a&gt;
+        &lt;a href="#" tabindex="3"&gt;Contact&lt;/a&gt;
+    &lt;/nav&gt;
+&lt;/div&gt;
+
+&lt;!-- Interactive elements --&gt;
+&lt;button 
+    onclick="toggleMenu()" 
+    onkeydown="handleKeyPress(event)"
+    aria-expanded="false"
+&gt;
+    Menu
+&lt;/button&gt;
+
+&lt;div 
+    role="dialog" 
+    aria-labelledby="dialog-title"
+    aria-modal="true"
+&gt;
+    &lt;h2 id="dialog-title"&gt;Dialog Title&lt;/h2&gt;
+    &lt;button autofocus&gt;Primary Action&lt;/button&gt;
+&lt;/div&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create an accessible form with the following requirements:</p>
+                    <ul>
+                        <li>Proper form labels and structure</li>
+                        <li>Error messaging using ARIA</li>
+                        <li>Required field indicators</li>
+                        <li>Keyboard navigation support</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+&lt;form role="form" aria-labelledby="form-title"&gt;
+    &lt;h2 id="form-title"&gt;Contact Form&lt;/h2&gt;
+    
+    &lt;div class="form-group"&gt;
+        &lt;label for="name"&gt;
+            Name
+            &lt;span class="required" aria-hidden="true"&gt;*&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;input 
+            type="text" 
+            id="name" 
+            name="name" 
+            required 
+            aria-required="true"
+            aria-describedby="name-error"
+        &gt;
+        &lt;div id="name-error" class="error" role="alert" aria-live="polite"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="form-group"&gt;
+        &lt;label for="email"&gt;
+            Email
+            &lt;span class="required" aria-hidden="true"&gt;*&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;input 
+            type="email" 
+            id="email" 
+            name="email" 
+            required 
+            aria-required="true"
+            aria-describedby="email-error"
+        &gt;
+        &lt;div id="email-error" class="error" role="alert" aria-live="polite"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;fieldset&gt;
+        &lt;legend&gt;Preferences&lt;/legend&gt;
+        &lt;div class="checkbox-group"&gt;
+            &lt;input type="checkbox" id="newsletter" name="newsletter"&gt;
+            &lt;label for="newsletter"&gt;Subscribe to newsletter&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+    
+    &lt;button 
+        type="submit"
+        aria-label="Submit form"
+    &gt;
+        Submit
+    &lt;/button&gt;
+&lt;/form&gt;
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which attribute is used to provide a text alternative for images?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> title</label>
+                            <label><input type="radio" name="q1" value="b"> alt</label>
+                            <label><input type="radio" name="q1" value="c"> description</label>
+                            <label><input type="radio" name="q1" value="d"> aria-label</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Images - CSS Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="site-title">
+            <h1>Complete Web Development & Video Creation Course</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="../../html-course.html">HTML</a>
+                    <div class="dropdown-content">
+                        <a href="../../html-course.html#basics">Basics</a>
+                        <a href="../../html-course.html#intermediate">Intermediate</a>
+                        <a href="../../html-course.html#advanced">Advanced</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../css-course.html" class="active">CSS</a>
+                    <div class="dropdown-content">
+                        <a href="../../css-course.html#basics">Basics</a>
+                        <a href="../../css-course.html#layouts">Layouts</a>
+                        <a href="../../css-course.html#responsive">Responsive Design</a>
+                        <a href="../../css-course.html#animations">Animations</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../video-creation.html">Video Creation</a>
+                    <div class="dropdown-content">
+                        <a href="../../video-creation.html#basics">Video Basics</a>
+                        <a href="../../video-creation.html#advanced">Advanced Techniques</a>
+                        <a href="../../video-creation.html#editing">Video Editing</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="responsive-units-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="animations-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>Responsive Images</h1>
+            
+            <section class="lesson-section">
+                <h2>Basic Responsive Images</h2>
+                <p>Learn how to make images adapt to different screen sizes and resolutions.</p>
+                
+                <div class="example-code">
+                    <h3>Fluid Images</h3>
+                    <pre><code>
+/* Basic responsive image */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Maintain aspect ratio */
+.image-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    position: relative;
+}
+
+.image-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Object-fit properties */
+.cover-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.contain-image {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+}
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Art Direction with picture Element</h3>
+                    <pre><code>
+&lt;!-- Art direction example --&gt;
+&lt;picture&gt;
+    &lt;source media="(min-width: 1200px)" 
+            srcset="images/hero-large.jpg"&gt;
+    &lt;source media="(min-width: 800px)" 
+            srcset="images/hero-medium.jpg"&gt;
+    &lt;img src="images/hero-small.jpg" 
+         alt="Hero image"
+         loading="lazy"&gt;
+&lt;/picture&gt;
+
+/* CSS for picture element */
+picture {
+    display: block;
+    width: 100%;
+}
+
+picture img {
+    width: 100%;
+    height: auto;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Resolution Switching</h2>
+                
+                <div class="example-code">
+                    <h3>Srcset and Sizes Attributes</h3>
+                    <pre><code>
+&lt;!-- Resolution switching example --&gt;
+&lt;img src="image-400.jpg"
+     srcset="image-400.jpg 400w,
+             image-800.jpg 800w,
+             image-1200.jpg 1200w"
+     sizes="(max-width: 400px) 100vw,
+            (max-width: 800px) 50vw,
+            33vw"
+     alt="Responsive image"
+     loading="lazy"&gt;
+
+/* Modern image formats */
+&lt;picture&gt;
+    &lt;source type="image/webp" 
+            srcset="image.webp"&gt;
+    &lt;source type="image/jpeg" 
+            srcset="image.jpg"&gt;
+    &lt;img src="image.jpg" 
+         alt="Image with format fallback"&gt;
+&lt;/picture&gt;
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Background Images</h2>
+                
+                <div class="example-code">
+                    <h3>Responsive Background Images</h3>
+                    <pre><code>
+/* Basic background image */
+.hero {
+    background-image: url('hero-small.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+}
+
+/* Media queries for background images */
+@media (min-width: 768px) {
+    .hero {
+        background-image: url('hero-medium.jpg');
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero {
+        background-image: url('hero-large.jpg');
+    }
+}
+
+/* Multiple background images */
+.parallax {
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('background.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Background image sets */
+.element {
+    background-image: -webkit-image-set(
+        url('image.jpg') 1x,
+        url('image@2x.jpg') 2x
+    );
+    background-image: image-set(
+        url('image.jpg') 1x,
+        url('image@2x.jpg') 2x
+    );
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a responsive image gallery that includes:</p>
+                    <ul>
+                        <li>Art direction using the picture element</li>
+                        <li>Resolution switching with srcset</li>
+                        <li>Lazy loading for performance</li>
+                        <li>Responsive background images</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+/* HTML Structure */
+&lt;div class="gallery"&gt;
+    &lt;div class="hero-banner"&gt;
+        &lt;picture&gt;
+            &lt;source media="(min-width: 1200px)" 
+                    srcset="hero-large.jpg"&gt;
+            &lt;source media="(min-width: 800px)" 
+                    srcset="hero-medium.jpg"&gt;
+            &lt;img src="hero-small.jpg" 
+                 alt="Hero banner"
+                 loading="eager"&gt;
+        &lt;/picture&gt;
+    &lt;/div&gt;
+
+    &lt;div class="image-grid"&gt;
+        &lt;div class="image-card"&gt;
+            &lt;img src="thumbnail-1.jpg"
+                 srcset="thumbnail-1-400.jpg 400w,
+                         thumbnail-1-800.jpg 800w"
+                 sizes="(max-width: 600px) 100vw,
+                        50vw"
+                 alt="Gallery image 1"
+                 loading="lazy"&gt;
+        &lt;/div&gt;
+        &lt;!-- More image cards... --&gt;
+    &lt;/div&gt;
+
+    &lt;div class="parallax-section"&gt;
+        &lt;h2&gt;Parallax Background&lt;/h2&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+/* CSS Styles */
+.gallery {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero-banner {
+    margin-bottom: 2rem;
+}
+
+.hero-banner picture {
+    display: block;
+    width: 100%;
+}
+
+.hero-banner img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.image-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.image-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-card:hover img {
+    transform: scale(1.05);
+}
+
+.parallax-section {
+    height: 400px;
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('parallax-small.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .parallax-section {
+        background-image: 
+            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url('parallax-medium.jpg');
+    }
+}
+
+@media (min-width: 1200px) {
+    .parallax-section {
+        background-image: 
+            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url('parallax-large.jpg');
+    }
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which HTML element is used for art direction in responsive images?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> &lt;img&gt;</label>
+                            <label><input type="radio" name="q1" value="b"> &lt;picture&gt;</label>
+                            <label><input type="radio" name="q1" value="c"> &lt;figure&gt;</label>
+                            <label><input type="radio" name="q1" value="d"> &lt;source&gt;</label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn check-answers">Check Answers</button>
+            </section>
+        </article>
+
+        <nav class="lesson-navigation">
+            <div class="lesson-controls">
+                <a href="responsive-units-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="animations-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2024 Web Development & Video Creation Course. All rights reserved.</p>
+            <p>Made by Ahyaan Farooqi</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+
+        document.querySelector('.check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'b'
+            };
+            // Add quiz checking logic
+        });
+    </script>
+</body>
+</html> 

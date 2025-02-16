@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox - CSS Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="site-title">
+            <h1>Complete Web Development & Video Creation Course</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="../../html-course.html">HTML</a>
+                    <div class="dropdown-content">
+                        <a href="../../html-course.html#basics">Basics</a>
+                        <a href="../../html-course.html#intermediate">Intermediate</a>
+                        <a href="../../html-course.html#advanced">Advanced</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../css-course.html" class="active">CSS</a>
+                    <div class="dropdown-content">
+                        <a href="../../css-course.html#basics">Basics</a>
+                        <a href="../../css-course.html#layouts">Layouts</a>
+                        <a href="../../css-course.html#responsive">Responsive Design</a>
+                        <a href="../../css-course.html#animations">Animations</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../video-creation.html">Video Creation</a>
+                    <div class="dropdown-content">
+                        <a href="../../video-creation.html#basics">Video Basics</a>
+                        <a href="../../video-creation.html#advanced">Advanced Techniques</a>
+                        <a href="../../video-creation.html#editing">Video Editing</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="box-model-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="grid-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>Flexbox Layout</h1>
+            
+            <section class="lesson-section">
+                <h2>Understanding Flexbox</h2>
+                <p>Flexbox is a one-dimensional layout model that helps distribute space and align content in a container.</p>
+                
+                <div class="example-code">
+                    <h3>Basic Flexbox Container</h3>
+                    <pre><code>
+/* Flex Container Properties */
+.container {
+    display: flex;
+    /* or display: inline-flex */
+    
+    /* Main Axis */
+    flex-direction: row;         /* default */
+    flex-direction: row-reverse;
+    flex-direction: column;
+    flex-direction: column-reverse;
+    
+    /* Main Axis Alignment */
+    justify-content: flex-start;  /* default */
+    justify-content: flex-end;
+    justify-content: center;
+    justify-content: space-between;
+    justify-content: space-around;
+    justify-content: space-evenly;
+    
+    /* Cross Axis Alignment */
+    align-items: stretch;        /* default */
+    align-items: flex-start;
+    align-items: flex-end;
+    align-items: center;
+    align-items: baseline;
+}
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Flex Items Properties</h3>
+                    <pre><code>
+/* Flex Item Properties */
+.item {
+    /* Growth & Shrink */
+    flex-grow: 0;      /* default */
+    flex-shrink: 1;    /* default */
+    flex-basis: auto;  /* default */
+    
+    /* Shorthand */
+    flex: 0 1 auto;    /* default */
+    flex: 1;           /* 1 1 0% */
+    flex: auto;        /* 1 1 auto */
+    flex: none;        /* 0 0 auto */
+    
+    /* Individual Alignment */
+    align-self: auto;      /* default */
+    align-self: flex-start;
+    align-self: flex-end;
+    align-self: center;
+    align-self: baseline;
+    align-self: stretch;
+    
+    /* Order */
+    order: 0;          /* default */
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Advanced Flexbox</h2>
+                
+                <div class="example-code">
+                    <h3>Multi-line Flex Containers</h3>
+                    <pre><code>
+.container {
+    /* Wrapping */
+    flex-wrap: nowrap;     /* default */
+    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
+    
+    /* Multi-line Alignment */
+    align-content: flex-start;
+    align-content: flex-end;
+    align-content: center;
+    align-content: space-between;
+    align-content: space-around;
+    align-content: stretch;    /* default */
+}
+
+/* Common Patterns */
+.equal-width {
+    flex: 1;
+}
+
+.fixed-width {
+    flex: 0 0 200px;
+}
+
+.responsive-item {
+    flex: 1 1 300px;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create a responsive layout that includes:</p>
+                    <ul>
+                        <li>A navigation bar with evenly spaced items</li>
+                        <li>A card layout that wraps on smaller screens</li>
+                        <li>A footer with centered content</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+/* HTML Structure */
+&lt;nav class="navbar"&gt;
+    &lt;div class="nav-items"&gt;
+        &lt;a href="#"&gt;Home&lt;/a&gt;
+        &lt;a href="#"&gt;About&lt;/a&gt;
+        &lt;a href="#"&gt;Services&lt;/a&gt;
+        &lt;a href="#"&gt;Contact&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;div class="card-container"&gt;
+    &lt;div class="card"&gt;Card 1&lt;/div&gt;
+    &lt;div class="card"&gt;Card 2&lt;/div&gt;
+    &lt;div class="card"&gt;Card 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;footer class="footer"&gt;
+    &lt;p&gt;© 2024 Your Website&lt;/p&gt;
+&lt;/footer&gt;
+
+/* CSS Styles */
+.navbar {
+    background: #333;
+    padding: 1rem;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.nav-items a {
+    color: white;
+    text-decoration: none;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    flex: 1 1 300px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #f5f5f5;
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which property is used to control the alignment of flex items along the main axis?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> align-items</label>
+                            <label><input type="radio" name="q1" value="b"> justify-content</label>
+                            <label><input type="radio" name="q1" value="c"> align-content</label>
+                            <label><input type="radio" name="q1" value="d"> flex-direction</label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn check-answers">Check Answers</button>
+            </section>
+        </article>
+
+        <nav class="lesson-navigation">
+            <div class="lesson-controls">
+                <a href="box-model-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="grid-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2024 Web Development & Video Creation Course. All rights reserved.</p>
+            <p>Made by Ahyaan Farooqi</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+
+        document.querySelector('.check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'b'
+            };
+            // Add quiz checking logic
+        });
+    </script>
+</body>
+</html> 

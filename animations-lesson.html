@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations - CSS Course</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="site-title">
+            <h1>Complete Web Development & Video Creation Course</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="../../html-course.html">HTML</a>
+                    <div class="dropdown-content">
+                        <a href="../../html-course.html#basics">Basics</a>
+                        <a href="../../html-course.html#intermediate">Intermediate</a>
+                        <a href="../../html-course.html#advanced">Advanced</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../css-course.html" class="active">CSS</a>
+                    <div class="dropdown-content">
+                        <a href="../../css-course.html#basics">Basics</a>
+                        <a href="../../css-course.html#layouts">Layouts</a>
+                        <a href="../../css-course.html#responsive">Responsive Design</a>
+                        <a href="../../css-course.html#animations">Animations</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../../video-creation.html">Video Creation</a>
+                    <div class="dropdown-content">
+                        <a href="../../video-creation.html#basics">Video Basics</a>
+                        <a href="../../video-creation.html#advanced">Advanced Techniques</a>
+                        <a href="../../video-creation.html#editing">Video Editing</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <nav class="lesson-navigation">
+            <a href="../../css-course.html" class="back-to-course">← Back to CSS Course</a>
+            <div class="lesson-controls">
+                <a href="responsive-images-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="transforms-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+
+        <article class="lesson">
+            <h1>CSS Animations</h1>
+            
+            <section class="lesson-section">
+                <h2>Transitions</h2>
+                <p>Learn how to create smooth transitions between element states.</p>
+                
+                <div class="example-code">
+                    <h3>Basic Transitions</h3>
+                    <pre><code>
+/* Single property transition */
+.button {
+    background-color: blue;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: darkblue;
+}
+
+/* Multiple property transitions */
+.card {
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 0.3s ease-out,
+                opacity 0.2s linear;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* All properties transition */
+.element {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Transition timing functions */
+.timing-examples {
+    /* Common timing functions */
+    transition-timing-function: ease;
+    transition-timing-function: linear;
+    transition-timing-function: ease-in;
+    transition-timing-function: ease-out;
+    transition-timing-function: ease-in-out;
+    
+    /* Custom cubic bezier */
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+                    </code></pre>
+                </div>
+
+                <div class="example-code">
+                    <h3>Keyframe Animations</h3>
+                    <pre><code>
+/* Basic keyframe animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Multiple keyframes */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.bounce {
+    animation: bounce 1s infinite;
+}
+
+/* Animation properties */
+.animated-element {
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-delay: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    
+    /* Shorthand */
+    animation: slideIn 1s ease-out 0.5s infinite alternate forwards;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Advanced Animations</h2>
+                
+                <div class="example-code">
+                    <h3>Complex Animations</h3>
+                    <pre><code>
+/* Multiple animations */
+.complex-animation {
+    animation: 
+        slideIn 1s ease-out,
+        fadeIn 1.5s ease-in,
+        scale 2s ease-in-out;
+}
+
+/* Staggered animations */
+.item:nth-child(1) { animation-delay: 0.1s; }
+.item:nth-child(2) { animation-delay: 0.2s; }
+.item:nth-child(3) { animation-delay: 0.3s; }
+
+/* Responsive animations */
+@media (prefers-reduced-motion: reduce) {
+    .animated {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* Transform animations */
+@keyframes rotate3D {
+    from {
+        transform: 
+            perspective(400px)
+            rotateX(0)
+            rotateY(0);
+    }
+    to {
+        transform: 
+            perspective(400px)
+            rotateX(360deg)
+            rotateY(180deg);
+    }
+}
+
+/* Animation with steps */
+@keyframes countdown {
+    0% { content: "3"; }
+    33.33% { content: "2"; }
+    66.66% { content: "1"; }
+    100% { content: "Go!"; }
+}
+
+.counter::after {
+    animation: countdown 3s steps(3, end);
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="lesson-section">
+                <h2>Performance Optimization</h2>
+                
+                <div class="example-code">
+                    <h3>Best Practices</h3>
+                    <pre><code>
+/* Use transform and opacity */
+.efficient {
+    transform: translateX(0);
+    opacity: 1;
+    will-change: transform, opacity;
+}
+
+/* Instead of */
+.inefficient {
+    left: 0;
+    display: block;
+}
+
+/* Hardware acceleration */
+.accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Animate on composite properties */
+.composite {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    will-change: transform, opacity;
+}
+
+/* Reduce animation impact */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="practice-section">
+                <h2>Practice Exercise</h2>
+                <div class="exercise">
+                    <p>Create an animated card component that includes:</p>
+                    <ul>
+                        <li>Hover transitions</li>
+                        <li>Loading animation</li>
+                        <li>Click animation</li>
+                        <li>Optimized performance</li>
+                    </ul>
+                    <button class="btn show-solution">Show Solution</button>
+                    <div class="solution" style="display: none;">
+                        <pre><code>
+/* HTML Structure */
+&lt;div class="card"&gt;
+    &lt;div class="card-image"&gt;&lt;/div&gt;
+    &lt;div class="card-content"&gt;
+        &lt;h3&gt;Card Title&lt;/h3&gt;
+        &lt;p&gt;Card description goes here...&lt;/p&gt;
+        &lt;button class="card-button"&gt;Learn More&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+/* CSS Animations */
+/* Loading Animation */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Card Flip Animation */
+@keyframes flipIn {
+    from {
+        transform: perspective(400px) rotateY(90deg);
+        opacity: 0;
+    }
+    to {
+        transform: perspective(400px) rotateY(0);
+        opacity: 1;
+    }
+}
+
+/* Button Press Animation */
+@keyframes press {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+}
+
+/* CSS Styles */
+.card {
+    position: relative;
+    width: 300px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transform-origin: center center;
+    animation: flipIn 0.6s ease-out;
+    will-change: transform;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-image {
+    height: 200px;
+    background: linear-gradient(
+        90deg,
+        #f0f0f0 25%,
+        #e0e0e0 50%,
+        #f0f0f0 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+.card-content {
+    padding: 1.5rem;
+    transform: translateZ(0);
+}
+
+.card-button {
+    padding: 0.5rem 1rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+    background: #0056b3;
+}
+
+.card-button:active {
+    animation: press 0.2s ease-in-out;
+}
+
+/* Performance Optimizations */
+.card {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card {
+        animation: none;
+    }
+    
+    .card-image {
+        animation: none;
+    }
+    
+    .card:hover {
+        transform: none;
+    }
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <h2>Knowledge Check</h2>
+                <div class="quiz">
+                    <div class="question">
+                        <p>Which CSS property is used to define the speed curve of an animation?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> animation-speed</label>
+                            <label><input type="radio" name="q1" value="b"> animation-timing-function</label>
+                            <label><input type="radio" name="q1" value="c"> animation-curve</label>
+                            <label><input type="radio" name="q1" value="d"> animation-easing</label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn check-answers">Check Answers</button>
+            </section>
+        </article>
+
+        <nav class="lesson-navigation">
+            <div class="lesson-controls">
+                <a href="responsive-images-lesson.html" class="prev-lesson">← Previous Lesson</a>
+                <a href="transforms-lesson.html" class="next-lesson">Next Lesson →</a>
+            </div>
+        </nav>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2024 Web Development & Video Creation Course. All rights reserved.</p>
+            <p>Made by Ahyaan Farooqi</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.show-solution').addEventListener('click', function() {
+            document.querySelector('.solution').style.display = 'block';
+        });
+
+        document.querySelector('.check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'b'
+            };
+            // Add quiz checking logic
+        });
+    </script>
+</body>
+</html> 
